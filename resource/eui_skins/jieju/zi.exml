@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="zi" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
-	<w:Config id="169dcc7f7cb" ></w:Config>
-	<e:Image id="img" left="0" top="0" right="0" bottom="0" source="huang_png"/>
-	<e:Label id="lab" text="牛" anchorOffsetX="0" anchorOffsetY="0" top="0" bottom="0" size="101" fontFamily="z2" verticalAlign="middle" textAlign="center" textColor="0x000000" left="0" right="0"/>
-	<e:Image id="check" source="dui_png" bottom="0" horizontalCenter="0"/>
-</e:Skin>

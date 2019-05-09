@@ -40,19 +40,20 @@ var LoadingUI = (function (_super) {
     __extends(LoadingUI, _super);
     function LoadingUI() {
         var _this = _super.call(this) || this;
-        _this.skinName = "load";
+        _this.createView();
         return _this;
     }
-    LoadingUI.prototype.childrenCreated = function () {
-        DRAGONBONES.getinstance().addToFactory("loading_ske_json", "loading_tex_json", "loading_tex_png");
-        DRAGONBONES.getinstance().initArmature("加载动画", "hecheng");
-        DRAGONBONES.getinstance().playAnimation("加载动画", "hechengloading", "加载动画分组", this.gr, 0, 1, 1);
+    LoadingUI.prototype.createView = function () {
+        this.textField = new egret.TextField();
+        this.addChild(this.textField);
+        this.textField.y = 300;
+        this.textField.width = 480;
+        this.textField.height = 100;
+        this.textField.textAlign = "center";
     };
     LoadingUI.prototype.onProgress = function (current, total) {
-        var baifenbi = ((current / total) * 100).toFixed(0);
-        this.lab.text = baifenbi + "%";
+        this.textField.text = "Loading..." + current + "/" + total;
     };
     return LoadingUI;
-}(eui.Component));
+}(egret.Sprite));
 __reflect(LoadingUI.prototype, "LoadingUI", ["RES.PromiseTaskReporter"]);
-//# sourceMappingURL=LoadingUI.js.map

@@ -27,29 +27,25 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
-class LoadingUI extends eui.Component implements RES.PromiseTaskReporter {
-    public lab: eui.Label;
-    public gr: eui.Group;
-
+class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
 
     public constructor() {
         super();
-        this.skinName = "load"
+        this.createView();
     }
 
-    protected childrenCreated(): void {
-        DRAGONBONES.getinstance().addToFactory("loading_ske_json", "loading_tex_json", "loading_tex_png")
-        DRAGONBONES.getinstance().initArmature("加载动画", "hecheng");
-        DRAGONBONES.getinstance().playAnimation("加载动画", "hechengloading", "加载动画分组", this.gr, 0, 1, 1)
+    private textField: egret.TextField;
+
+    private createView(): void {
+        this.textField = new egret.TextField();
+        this.addChild(this.textField);
+        this.textField.y = 300;
+        this.textField.width = 480;
+        this.textField.height = 100;
+        this.textField.textAlign = "center";
     }
 
     public onProgress(current: number, total: number): void {
-        let baifenbi = ((current / total) * 100).toFixed(0)
-        this.lab.text = `${baifenbi}%`;
-
-
-
-
-
+        this.textField.text = `Loading...${current}/${total}`;
     }
 }
