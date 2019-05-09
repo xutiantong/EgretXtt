@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="daziSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16a0a798f7a" ></w:Config>
+	<e:Image id="img" source="da_png" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

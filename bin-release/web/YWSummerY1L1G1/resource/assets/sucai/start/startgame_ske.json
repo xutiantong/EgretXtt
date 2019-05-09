@@ -1,0 +1,716 @@
+{
+    "frameRate": 24,
+    "name": "startgame",
+    "version": "5.5",
+    "compatibleVersion": "5.5",
+    "armature": [
+        {
+            "type": "Armature",
+            "frameRate": 24,
+            "name": "startgame",
+            "aabb": {
+                "x": 570.82,
+                "y": 304.34,
+                "width": 819.7,
+                "height": 329.91
+            },
+            "bone": [
+                {
+                    "name": "root"
+                },
+                {
+                    "name": "c",
+                    "parent": "root",
+                    "transform": {
+                        "x": 690.3104,
+                        "y": 406.0649
+                    }
+                },
+                {
+                    "name": "c1",
+                    "parent": "root",
+                    "transform": {
+                        "x": 841.4097,
+                        "y": 402.9828
+                    }
+                },
+                {
+                    "name": "c2",
+                    "parent": "root",
+                    "transform": {
+                        "x": 967.2964,
+                        "y": 401.8377
+                    }
+                },
+                {
+                    "length": 66,
+                    "name": "c3",
+                    "parent": "root",
+                    "transform": {
+                        "x": 1104.4492,
+                        "y": 403.3788
+                    }
+                },
+                {
+                    "name": "c4",
+                    "parent": "root",
+                    "transform": {
+                        "x": 1237.2101,
+                        "y": 403.9181
+                    }
+                },
+                {
+                    "name": "b",
+                    "parent": "root",
+                    "transform": {
+                        "x": 696.3204,
+                        "y": 435.1906
+                    }
+                },
+                {
+                    "name": "b1",
+                    "parent": "root",
+                    "transform": {
+                        "x": 943.1185,
+                        "y": 433.8037
+                    }
+                },
+                {
+                    "name": "b2",
+                    "parent": "root",
+                    "transform": {
+                        "x": 1226.5164,
+                        "y": 433.7267
+                    }
+                },
+                {
+                    "name": "t",
+                    "parent": "root",
+                    "transform": {
+                        "x": 956.9879,
+                        "y": 584.7489
+                    }
+                }
+            ],
+            "slot": [
+                {
+                    "name": "hua_01",
+                    "parent": "b"
+                },
+                {
+                    "name": "hua_02",
+                    "parent": "b1"
+                },
+                {
+                    "name": "hua_03",
+                    "parent": "b2"
+                },
+                {
+                    "name": "c1",
+                    "parent": "c"
+                },
+                {
+                    "name": "d1",
+                    "parent": "c2"
+                },
+                {
+                    "name": "l1",
+                    "parent": "c1"
+                },
+                {
+                    "name": "m1",
+                    "parent": "c3"
+                },
+                {
+                    "name": "x1",
+                    "parent": "c4"
+                },
+                {
+                    "name": "c",
+                    "parent": "c"
+                },
+                {
+                    "name": "l",
+                    "parent": "c1"
+                },
+                {
+                    "name": "d",
+                    "parent": "c2"
+                },
+                {
+                    "name": "m",
+                    "parent": "c3"
+                },
+                {
+                    "name": "x",
+                    "parent": "c4"
+                },
+                {
+                    "name": "morebtn",
+                    "parent": "t"
+                }
+            ],
+            "skin": [
+                {
+                    "slot": [
+                        {
+                            "name": "hua_01",
+                            "display": [
+                                {
+                                    "name": "hua_01"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "x1",
+                            "display": [
+                                {
+                                    "name": "x1",
+                                    "transform": {
+                                        "x": -4.4,
+                                        "y": -3.52
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "d",
+                            "display": [
+                                {
+                                    "name": "d"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "m",
+                            "display": [
+                                {
+                                    "name": "m"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "c1",
+                            "display": [
+                                {
+                                    "name": "c1",
+                                    "transform": {
+                                        "x": 11.35,
+                                        "y": -2.64
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "morebtn",
+                            "display": [
+                                {
+                                    "name": "morebtn"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "c",
+                            "display": [
+                                {
+                                    "name": "c"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "d1",
+                            "display": [
+                                {
+                                    "name": "d1",
+                                    "transform": {
+                                        "x": 7.04
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "l",
+                            "display": [
+                                {
+                                    "name": "l"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "hua_03",
+                            "display": [
+                                {
+                                    "name": "hua_03"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "x",
+                            "display": [
+                                {
+                                    "name": "x"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "hua_02",
+                            "display": [
+                                {
+                                    "name": "hua_02"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "m1",
+                            "display": [
+                                {
+                                    "name": "m1",
+                                    "transform": {
+                                        "x": -1.76,
+                                        "y": 2.64
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "l1",
+                            "display": [
+                                {
+                                    "name": "l1",
+                                    "transform": {
+                                        "x": -8.8
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "animation": [
+                {
+                    "duration": 54,
+                    "playTimes": 0,
+                    "name": "startanimation",
+                    "bone": [
+                        {
+                            "name": "c",
+                            "scaleFrame": [
+                                {
+                                    "duration": 11,
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.4020185365853659,
+                                        1.2939951807228915,
+                                        0.7187984585365854,
+                                        1.4582751807228915,
+                                        0.7833530696585366,
+                                        1.4917527807228916,
+                                        0.795587418232195,
+                                        0.9136724975421687,
+                                        0.848938969534595,
+                                        0.796510731994217,
+                                        0.887572851512195,
+                                        0.7116694534939759,
+                                        0.9709687804878049,
+                                        1.1092
+                                    ],
+                                    "x": 0.01,
+                                    "y": 0.01
+                                },
+                                {
+                                    "duration": 43
+                                }
+                            ]
+                        },
+                        {
+                            "name": "c1",
+                            "scaleFrame": [
+                                {
+                                    "duration": 8
+                                },
+                                {
+                                    "duration": 11,
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.4020185365853659,
+                                        1.2939951807228915,
+                                        0.7187984585365854,
+                                        1.4582751807228915,
+                                        0.7833530696585366,
+                                        1.4917527807228916,
+                                        0.795587418232195,
+                                        0.9136724975421687,
+                                        0.848938969534595,
+                                        0.796510731994217,
+                                        0.887572851512195,
+                                        0.7116694534939759,
+                                        0.9709687804878049,
+                                        1.1092
+                                    ],
+                                    "x": 0.01,
+                                    "y": 0.01
+                                },
+                                {
+                                    "duration": 35
+                                }
+                            ]
+                        },
+                        {
+                            "name": "c2",
+                            "scaleFrame": [
+                                {
+                                    "duration": 16
+                                },
+                                {
+                                    "duration": 12,
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.4020185365853659,
+                                        1.2939951807228915,
+                                        0.7187984585365854,
+                                        1.4582751807228915,
+                                        0.7833530696585366,
+                                        1.4917527807228916,
+                                        0.795587418232195,
+                                        0.9136724975421687,
+                                        0.848938969534595,
+                                        0.796510731994217,
+                                        0.887572851512195,
+                                        0.7116694534939759,
+                                        0.9709687804878049,
+                                        1.1092
+                                    ],
+                                    "x": 0.01,
+                                    "y": 0.01
+                                },
+                                {
+                                    "duration": 26
+                                }
+                            ]
+                        },
+                        {
+                            "name": "c3",
+                            "scaleFrame": [
+                                {
+                                    "duration": 25
+                                },
+                                {
+                                    "duration": 14,
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.2849453658536586,
+                                        1.2939951807228915,
+                                        0.6017252878048781,
+                                        1.4582751807228915,
+                                        0.6662798989268293,
+                                        1.4917527807228916,
+                                        0.7034801762517741,
+                                        0.8914728144457161,
+                                        0.7904023841687414,
+                                        0.796510731994217,
+                                        0.8680606563902439,
+                                        0.7116694534939759,
+                                        0.9709687804878049,
+                                        0.9465493975903614
+                                    ],
+                                    "x": 0.01,
+                                    "y": 0.01
+                                },
+                                {
+                                    "duration": 15
+                                }
+                            ]
+                        },
+                        {
+                            "name": "c4",
+                            "scaleFrame": [
+                                {
+                                    "duration": 34
+                                },
+                                {
+                                    "duration": 14,
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.2849453658536586,
+                                        1.2939951807228915,
+                                        0.6017252878048781,
+                                        1.4582751807228915,
+                                        0.6662798989268293,
+                                        1.4917527807228916,
+                                        0.7034801762517741,
+                                        0.8914728144457161,
+                                        0.7904023841687414,
+                                        0.796510731994217,
+                                        0.8680606563902439,
+                                        0.7116694534939759,
+                                        0.9709687804878049,
+                                        0.9465493975903614
+                                    ],
+                                    "x": 0.01,
+                                    "y": 0.01
+                                },
+                                {
+                                    "duration": 6
+                                }
+                            ]
+                        },
+                        {
+                            "name": "b",
+                            "scaleFrame": [
+                                {
+                                    "duration": 21
+                                },
+                                {
+                                    "duration": 21,
+                                    "curve": [
+                                        0.5,
+                                        0,
+                                        0.5,
+                                        1
+                                    ],
+                                    "x": 0.01,
+                                    "y": 0.01
+                                },
+                                {
+                                    "duration": 12
+                                }
+                            ]
+                        },
+                        {
+                            "name": "b1",
+                            "scaleFrame": [
+                                {
+                                    "duration": 24
+                                },
+                                {
+                                    "duration": 20,
+                                    "curve": [
+                                        0.5,
+                                        0,
+                                        0.5,
+                                        1
+                                    ],
+                                    "x": 0.01,
+                                    "y": 0.01
+                                },
+                                {
+                                    "duration": 10
+                                }
+                            ]
+                        },
+                        {
+                            "name": "b2",
+                            "scaleFrame": [
+                                {
+                                    "duration": 27
+                                },
+                                {
+                                    "duration": 23,
+                                    "curve": [
+                                        0.5,
+                                        0,
+                                        0.5,
+                                        1
+                                    ],
+                                    "x": 0.01,
+                                    "y": 0.01
+                                },
+                                {
+                                    "duration": 4
+                                }
+                            ]
+                        },
+                        {
+                            "name": "t",
+                            "translateFrame": [
+                                {
+                                    "duration": 24
+                                },
+                                {
+                                    "duration": 14,
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.7390243902439024,
+                                        1.8132530120481927
+                                    ],
+                                    "y": -156
+                                },
+                                {
+                                    "duration": 16
+                                }
+                            ]
+                        }
+                    ],
+                    "slot": [
+                        {
+                            "name": "l",
+                            "displayFrame": [
+                                {
+                                    "duration": 8,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 46
+                                }
+                            ]
+                        },
+                        {
+                            "name": "d",
+                            "displayFrame": [
+                                {
+                                    "duration": 16,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 38
+                                }
+                            ]
+                        },
+                        {
+                            "name": "m",
+                            "displayFrame": [
+                                {
+                                    "duration": 25,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 29
+                                }
+                            ]
+                        },
+                        {
+                            "name": "x",
+                            "displayFrame": [
+                                {
+                                    "duration": 34,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 20
+                                }
+                            ]
+                        },
+                        {
+                            "name": "hua_01",
+                            "displayFrame": [
+                                {
+                                    "duration": 21,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 33
+                                }
+                            ]
+                        },
+                        {
+                            "name": "hua_02",
+                            "displayFrame": [
+                                {
+                                    "duration": 24,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 30
+                                }
+                            ]
+                        },
+                        {
+                            "name": "hua_03",
+                            "displayFrame": [
+                                {
+                                    "duration": 27,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 27
+                                }
+                            ]
+                        },
+                        {
+                            "name": "morebtn",
+                            "displayFrame": [
+                                {
+                                    "duration": 24,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 30
+                                }
+                            ]
+                        },
+                        {
+                            "name": "d1",
+                            "displayFrame": [
+                                {
+                                    "duration": 16,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 38
+                                }
+                            ]
+                        },
+                        {
+                            "name": "l1",
+                            "displayFrame": [
+                                {
+                                    "duration": 8,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 46
+                                }
+                            ]
+                        },
+                        {
+                            "name": "m1",
+                            "displayFrame": [
+                                {
+                                    "duration": 25,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 29
+                                }
+                            ]
+                        },
+                        {
+                            "name": "x1",
+                            "displayFrame": [
+                                {
+                                    "duration": 34,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 20
+                                }
+                            ]
+                        }
+                    ],
+                    "zOrder": {
+                        "frame": [
+                            {
+                                "duration": 54,
+                                "zOrder": [
+                                    13,
+                                    -13
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "defaultActions": [
+                {
+                    "gotoAndPlay": "startanimation"
+                }
+            ]
+        }
+    ]
+}

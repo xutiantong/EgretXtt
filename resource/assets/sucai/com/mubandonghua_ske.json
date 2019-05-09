@@ -1,0 +1,248 @@
+{
+    "frameRate": 24,
+    "name": "mubandonghua",
+    "version": "5.5",
+    "compatibleVersion": "5.5",
+    "armature": [
+        {
+            "type": "Armature",
+            "frameRate": 24,
+            "name": "mubandonghua",
+            "aabb": {
+                "x": -163.5,
+                "y": -59.5,
+                "width": 311,
+                "height": 317
+            },
+            "bone": [
+                {
+                    "name": "root"
+                },
+                {
+                    "length": 54,
+                    "name": "bone",
+                    "parent": "root",
+                    "transform": {
+                        "x": -2,
+                        "y": -41
+                    }
+                },
+                {
+                    "length": 54,
+                    "name": "bone1",
+                    "parent": "bone",
+                    "transform": {
+                        "x": -6,
+                        "y": 143
+                    }
+                }
+            ],
+            "slot": [
+                {
+                    "name": "木板",
+                    "parent": "bone"
+                },
+                {
+                    "name": "女",
+                    "parent": "bone1"
+                }
+            ],
+            "skin": [
+                {
+                    "slot": [
+                        {
+                            "name": "木板",
+                            "display": [
+                                {
+                                    "name": "木板",
+                                    "transform": {
+                                        "x": -6,
+                                        "y": 140
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "女",
+                            "display": [
+                                {
+                                    "name": "女",
+                                    "transform": {
+                                        "x": 2,
+                                        "y": 39
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "animation": [
+                {
+                    "duration": 44,
+                    "playTimes": 0,
+                    "name": "in",
+                    "bone": [
+                        {
+                            "name": "bone",
+                            "rotateFrame": [
+                                {
+                                    "duration": 16,
+                                    "curve": [
+                                        0.5,
+                                        0,
+                                        1,
+                                        1
+                                    ],
+                                    "rotate": 128
+                                },
+                                {
+                                    "duration": 4,
+                                    "curve": [
+                                        0.5,
+                                        0,
+                                        1,
+                                        1
+                                    ]
+                                },
+                                {
+                                    "duration": 4,
+                                    "curve": [
+                                        0.5,
+                                        0,
+                                        1,
+                                        1
+                                    ],
+                                    "rotate": -25
+                                },
+                                {
+                                    "duration": 4,
+                                    "curve": [
+                                        0.5,
+                                        0,
+                                        1,
+                                        1
+                                    ],
+                                    "rotate": 18
+                                },
+                                {
+                                    "duration": 3,
+                                    "curve": [
+                                        0.5,
+                                        0,
+                                        1,
+                                        1
+                                    ],
+                                    "rotate": -12
+                                },
+                                {
+                                    "duration": 2,
+                                    "curve": [
+                                        0.5,
+                                        0,
+                                        1,
+                                        1
+                                    ],
+                                    "rotate": 8
+                                },
+                                {
+                                    "duration": 2,
+                                    "curve": [
+                                        0.5,
+                                        0,
+                                        1,
+                                        1
+                                    ],
+                                    "rotate": -4
+                                },
+                                {
+                                    "duration": 9
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "duration": 44,
+                    "playTimes": 0,
+                    "name": "out",
+                    "bone": [
+                        {
+                            "name": "bone",
+                            "rotateFrame": [
+                                {
+                                    "duration": 4,
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.6165644171779141,
+                                        1.7228915662650603
+                                    ],
+                                    "rotate": -25
+                                },
+                                {
+                                    "duration": 4,
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.5,
+                                        1
+                                    ],
+                                    "rotate": 18
+                                },
+                                {
+                                    "duration": 3,
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.5,
+                                        1
+                                    ],
+                                    "rotate": -12
+                                },
+                                {
+                                    "duration": 2,
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.5,
+                                        1
+                                    ],
+                                    "rotate": 8
+                                },
+                                {
+                                    "duration": 2,
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.5,
+                                        1
+                                    ],
+                                    "rotate": -4
+                                },
+                                {
+                                    "duration": 20,
+                                    "curve": [
+                                        0,
+                                        0,
+                                        0.5,
+                                        1
+                                    ]
+                                },
+                                {
+                                    "duration": 9,
+                                    "rotate": 143
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "defaultActions": [
+                {
+                    "gotoAndPlay": "in"
+                }
+            ]
+        }
+    ]
+}

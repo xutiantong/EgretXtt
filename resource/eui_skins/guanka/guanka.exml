@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="guankaSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16a06949551" ></w:Config>
+	<e:Image source="ditu_jpg" left="0" right="0" top="0" bottom="0"/>
+	<e:Image source="youjiantou_png" x="8.85" y="458.06"/>
+	<e:Image source="zuojiantou_png" x="1790.54" y="472.36"/>
+	<e:Group id="animGroup" left="0" right="0" top="0" bottom="0" touchEnabled="false"/>
+	<e:Group id="guanGroup" left="0" right="0" top="0" bottom="0" touchEnabled="false">
+		<e:Image source="1_png" x="196.76" y="655"/>
+		<e:Image source="2_png" x="313.26" y="240.06"/>
+		<e:Image source="3_png" x="708.82" y="561.15"/>
+		<e:Image source="4_png" x="960" y="200.67"/>
+		<e:Image source="5_png" x="1339.12" y="331.09"/>
+		<e:Image source="6_png" x="1485.92" y="682.27"/>
+	</e:Group>
+</e:Skin>

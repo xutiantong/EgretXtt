@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="xue" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="169dcb9b74b" ></w:Config>
+	<e:Image id="x2" x="47.99" y="26.34" anchorOffsetX="0" width="70.67" anchorOffsetY="0" height="58.67" source="taoxin_png"/>
+	<e:Image id="x1" x="137.99" y="26.34" anchorOffsetX="0" width="70.67" anchorOffsetY="0" height="58.67" source="taoxin_png"/>
+</e:Skin>

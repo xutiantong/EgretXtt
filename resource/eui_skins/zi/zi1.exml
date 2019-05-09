@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="zi1Skin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16a076b406f" ></w:Config>
+	<e:Image source="xingzhuang1_png" left="0" right="0" top="1" bottom="-1"/>
+	<e:Label id="label" text="字" anchorOffsetX="96" anchorOffsetY="136" verticalAlign="middle" textAlign="center" fontFamily="z2" size="106" textColor="0x000000" left="-6" right="6" top="39" bottom="-39"/>
+</e:Skin>
