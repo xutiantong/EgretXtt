@@ -1,0 +1,32 @@
+{
+    "16ab405362b": {
+        "path": "Code\\MainScene.ts",
+        "class": "MainScene",
+        "parentPath": ""
+    },
+    "16ab41049bc": {
+        "path": "Code\\System.ts",
+        "class": "System",
+        "parentPath": ""
+    },
+    "16ab55e719f": {
+        "path": "Code\\Question.ts",
+        "class": "Question",
+        "parentPath": ""
+    },
+    "16aba0259d4": {
+        "path": "Code\\Item.ts",
+        "class": "Item",
+        "parentPath": ""
+    },
+    "16aba64ea8a": {
+        "path": "Code\\Success.ts",
+        "class": "Success",
+        "parentPath": ""
+    },
+    "16aba829132": {
+        "path": "Code\\Introduction.ts",
+        "class": "Introduction",
+        "parentPath": ""
+    }
+}
