@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SystemSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16ab41049bc" ></w:Config>
+	<e:Rect id="rect" fillAlpha="0.8" left="0" top="0" bottom="0" right="0"/>
+	<e:Image id="lab" width="313" height="315" source="zanting_png" verticalCenter="0" horizontalCenter="0"/>
+	<e:Group width="144" height="600" x="1766" y="420" scrollEnabled="true">
+		<e:Group id="group" width="144" height="0" x="0" bottom="0">
+			<e:Image width="521" height="112" x="128" y="0" source="anniu-di_png" rotation="90"/>
+			<e:Image id="pause" width="111" height="112" x="18" y="65" source="zanting-anniu_png"/>
+			<e:Image id="reback" width="108" height="111" x="18" y="191" source="fanhui-anniu_png"/>
+			<e:ToggleButton id="music" label="" x="18" y="311">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="yinyue-anniu_png" source.down="qiangdadeniukou_02_2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:ToggleButton>
+		</e:Group>
+	</e:Group>
+	<e:ToggleButton id="mains" label="" x="1770" y="930" width="140">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="anniu-shezhi_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:ToggleButton>
+</e:Skin>

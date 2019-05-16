@@ -44,16 +44,26 @@ var LoadingUI = (function (_super) {
         return _this;
     }
     LoadingUI.prototype.createView = function () {
+        DragonBonesManager.getInstance().addToFactory("loading_ske_json", "loading_tex_json", "loading_tex_png");
+        DragonBonesManager.getInstance().initArmatureDisplay("loading", "loading");
+        DragonBonesManager.getInstance().playAnimation("loading", "newAnimation", this);
         this.textField = new egret.TextField();
         this.addChild(this.textField);
+        this.textField.x = 960;
         this.textField.y = 300;
         this.textField.width = 480;
         this.textField.height = 100;
+        this.textField.anchorOffsetX = 240;
+        this.textField.anchorOffsetY = 50;
+        this.textField.size = 70;
+        this.textField.fontFamily = "z2";
         this.textField.textAlign = "center";
     };
     LoadingUI.prototype.onProgress = function (current, total) {
-        this.textField.text = "Loading..." + current + "/" + total;
+        var n = (current / total * 100).toFixed(0);
+        this.textField.text = n + "%";
     };
     return LoadingUI;
 }(egret.Sprite));
 __reflect(LoadingUI.prototype, "LoadingUI", ["RES.PromiseTaskReporter"]);
+//# sourceMappingURL=LoadingUI.js.map

@@ -98,22 +98,18 @@ var Main = (function (_super) {
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var result, userInfo;
+            var userInfo;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.loadResource()];
                     case 1:
                         _a.sent();
                         this.createGameScene();
-                        return [4 /*yield*/, RES.getResAsync("description_json")];
-                    case 2:
-                        result = _a.sent();
-                        this.startAnimation(result);
                         return [4 /*yield*/, platform.login()];
-                    case 3:
+                    case 2:
                         _a.sent();
                         return [4 /*yield*/, platform.getUserInfo()];
-                    case 4:
+                    case 3:
                         userInfo = _a.sent();
                         console.log(userInfo);
                         return [2 /*return*/];
@@ -127,25 +123,28 @@ var Main = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 4, , 5]);
-                        loadingView = new LoadingUI();
-                        this.stage.addChild(loadingView);
+                        _a.trys.push([0, 5, , 6]);
                         return [4 /*yield*/, RES.loadConfig("resource/default.res.json", "resource/")];
                     case 1:
                         _a.sent();
-                        return [4 /*yield*/, this.loadTheme()];
+                        return [4 /*yield*/, RES.loadGroup("loading")];
                     case 2:
                         _a.sent();
-                        return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
+                        loadingView = new LoadingUI();
+                        this.stage.addChild(loadingView);
+                        return [4 /*yield*/, this.loadTheme()];
                     case 3:
                         _a.sent();
-                        this.stage.removeChild(loadingView);
-                        return [3 /*break*/, 5];
+                        return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
                     case 4:
+                        _a.sent();
+                        this.stage.removeChild(loadingView);
+                        return [3 /*break*/, 6];
+                    case 5:
                         e_1 = _a.sent();
                         console.error(e_1);
-                        return [3 /*break*/, 5];
-                    case 5: return [2 /*return*/];
+                        return [3 /*break*/, 6];
+                    case 6: return [2 /*return*/];
                 }
             });
         });
@@ -161,60 +160,45 @@ var Main = (function (_super) {
             }, _this);
         });
     };
+    // private txt: string = "<font color=\"#ff0000\"><a href = 'event:hello'>只是有些麻烦</a>，点击句子后。</font>";
+    // private correct: string = "只是有些麻烦";
+    // private textfield: egret.TextField;
+    // private label: egret.TextField;
+    // private loopTime: number = 0;
     /**
      * 创建场景界面
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
-        var sky = this.createBitmapByName("bg_jpg");
-        this.addChild(sky);
-        var stageW = this.stage.stageWidth;
-        var stageH = this.stage.stageHeight;
-        sky.width = stageW;
-        sky.height = stageH;
-        var topMask = new egret.Shape();
-        topMask.graphics.beginFill(0x000000, 0.5);
-        topMask.graphics.drawRect(0, 0, stageW, 172);
-        topMask.graphics.endFill();
-        topMask.y = 33;
-        this.addChild(topMask);
-        var icon = this.createBitmapByName("egret_icon_png");
-        this.addChild(icon);
-        icon.x = 26;
-        icon.y = 33;
-        var line = new egret.Shape();
-        line.graphics.lineStyle(2, 0xffffff);
-        line.graphics.moveTo(0, 0);
-        line.graphics.lineTo(0, 117);
-        line.graphics.endFill();
-        line.x = 172;
-        line.y = 61;
-        this.addChild(line);
-        var colorLabel = new egret.TextField();
-        colorLabel.textColor = 0xffffff;
-        colorLabel.width = stageW - 172;
-        colorLabel.textAlign = "center";
-        colorLabel.text = "Hello Egret";
-        colorLabel.size = 24;
-        colorLabel.x = 172;
-        colorLabel.y = 80;
-        this.addChild(colorLabel);
-        var textfield = new egret.TextField();
-        this.addChild(textfield);
-        textfield.alpha = 0;
-        textfield.width = stageW - 172;
-        textfield.textAlign = egret.HorizontalAlign.CENTER;
-        textfield.size = 24;
-        textfield.textColor = 0xffffff;
-        textfield.x = 172;
-        textfield.y = 135;
-        this.textfield = textfield;
-        var button = new eui.Button();
-        button.label = "Click!";
-        button.horizontalCenter = 0;
-        button.verticalCenter = 0;
-        this.addChild(button);
-        button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
+        this.addChild(GlobalManager.getInstance());
+        // let sky = this.createBitmapByName("bg_jpg");
+        // this.addChild(sky);
+        // let stageW = this.stage.stageWidth;
+        // let stageH = this.stage.stageHeight;
+        // sky.width = stageW;
+        // sky.height = stageH;
+        // let colorLabel = new egret.TextField();
+        // colorLabel.textColor = 0xffffff;
+        // colorLabel.width = stageW - 172;
+        // colorLabel.textAlign = "center";
+        // colorLabel.textFlow = (new egret.HtmlTextParser).parser(this.txt);
+        // colorLabel.addEventListener(egret.TextEvent.LINK, this.onTextClick, this);
+        // colorLabel.touchEnabled = true;
+        // colorLabel.size = 80;
+        // colorLabel.x = 172;
+        // colorLabel.y = 500;
+        // this.addChild(colorLabel);
+        // this.textfield = colorLabel;
+        // var label: egret.TextField = new egret.TextField();
+        // this.addChild(label);
+        // label.text = "♦";
+        // label.size = 80;
+        // label.textAlign = egret.HorizontalAlign.CENTER;
+        // label.fontFamily = "微软雅黑";
+        // label.textColor = 0x00ff00;
+        // label.x = 0;
+        // label.y = 0;
+        // this.label = label;
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
@@ -225,33 +209,6 @@ var Main = (function (_super) {
         var texture = RES.getRes(name);
         result.texture = texture;
         return result;
-    };
-    /**
-     * 描述文件加载成功，开始播放动画
-     * Description file loading is successful, start to play the animation
-     */
-    Main.prototype.startAnimation = function (result) {
-        var _this = this;
-        var parser = new egret.HtmlTextParser();
-        var textflowArr = result.map(function (text) { return parser.parse(text); });
-        var textfield = this.textfield;
-        var count = -1;
-        var change = function () {
-            count++;
-            if (count >= textflowArr.length) {
-                count = 0;
-            }
-            var textFlow = textflowArr[count];
-            // 切换描述内容
-            // Switch to described content
-            textfield.textFlow = textFlow;
-            var tw = egret.Tween.get(textfield);
-            tw.to({ "alpha": 1 }, 200);
-            tw.wait(2000);
-            tw.to({ "alpha": 0 }, 200);
-            tw.call(change, _this);
-        };
-        change();
     };
     /**
      * 点击按钮
@@ -267,3 +224,4 @@ var Main = (function (_super) {
     return Main;
 }(eui.UILayer));
 __reflect(Main.prototype, "Main");
+//# sourceMappingURL=Main.js.map
