@@ -102,6 +102,7 @@ var Question = (function (_super) {
             this.canErr = false;
             GlobalManager.getInstance().mainscene.music.play(GlobalManager.getInstance().mainscene.err_sound);
             if (this.canAdd) {
+                this.canAdd = false;
                 this.questionWrongNum += 1;
             }
         }

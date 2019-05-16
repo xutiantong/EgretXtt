@@ -56,7 +56,6 @@ class MainScene extends eui.Component implements eui.UIComponent {
 
 	private loadRes() {
 		GlobalManager.getInstance().dg.addToFactory("xiaodongwu_ske_json", "xiaodongwu_tex_json", "xiaodongwu_tex_png");
-		GlobalManager.getInstance().dg.addToFactory("pangxie_ske_json", "pangxie_tex_json", "pangxie_tex_png");
 		GlobalManager.getInstance().dg.addToFactory("changjing_ske_json", "changjing_tex_0_json", "changjing_tex_0_png");
 		// GlobalManager.getInstance().dg.addToFactoryAtlas("changjing_tex_0_json", "changjing_tex_0_png");
 		GlobalManager.getInstance().dg.addToFactoryAtlas("changjing_tex_1_json", "changjing_tex_1_png");

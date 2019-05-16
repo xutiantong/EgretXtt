@@ -40,7 +40,7 @@ var System = (function (_super) {
                 this.reback.touchEnabled = true;
                 this.pause.touchEnabled = true;
                 this.lab.visible = false;
-                // GlobalManager.getInstance().mainscene.question.touchChildren = true;
+                GlobalManager.getInstance().mainscene.question.touchChildren = true;
                 if (this.music.selected != true) {
                     GlobalManager.getInstance().mainscene.music.getchannel(GlobalManager.getInstance().mainscene.bg_sound).volume = 1;
                 }
@@ -91,7 +91,7 @@ var System = (function (_super) {
                 this.reback.touchEnabled = false;
                 GlobalManager.getInstance().mainscene.music.getchannel(GlobalManager.getInstance().mainscene.bg_sound).volume = 0;
                 this.pause.touchEnabled = false;
-                // GlobalManager.getInstance().mainscene.question.touchChildren = false;
+                GlobalManager.getInstance().mainscene.question.touchChildren = false;
                 break;
             default:
                 break;

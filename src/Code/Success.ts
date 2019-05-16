@@ -31,7 +31,7 @@ class Success extends eui.Component implements eui.UIComponent {
 		} else if (wrongNum == 6) {
 			this.label.text = "同学们，请再接再厉吧";
 		} else {
-			this.label.text = "答对" + (6 - wrongNum) + "道题,答错" + wrongNum + "道题";
+			this.label.text = "答对" + ((6 - wrongNum) > 0 ? (6 - wrongNum) : 0) + "道题,答错" + wrongNum + "道题";
 		}
 		egret.Tween.get(this.label).to({ alpha: 1 }, 600)
 		GlobalManager.getInstance().dg.playAnimation("success", "shengli", this.aniGroup, 1);
