@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ItemSkin" width="120" height="90" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
-	<w:Config id="16aba0259d4" ></w:Config>
-	<e:Group id="itemGroup" right="0" top="0" left="0" bottom="0"/>
-</e:Skin>
