@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CuoTiBenSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16af733f504" ></w:Config>
+	<e:Rect fillAlpha="0.5" left="0" top="0" right="0" bottom="0"/>
+	<e:Group id="aniGroup" left="0" top="-100" bottom="100" right="0">
+	</e:Group>
+	<e:Group id="contentGroup" width="795" height="315" verticalCenter="50" horizontalCenter="0">
+		<e:layout>
+			<e:TileLayout horizontalAlign="center" verticalAlign="middle" horizontalGap="15" verticalGap="15" orientation="rows" rowHeight="135" requestedRowCount="2" columnWidth="141" requestedColumnCount="5" paddingLeft="15" paddingRight="15" paddingTop="15" paddingBottom="15"/>
+		</e:layout>
+	</e:Group>
+	<e:Image id="restart" x="797" y="795" source="anniu_png"/>
+</e:Skin>

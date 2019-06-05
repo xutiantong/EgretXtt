@@ -1,0 +1,952 @@
+{
+  "0": {
+    "id": "0",
+    "zimu": "bɑ",
+    "shengdiao": "0"
+  },
+  "1": {
+    "id": "1",
+    "zimu": "bɑ",
+    "shengdiao": "1"
+  },
+  "2": {
+    "id": "2",
+    "zimu": "bɑ",
+    "shengdiao": "2"
+  },
+  "3": {
+    "id": "3",
+    "zimu": "bɑ",
+    "shengdiao": "3"
+  },
+  "4": {
+    "id": "4",
+    "zimu": "bo",
+    "shengdiao": "0"
+  },
+  "5": {
+    "id": "5",
+    "zimu": "bo",
+    "shengdiao": "1"
+  },
+  "6": {
+    "id": "6",
+    "zimu": "bo",
+    "shengdiao": "2"
+  },
+  "7": {
+    "id": "7",
+    "zimu": "bo",
+    "shengdiao": "3"
+  },
+  "8": {
+    "id": "8",
+    "zimu": "bi",
+    "shengdiao": "0"
+  },
+  "9": {
+    "id": "9",
+    "zimu": "bi",
+    "shengdiao": "1"
+  },
+  "10": {
+    "id": "10",
+    "zimu": "bi",
+    "shengdiao": "2"
+  },
+  "11": {
+    "id": "11",
+    "zimu": "bi",
+    "shengdiao": "3"
+  },
+  "12": {
+    "id": "12",
+    "zimu": "bu",
+    "shengdiao": "0"
+  },
+  "13": {
+    "id": "13",
+    "zimu": "bu",
+    "shengdiao": "2"
+  },
+  "14": {
+    "id": "14",
+    "zimu": "bu",
+    "shengdiao": "3"
+  },
+  "15": {
+    "id": "15",
+    "zimu": "pɑ",
+    "shengdiao": "0"
+  },
+  "16": {
+    "id": "16",
+    "zimu": "pɑ",
+    "shengdiao": "1"
+  },
+  "17": {
+    "id": "17",
+    "zimu": "pɑ",
+    "shengdiao": "3"
+  },
+  "18": {
+    "id": "18",
+    "zimu": "po",
+    "shengdiao": "0"
+  },
+  "19": {
+    "id": "19",
+    "zimu": "po",
+    "shengdiao": "1"
+  },
+  "20": {
+    "id": "20",
+    "zimu": "po",
+    "shengdiao": "2"
+  },
+  "21": {
+    "id": "21",
+    "zimu": "po",
+    "shengdiao": "3"
+  },
+  "22": {
+    "id": "22",
+    "zimu": "pi",
+    "shengdiao": "0"
+  },
+  "23": {
+    "id": "23",
+    "zimu": "pi",
+    "shengdiao": "1"
+  },
+  "24": {
+    "id": "24",
+    "zimu": "pi",
+    "shengdiao": "2"
+  },
+  "25": {
+    "id": "25",
+    "zimu": "pi",
+    "shengdiao": "3"
+  },
+  "26": {
+    "id": "26",
+    "zimu": "pu",
+    "shengdiao": "0"
+  },
+  "27": {
+    "id": "27",
+    "zimu": "pu",
+    "shengdiao": "1"
+  },
+  "28": {
+    "id": "28",
+    "zimu": "pu",
+    "shengdiao": "2"
+  },
+  "29": {
+    "id": "29",
+    "zimu": "pu",
+    "shengdiao": "3"
+  },
+  "30": {
+    "id": "30",
+    "zimu": "mɑ",
+    "shengdiao": "0"
+  },
+  "31": {
+    "id": "31",
+    "zimu": "mɑ",
+    "shengdiao": "1"
+  },
+  "32": {
+    "id": "32",
+    "zimu": "mɑ",
+    "shengdiao": "2"
+  },
+  "33": {
+    "id": "33",
+    "zimu": "mɑ",
+    "shengdiao": "3"
+  },
+  "34": {
+    "id": "34",
+    "zimu": "mo",
+    "shengdiao": "0"
+  },
+  "35": {
+    "id": "35",
+    "zimu": "mo",
+    "shengdiao": "1"
+  },
+  "36": {
+    "id": "36",
+    "zimu": "mo",
+    "shengdiao": "2"
+  },
+  "37": {
+    "id": "37",
+    "zimu": "mo",
+    "shengdiao": "3"
+  },
+  "38": {
+    "id": "38",
+    "zimu": "mi",
+    "shengdiao": "0"
+  },
+  "39": {
+    "id": "39",
+    "zimu": "mi",
+    "shengdiao": "1"
+  },
+  "40": {
+    "id": "40",
+    "zimu": "mi",
+    "shengdiao": "2"
+  },
+  "41": {
+    "id": "41",
+    "zimu": "mi",
+    "shengdiao": "3"
+  },
+  "42": {
+    "id": "42",
+    "zimu": "mu",
+    "shengdiao": "1"
+  },
+  "43": {
+    "id": "43",
+    "zimu": "mu",
+    "shengdiao": "2"
+  },
+  "44": {
+    "id": "44",
+    "zimu": "mu",
+    "shengdiao": "3"
+  },
+  "45": {
+    "id": "45",
+    "zimu": "fɑ",
+    "shengdiao": "0"
+  },
+  "46": {
+    "id": "46",
+    "zimu": "fɑ",
+    "shengdiao": "1"
+  },
+  "47": {
+    "id": "47",
+    "zimu": "fɑ",
+    "shengdiao": "2"
+  },
+  "48": {
+    "id": "48",
+    "zimu": "fɑ",
+    "shengdiao": "3"
+  },
+  "49": {
+    "id": "49",
+    "zimu": "fo",
+    "shengdiao": "0"
+  },
+  "50": {
+    "id": "50",
+    "zimu": "fo",
+    "shengdiao": "1"
+  },
+  "51": {
+    "id": "51",
+    "zimu": "fu",
+    "shengdiao": "0"
+  },
+  "52": {
+    "id": "52",
+    "zimu": "fu",
+    "shengdiao": "1"
+  },
+  "53": {
+    "id": "53",
+    "zimu": "fu",
+    "shengdiao": "2"
+  },
+  "54": {
+    "id": "54",
+    "zimu": "fu",
+    "shengdiao": "3"
+  },
+  "55": {
+    "id": "55",
+    "zimu": "dɑ",
+    "shengdiao": "0"
+  },
+  "56": {
+    "id": "56",
+    "zimu": "dɑ",
+    "shengdiao": "1"
+  },
+  "57": {
+    "id": "57",
+    "zimu": "dɑ",
+    "shengdiao": "2"
+  },
+  "58": {
+    "id": "58",
+    "zimu": "dɑ",
+    "shengdiao": "3"
+  },
+  "59": {
+    "id": "59",
+    "zimu": "de",
+    "shengdiao": "0"
+  },
+  "60": {
+    "id": "60",
+    "zimu": "de",
+    "shengdiao": "1"
+  },
+  "61": {
+    "id": "61",
+    "zimu": "de",
+    "shengdiao": "3"
+  },
+  "62": {
+    "id": "62",
+    "zimu": "di",
+    "shengdiao": "0"
+  },
+  "63": {
+    "id": "63",
+    "zimu": "di",
+    "shengdiao": "1"
+  },
+  "64": {
+    "id": "64",
+    "zimu": "di",
+    "shengdiao": "2"
+  },
+  "65": {
+    "id": "65",
+    "zimu": "di",
+    "shengdiao": "3"
+  },
+  "66": {
+    "id": "66",
+    "zimu": "du",
+    "shengdiao": "0"
+  },
+  "67": {
+    "id": "67",
+    "zimu": "du",
+    "shengdiao": "1"
+  },
+  "68": {
+    "id": "68",
+    "zimu": "du",
+    "shengdiao": "2"
+  },
+  "69": {
+    "id": "69",
+    "zimu": "du",
+    "shengdiao": "3"
+  },
+  "70": {
+    "id": "70",
+    "zimu": "tɑ",
+    "shengdiao": "0"
+  },
+  "71": {
+    "id": "71",
+    "zimu": "tɑ",
+    "shengdiao": "1"
+  },
+  "72": {
+    "id": "72",
+    "zimu": "tɑ",
+    "shengdiao": "2"
+  },
+  "73": {
+    "id": "73",
+    "zimu": "tɑ",
+    "shengdiao": "3"
+  },
+  "74": {
+    "id": "74",
+    "zimu": "te",
+    "shengdiao": "0"
+  },
+  "75": {
+    "id": "75",
+    "zimu": "te",
+    "shengdiao": "3"
+  },
+  "76": {
+    "id": "76",
+    "zimu": "ti",
+    "shengdiao": "0"
+  },
+  "77": {
+    "id": "77",
+    "zimu": "ti",
+    "shengdiao": "1"
+  },
+  "78": {
+    "id": "78",
+    "zimu": "ti",
+    "shengdiao": "2"
+  },
+  "79": {
+    "id": "79",
+    "zimu": "ti",
+    "shengdiao": "3"
+  },
+  "80": {
+    "id": "80",
+    "zimu": "tu",
+    "shengdiao": "0"
+  },
+  "81": {
+    "id": "81",
+    "zimu": "tu",
+    "shengdiao": "1"
+  },
+  "82": {
+    "id": "82",
+    "zimu": "tu",
+    "shengdiao": "2"
+  },
+  "83": {
+    "id": "83",
+    "zimu": "tu",
+    "shengdiao": "3"
+  },
+  "84": {
+    "id": "84",
+    "zimu": "nɑ",
+    "shengdiao": "0"
+  },
+  "85": {
+    "id": "85",
+    "zimu": "nɑ",
+    "shengdiao": "1"
+  },
+  "86": {
+    "id": "86",
+    "zimu": "nɑ",
+    "shengdiao": "2"
+  },
+  "87": {
+    "id": "87",
+    "zimu": "nɑ",
+    "shengdiao": "3"
+  },
+  "88": {
+    "id": "88",
+    "zimu": "ne",
+    "shengdiao": "0"
+  },
+  "89": {
+    "id": "89",
+    "zimu": "ne",
+    "shengdiao": "1"
+  },
+  "90": {
+    "id": "90",
+    "zimu": "ne",
+    "shengdiao": "3"
+  },
+  "91": {
+    "id": "91",
+    "zimu": "ni",
+    "shengdiao": "0"
+  },
+  "92": {
+    "id": "92",
+    "zimu": "ni",
+    "shengdiao": "1"
+  },
+  "93": {
+    "id": "93",
+    "zimu": "ni",
+    "shengdiao": "2"
+  },
+  "94": {
+    "id": "94",
+    "zimu": "ni",
+    "shengdiao": "3"
+  },
+  "95": {
+    "id": "95",
+    "zimu": "nu",
+    "shengdiao": "1"
+  },
+  "96": {
+    "id": "96",
+    "zimu": "nu",
+    "shengdiao": "2"
+  },
+  "97": {
+    "id": "97",
+    "zimu": "nu",
+    "shengdiao": "3"
+  },
+  "98": {
+    "id": "98",
+    "zimu": "nü",
+    "shengdiao": "2"
+  },
+  "99": {
+    "id": "99",
+    "zimu": "lɑ",
+    "shengdiao": "0"
+  },
+  "100": {
+    "id": "100",
+    "zimu": "lɑ",
+    "shengdiao": "1"
+  },
+  "101": {
+    "id": "101",
+    "zimu": "lɑ",
+    "shengdiao": "2"
+  },
+  "102": {
+    "id": "102",
+    "zimu": "lɑ",
+    "shengdiao": "3"
+  },
+  "103": {
+    "id": "103",
+    "zimu": "le",
+    "shengdiao": "0"
+  },
+  "104": {
+    "id": "104",
+    "zimu": "le",
+    "shengdiao": "3"
+  },
+  "105": {
+    "id": "105",
+    "zimu": "li",
+    "shengdiao": "0"
+  },
+  "106": {
+    "id": "106",
+    "zimu": "li",
+    "shengdiao": "1"
+  },
+  "107": {
+    "id": "107",
+    "zimu": "li",
+    "shengdiao": "2"
+  },
+  "108": {
+    "id": "108",
+    "zimu": "li",
+    "shengdiao": "3"
+  },
+  "109": {
+    "id": "109",
+    "zimu": "lu",
+    "shengdiao": "0"
+  },
+  "110": {
+    "id": "110",
+    "zimu": "lu",
+    "shengdiao": "1"
+  },
+  "111": {
+    "id": "111",
+    "zimu": "lu",
+    "shengdiao": "2"
+  },
+  "112": {
+    "id": "112",
+    "zimu": "lu",
+    "shengdiao": "3"
+  },
+  "113": {
+    "id": "113",
+    "zimu": "ge",
+    "shengdiao": "0"
+  },
+  "114": {
+    "id": "114",
+    "zimu": "ge",
+    "shengdiao": "1"
+  },
+  "115": {
+    "id": "115",
+    "zimu": "ge",
+    "shengdiao": "2"
+  },
+  "116": {
+    "id": "116",
+    "zimu": "ge",
+    "shengdiao": "3"
+  },
+  "117": {
+    "id": "117",
+    "zimu": "gu",
+    "shengdiao": "0"
+  },
+  "118": {
+    "id": "118",
+    "zimu": "gu",
+    "shengdiao": "2"
+  },
+  "119": {
+    "id": "119",
+    "zimu": "gu",
+    "shengdiao": "3"
+  },
+  "120": {
+    "id": "120",
+    "zimu": "kɑ",
+    "shengdiao": "0"
+  },
+  "121": {
+    "id": "121",
+    "zimu": "kɑ",
+    "shengdiao": "2"
+  },
+  "122": {
+    "id": "122",
+    "zimu": "hu",
+    "shengdiao": "0"
+  },
+  "123": {
+    "id": "123",
+    "zimu": "hu",
+    "shengdiao": "1"
+  },
+  "124": {
+    "id": "124",
+    "zimu": "hu",
+    "shengdiao": "2"
+  },
+  "125": {
+    "id": "125",
+    "zimu": "hu",
+    "shengdiao": "3"
+  },
+  "126": {
+    "id": "126",
+    "zimu": "ji",
+    "shengdiao": "0"
+  },
+  "127": {
+    "id": "127",
+    "zimu": "ji",
+    "shengdiao": "1"
+  },
+  "128": {
+    "id": "128",
+    "zimu": "ji",
+    "shengdiao": "2"
+  },
+  "129": {
+    "id": "129",
+    "zimu": "ji",
+    "shengdiao": "3"
+  },
+  "130": {
+    "id": "130",
+    "zimu": "ju",
+    "shengdiao": "0"
+  },
+  "131": {
+    "id": "131",
+    "zimu": "ju",
+    "shengdiao": "1"
+  },
+  "132": {
+    "id": "132",
+    "zimu": "ju",
+    "shengdiao": "2"
+  },
+  "133": {
+    "id": "133",
+    "zimu": "ju",
+    "shengdiao": "3"
+  },
+  "134": {
+    "id": "134",
+    "zimu": "qi",
+    "shengdiao": "0"
+  },
+  "135": {
+    "id": "135",
+    "zimu": "qi",
+    "shengdiao": "1"
+  },
+  "136": {
+    "id": "136",
+    "zimu": "qi",
+    "shengdiao": "2"
+  },
+  "137": {
+    "id": "137",
+    "zimu": "qi",
+    "shengdiao": "3"
+  },
+  "138": {
+    "id": "138",
+    "zimu": "qu",
+    "shengdiao": "0"
+  },
+  "139": {
+    "id": "139",
+    "zimu": "qu",
+    "shengdiao": "1"
+  },
+  "140": {
+    "id": "140",
+    "zimu": "qu",
+    "shengdiao": "2"
+  },
+  "141": {
+    "id": "141",
+    "zimu": "qu",
+    "shengdiao": "3"
+  },
+  "142": {
+    "id": "142",
+    "zimu": "xi",
+    "shengdiao": "0"
+  },
+  "143": {
+    "id": "143",
+    "zimu": "xi",
+    "shengdiao": "1"
+  },
+  "144": {
+    "id": "144",
+    "zimu": "xi",
+    "shengdiao": "2"
+  },
+  "145": {
+    "id": "145",
+    "zimu": "xi",
+    "shengdiao": "3"
+  },
+  "146": {
+    "id": "146",
+    "zimu": "xu",
+    "shengdiao": "0"
+  },
+  "147": {
+    "id": "147",
+    "zimu": "xu",
+    "shengdiao": "1"
+  },
+  "148": {
+    "id": "148",
+    "zimu": "xu",
+    "shengdiao": "2"
+  },
+  "149": {
+    "id": "149",
+    "zimu": "xu",
+    "shengdiao": "3"
+  },
+  "150": {
+    "id": "150",
+    "zimu": "zi",
+    "shengdiao": "0"
+  },
+  "151": {
+    "id": "151",
+    "zimu": "zi",
+    "shengdiao": "2"
+  },
+  "152": {
+    "id": "152",
+    "zimu": "zi",
+    "shengdiao": "3"
+  },
+  "153": {
+    "id": "153",
+    "zimu": "ci",
+    "shengdiao": "0"
+  },
+  "154": {
+    "id": "154",
+    "zimu": "ci",
+    "shengdiao": "1"
+  },
+  "155": {
+    "id": "155",
+    "zimu": "ci",
+    "shengdiao": "2"
+  },
+  "156": {
+    "id": "156",
+    "zimu": "ci",
+    "shengdiao": "3"
+  },
+  "157": {
+    "id": "157",
+    "zimu": "si",
+    "shengdiao": "0"
+  },
+  "158": {
+    "id": "158",
+    "zimu": "si",
+    "shengdiao": "2"
+  },
+  "159": {
+    "id": "159",
+    "zimu": "si",
+    "shengdiao": "3"
+  },
+  "160": {
+    "id": "160",
+    "zimu": "zhi",
+    "shengdiao": "0"
+  },
+  "161": {
+    "id": "161",
+    "zimu": "zhi",
+    "shengdiao": "1"
+  },
+  "162": {
+    "id": "162",
+    "zimu": "zhi",
+    "shengdiao": "2"
+  },
+  "163": {
+    "id": "163",
+    "zimu": "zhi",
+    "shengdiao": "3"
+  },
+  "164": {
+    "id": "164",
+    "zimu": "chi",
+    "shengdiao": "0"
+  },
+  "165": {
+    "id": "165",
+    "zimu": "chi",
+    "shengdiao": "1"
+  },
+  "166": {
+    "id": "166",
+    "zimu": "chi",
+    "shengdiao": "2"
+  },
+  "167": {
+    "id": "167",
+    "zimu": "chi",
+    "shengdiao": "3"
+  },
+  "168": {
+    "id": "168",
+    "zimu": "shi",
+    "shengdiao": "0"
+  },
+  "169": {
+    "id": "169",
+    "zimu": "shi",
+    "shengdiao": "1"
+  },
+  "170": {
+    "id": "170",
+    "zimu": "shi",
+    "shengdiao": "2"
+  },
+  "171": {
+    "id": "171",
+    "zimu": "shi",
+    "shengdiao": "3"
+  },
+  "172": {
+    "id": "172",
+    "zimu": "yi",
+    "shengdiao": "0"
+  },
+  "173": {
+    "id": "173",
+    "zimu": "yi",
+    "shengdiao": "1"
+  },
+  "174": {
+    "id": "174",
+    "zimu": "yi",
+    "shengdiao": "2"
+  },
+  "175": {
+    "id": "175",
+    "zimu": "yi",
+    "shengdiao": "3"
+  },
+  "176": {
+    "id": "176",
+    "zimu": "yu",
+    "shengdiao": "0"
+  },
+  "177": {
+    "id": "177",
+    "zimu": "yu",
+    "shengdiao": "1"
+  },
+  "178": {
+    "id": "178",
+    "zimu": "yu",
+    "shengdiao": "2"
+  },
+  "179": {
+    "id": "179",
+    "zimu": "yu",
+    "shengdiao": "3"
+  },
+  "180": {
+    "id": "180",
+    "zimu": "wu",
+    "shengdiao": "0"
+  },
+  "181": {
+    "id": "181",
+    "zimu": "wu",
+    "shengdiao": "1"
+  },
+  "182": {
+    "id": "182",
+    "zimu": "wu",
+    "shengdiao": "2"
+  },
+  "183": {
+    "id": "183",
+    "zimu": "wu",
+    "shengdiao": "3"
+  },
+  "184": {
+    "id": "184",
+    "zimu": "ri",
+    "shengdiao": "0"
+  },
+  "185": {
+    "id": "185",
+    "zimu": "ru",
+    "shengdiao": "1"
+  },
+  "186": {
+    "id": "186",
+    "zimu": "ru",
+    "shengdiao": "2"
+  },
+  "187": {
+    "id": "187",
+    "zimu": "ru",
+    "shengdiao": "3"
+  },
+  "188": {
+    "id": "188",
+    "zimu": "re",
+    "shengdiao": "2"
+  },
+  "189": {
+    "id": "189",
+    "zimu": "re",
+    "shengdiao": "3"
+  }
+}

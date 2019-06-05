@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Scene1Skin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16a957de5ef" ></w:Config>
+	<e:Image left="0" top="0" bottom="0" right="0" source="bg_png" alpha="1"/>
+	<e:Group id="aniGroup" left="0" right="0" top="0" bottom="0" touchEnabled="false">
+	</e:Group>
+	<e:Group id="questionGroup" left="719" top="368" bottom="362" right="351" anchorOffsetX="0" anchorOffsetY="0">
+	</e:Group>
+	<e:Image id="eraser" x="1592.385" y="780" source="heibancha_png" fillMode="scale"/>
+	<e:Image id="box" x="1335" y="755" fillMode="scale" source="tijiao_png"/>
+
+
+	<e:Image source="shuiyin_png" left="0" bottom="0"/>
+</e:Skin>

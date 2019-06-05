@@ -40,30 +40,19 @@ var LoadingUI = (function (_super) {
     __extends(LoadingUI, _super);
     function LoadingUI() {
         var _this = _super.call(this) || this;
-        _this.createView();
+        _this.skinName = "Load";
         return _this;
     }
-    LoadingUI.prototype.createView = function () {
-        DragonBonesManager.getInstance().addToFactory("loading_ske_json", "loading_tex_json", "loading_tex_png");
-        DragonBonesManager.getInstance().initArmatureDisplay("loading", "loading");
-        DragonBonesManager.getInstance().playAnimation("loading", "newAnimation", this);
-        this.textField = new egret.TextField();
-        this.addChild(this.textField);
-        this.textField.x = 960;
-        this.textField.y = 300;
-        this.textField.width = 480;
-        this.textField.height = 100;
-        this.textField.anchorOffsetX = 240;
-        this.textField.anchorOffsetY = 50;
-        this.textField.size = 70;
-        this.textField.fontFamily = "z2";
-        this.textField.textAlign = "center";
+    LoadingUI.prototype.childrenCreated = function () {
+        DRAGONBONES.getinstance().addToFactory("loading_ske_json", "loading_tex_json", "loading_tex_png");
+        DRAGONBONES.getinstance().initArmature("加载动画", "loading");
+        DRAGONBONES.getinstance().playAnimation("加载动画", "newAnimation", "加载动画分组", this.gr, 0, 1, 1, 1);
     };
     LoadingUI.prototype.onProgress = function (current, total) {
-        var n = (current / total * 100).toFixed(0);
-        this.textField.text = n + "%";
+        var baifenbi = ((current / total) * 100).toFixed(0);
+        this.lab.text = baifenbi + "%";
     };
     return LoadingUI;
-}(egret.Sprite));
+}(eui.Component));
 __reflect(LoadingUI.prototype, "LoadingUI", ["RES.PromiseTaskReporter"]);
 //# sourceMappingURL=LoadingUI.js.map

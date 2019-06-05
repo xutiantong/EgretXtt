@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Bottom" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Label id="ll" text="底层" x="664" y="358" anchorOffsetX="0" width="828.55" anchorOffsetY="0" height="545.15" textColor="0x070505" verticalAlign="middle" size="281"/>
+
+
+</e:Skin>

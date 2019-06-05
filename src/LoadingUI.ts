@@ -27,34 +27,24 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
-class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
-
+class LoadingUI extends eui.Component implements RES.PromiseTaskReporter {
+    public lab: eui.Label;
+    public gr: eui.Group;
     public constructor() {
         super();
-        this.createView();
+        this.skinName = "Load"
     }
-
-    private textField: egret.TextField;
-
-    private createView(): void {
-        DragonBonesManager.getInstance().addToFactory("loading_ske_json", "loading_tex_json", "loading_tex_png");
-        DragonBonesManager.getInstance().initArmatureDisplay("loading", "loading");
-        DragonBonesManager.getInstance().playAnimation("loading", "newAnimation", this);
-        this.textField = new egret.TextField();
-        this.addChild(this.textField);
-        this.textField.x = 960;
-        this.textField.y = 300;
-        this.textField.width = 480;
-        this.textField.height = 100;
-        this.textField.anchorOffsetX = 240;
-        this.textField.anchorOffsetY = 50;
-        this.textField.size = 70;
-        this.textField.fontFamily = "z2";
-        this.textField.textAlign = "center";
+    protected childrenCreated(): void {
+        DRAGONBONES.getinstance().addToFactory("loading_ske_json", "loading_tex_json", "loading_tex_png");
+        DRAGONBONES.getinstance().initArmature("加载动画", "loading");
+        DRAGONBONES.getinstance().playAnimation("加载动画", "newAnimation", "加载动画分组", this.gr, 0, 1, 1, 1);
     }
 
     public onProgress(current: number, total: number): void {
-        var n = (current / total * 100).toFixed(0);
-        this.textField.text = n + "%";
+        let baifenbi = ((current / total) * 100).toFixed(0)
+        this.lab.text = `${baifenbi}%`;
+
+
+
     }
 }
