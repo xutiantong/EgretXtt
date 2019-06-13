@@ -33,8 +33,6 @@ var Hierarchy;
             this.pause.addEventListener(egret.TouchEvent.TOUCH_TAP, this.touch, this);
             this.music.addEventListener(egret.TouchEvent.TOUCH_TAP, this.touch, this);
             this.lab.addEventListener(egret.TouchEvent.TOUCH_TAP, this.touch, this);
-            this.read.addEventListener(egret.TouchEvent.TOUCH_TAP, this.touch, this);
-            this.read.touchEnabled = false;
             this.group.height = 0;
             this.init();
         };
@@ -90,7 +88,7 @@ var Hierarchy;
                     //点击声音
                     switch (this.music.selected) {
                         case false:
-                            MUSIC4.get().play("bg");
+                            MUSIC4.get().play("bg", -1);
                             break;
                         case true:
                             MUSIC4.get().stop("bg");
@@ -113,10 +111,6 @@ var Hierarchy;
                     setTimeout(function () {
                         egret.ticker.pause();
                     }, 200);
-                    break;
-                case this.read:
-                    var question = Manager.GlobalManager.get().questionCurArr[Manager.GlobalManager.get().questionNum - 1];
-                    MUSIC4.get().play(question.zimu + "_" + question.shengdiao);
                     break;
                 default:
                     break;
@@ -145,4 +139,3 @@ var Hierarchy;
     Hierarchy.MenuManager = MenuManager;
     __reflect(MenuManager.prototype, "Hierarchy.MenuManager", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Hierarchy || (Hierarchy = {}));
-//# sourceMappingURL=MenuManager.js.map

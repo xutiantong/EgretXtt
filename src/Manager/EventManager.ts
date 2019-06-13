@@ -21,6 +21,7 @@ module Manager {
 		 * @param thisObj this对象
 		 */
 		addListener(className: string, addObj: egret.DisplayObject, type: any, listener: Function, thisObj: any) {
+			// if (DEBUG) console.log("addListener: " + className);
 			addObj.addEventListener(type, listener, thisObj);
 			this.listenerArr.push({ className: className, addObj: addObj, type: type, listener: listener, thisObj: thisObj })
 		}

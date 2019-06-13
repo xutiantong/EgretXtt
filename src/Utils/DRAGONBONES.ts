@@ -48,17 +48,15 @@ class DRAGONBONES {
 
     }
     /**
-     * 更换插槽图片
+     * 更换插槽
      * nicheng:龙骨昵称
      * cacao：插槽名称
      * imgTex：图片
      */
-    public changeSlotImg2(nicheng, cacao, imgTex) {
-        let img: egret.Bitmap = new egret.Bitmap();
-        img.texture = RES.getRes(imgTex);
-        img.anchorOffsetX = img.width / 2
-        img.anchorOffsetY = img.height / 2
-        DRAGONBONES.getinstance().getarmature(nicheng).armature.getSlot(cacao).displayList = [img]
+    public changeSlotImg2(nicheng, cacao, obj) {
+        obj.anchorOffsetX = obj.width / 2
+        obj.anchorOffsetY = obj.height / 2
+        DRAGONBONES.getinstance().getarmature(nicheng).armature.getSlot(cacao).displayList = [obj]
         DRAGONBONES.getinstance().getarmature(nicheng).armature.invalidUpdate("root", true);
     }
     /**
@@ -164,7 +162,7 @@ class DRAGONBONES {
      * animationname：动画
      * goupname：分组
      * com：容器
-     * playtime：播放次数
+     * playtime：播放次数(-2为不播放)
      * speed：播放速度
      * maskname：骨头遮罩
      * layer:渲染权重，越大越优先，用在同一个骨架同时播放多个动画(一般以一个动画为主，其余动画加遮罩，只显示部分，并调高这部分的优先级);
@@ -188,17 +186,25 @@ class DRAGONBONES {
                 if (y != null) {
                     armature.y = y;
                 }
-                let sb: dragonBones.AnimationState = armature.animation.fadeIn(animationname, 0, playtime, layer, groupname);
-
-                com.addChild(armature);
-                if (speed != null) {
-                    sb.timeScale = speed;
+              
+                if (armature.parent) {
+                } else {
+                    com.addChild(armature);
                 }
-                if (maskboundname != null) {
-                    sb.addBoneMask(maskboundname);
+          
+                if (playtime != -2) {
+                    let sb: dragonBones.AnimationState = armature.animation.gotoAndPlayByFrame(animationname, 0, playtime);
+                    if (speed != null) {
+                        sb.timeScale = speed;
+                    }
+                    if (maskboundname != null) {
+                        sb.addBoneMask(maskboundname);
+                    }
+                    return sb;
                 }
 
-                return sb;
+
+
             }
 
         });

@@ -10,7 +10,7 @@ module Manager {
         static D: GlobalManager = null;
         public questionNum: number = 1;
         public questionCurArr: Array<any> = new Array<any>();
-        public wrongArr: Array<number> = new Array<number>();
+        public wrongArr: Array<any> = [];
 
         public constructor() {
             super();

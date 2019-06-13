@@ -27,27 +27,30 @@ var Assembly;
         Start.prototype.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
             DRAGONBONES.getinstance().addToFactory("kaishiyouxi_ske_json", "kaishiyouxi_tex_json", "kaishiyouxi_tex_png");
-            DRAGONBONES.getinstance().initArmature("开始动画", "kaishiyouxi");
+            this.startAni = DRAGONBONES.getinstance().initArmature("开始动画", "kaishiyouxi");
         };
         Start.prototype.onStart = function () {
+            this.startButton.visible = false;
+            Hierarchy.MenuManager.get().reback.touchEnabled = false;
+            this.startAni.animation.play("out", 1);
             //点击声音
             MUSIC4.get().play("dianji");
+            Hierarchy.MenuManager.get().reback.touchEnabled = true;
             //隐藏开始界面
             Hierarchy.AbManager.get().hide("Start");
-            //显示介绍界面
-            Hierarchy.MessageManager.get().show("Introduction");
             //显示场景1
             Hierarchy.AbManager.get().show("Scene1");
+            //显示介绍界面
+            Hierarchy.MessageManager.get().show("Introduction");
         };
         //每次show自动调用
         Start.prototype.init = function () {
+            this.startButton.visible = true;
             DRAGONBONES.getinstance().playAnimation("开始动画", "newAnimation", "a", this.aniGroup, 1);
             Manager.EventManager.get().addListener("Start", this.startButton, egret.TouchEvent.TOUCH_TAP, this.onStart, this);
-            Hierarchy.AbManager.get().getOne("Scene1").showDongDong(false);
         };
         return Start;
     }(eui.Component));
     Assembly.Start = Start;
     __reflect(Start.prototype, "Assembly.Start", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Assembly || (Assembly = {}));
-//# sourceMappingURL=Start.js.map

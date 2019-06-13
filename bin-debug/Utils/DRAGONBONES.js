@@ -42,17 +42,15 @@ var DRAGONBONES = (function () {
         this.egretFactory.parseTextureAtlasData(RES.getRes(json), RES.getRes(png), textureName != "" ? textureName : null);
     };
     /**
-     * 更换插槽图片
+     * 更换插槽
      * nicheng:龙骨昵称
      * cacao：插槽名称
      * imgTex：图片
      */
-    DRAGONBONES.prototype.changeSlotImg2 = function (nicheng, cacao, imgTex) {
-        var img = new egret.Bitmap();
-        img.texture = RES.getRes(imgTex);
-        img.anchorOffsetX = img.width / 2;
-        img.anchorOffsetY = img.height / 2;
-        DRAGONBONES.getinstance().getarmature(nicheng).armature.getSlot(cacao).displayList = [img];
+    DRAGONBONES.prototype.changeSlotImg2 = function (nicheng, cacao, obj) {
+        obj.anchorOffsetX = obj.width / 2;
+        obj.anchorOffsetY = obj.height / 2;
+        DRAGONBONES.getinstance().getarmature(nicheng).armature.getSlot(cacao).displayList = [obj];
         DRAGONBONES.getinstance().getarmature(nicheng).armature.invalidUpdate("root", true);
     };
     /**
@@ -156,7 +154,7 @@ var DRAGONBONES = (function () {
      * animationname：动画
      * goupname：分组
      * com：容器
-     * playtime：播放次数
+     * playtime：播放次数(-2为不播放)
      * speed：播放速度
      * maskname：骨头遮罩
      * layer:渲染权重，越大越优先，用在同一个骨架同时播放多个动画(一般以一个动画为主，其余动画加遮罩，只显示部分，并调高这部分的优先级);
@@ -180,15 +178,21 @@ var DRAGONBONES = (function () {
                 if (y != null) {
                     armature.y = y;
                 }
-                var sb = armature.animation.fadeIn(animationname, 0, playtime, layer, groupname);
-                com.addChild(armature);
-                if (speed != null) {
-                    sb.timeScale = speed;
+                if (armature.parent) {
                 }
-                if (maskboundname != null) {
-                    sb.addBoneMask(maskboundname);
+                else {
+                    com.addChild(armature);
                 }
-                return sb;
+                if (playtime != -2) {
+                    var sb = armature.animation.gotoAndPlayByFrame(animationname, 0, playtime);
+                    if (speed != null) {
+                        sb.timeScale = speed;
+                    }
+                    if (maskboundname != null) {
+                        sb.addBoneMask(maskboundname);
+                    }
+                    return sb;
+                }
             }
         });
         return null;
@@ -250,4 +254,3 @@ var DRAGONBONES = (function () {
     return DRAGONBONES;
 }());
 __reflect(DRAGONBONES.prototype, "DRAGONBONES");
-//# sourceMappingURL=DRAGONBONES.js.map

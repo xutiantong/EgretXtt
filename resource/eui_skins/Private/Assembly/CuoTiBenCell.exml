@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="CuoTiBenCellSkin" width="141" height="135" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
-	<w:Config id="16af7d0770c" ></w:Config>
-	<e:Image source="zhandoujieshuqietu_png" left="0" top="0" right="0" bottom="0"/>
-	<e:Label id="label" text="ǚ" y="-14" textColor="0x000000" fontFamily="黑体" size="100" verticalAlign="bottom" textAlign="center" height="120" width="120" horizontalCenter="0"/>
-	<e:Image id="mark" source="dui_png" horizontalCenter="0" bottom="0"/>
-</e:Skin>

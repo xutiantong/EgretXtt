@@ -32,7 +32,8 @@ var Manager;
          * @param callBack：延时执行的函数
          * @param loop: 是否循环
          */
-        DelayManager.prototype.addDelay = function (num, time, callBack, loop) {
+        DelayManager.prototype.addDelay = function (time, callBack, num, loop) {
+            if (num === void 0) { num = 1; }
             if (loop === void 0) { loop = false; }
             egret.Tween.get(this["delay" + num], { loop: loop }).wait(time).call(callBack);
         };
@@ -47,7 +48,9 @@ var Manager;
          * 移除DelayManager所有延时
          */
         DelayManager.prototype.removeAllDelay = function () {
-            egret.Tween.removeTweens(this);
+            egret.Tween.removeTweens(this["delay1"]);
+            egret.Tween.removeTweens(this["delay2"]);
+            egret.Tween.removeTweens(this["delay3"]);
         };
         //单例
         DelayManager.get = function () {
@@ -62,4 +65,3 @@ var Manager;
     Manager.DelayManager = DelayManager;
     __reflect(DelayManager.prototype, "Manager.DelayManager");
 })(Manager || (Manager = {}));
-//# sourceMappingURL=DelayManager.js.map

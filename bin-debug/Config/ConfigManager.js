@@ -24,11 +24,7 @@ var Hierarchy;
         //配置
         ConfigManager.prototype.config = function () {
             //1.注册声音
-            var musicArr = ["bg", "dianji", "err", "correct", "introduction", "talk_correct", "talk_wrong", "eraser"];
-            var config = RES.getRes("ti_json");
-            for (var i = 0; i <= 189; i++) {
-                musicArr.push(config[i].zimu + "_" + config[i].shengdiao);
-            }
+            var musicArr = ["bg", "dianji", "err", "introduction1", "introduction2", "correct", "wrong", "finish"];
             MUSIC4.get().init(musicArr);
             //2.注册层级
             this.addChildAt(Hierarchy.BottomManager.get(), 0);
@@ -36,10 +32,12 @@ var Hierarchy;
             this.addChildAt(Hierarchy.MenuManager.get(), 2);
             this.addChildAt(Hierarchy.MessageManager.get(), 3);
             this.addChildAt(Hierarchy.GuideManager.get(), 4);
+            this.addChildAt(new XDFLogoComponent(), 5);
             //3.注册组件
             Hierarchy.AbManager.get().init([
                 { name: "Start", obj: new Assembly.Start() },
                 { name: "Scene1", obj: new Assembly.Scene1() },
+                { name: "End", obj: new Assembly.End() },
                 { name: "CuoTiBen", obj: new Assembly.CuoTiBen() }
             ]);
             //4.注册消息提示
@@ -65,4 +63,3 @@ var Hierarchy;
     Hierarchy.ConfigManager = ConfigManager;
     __reflect(ConfigManager.prototype, "Hierarchy.ConfigManager", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Hierarchy || (Hierarchy = {}));
-//# sourceMappingURL=ConfigManager.js.map

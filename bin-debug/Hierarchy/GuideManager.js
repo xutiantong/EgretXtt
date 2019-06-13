@@ -20,7 +20,11 @@ var Hierarchy;
     var GuideManager = (function (_super) {
         __extends(GuideManager, _super);
         function GuideManager() {
-            return _super.call(this) || this;
+            var _this = _super.call(this) || this;
+            DRAGONBONES.getinstance().addToFactory("dongdongdianji_ske_json", "dongdongdianji_tex_json", "dongdongdianji_tex_png");
+            //初始化对号(全局唯一)
+            DRAGONBONES.getinstance().initArmature("手指", "shouzhi");
+            return _this;
         }
         //指引
         GuideManager.prototype.show = function (x, y) {
@@ -41,4 +45,3 @@ var Hierarchy;
     Hierarchy.GuideManager = GuideManager;
     __reflect(GuideManager.prototype, "Hierarchy.GuideManager");
 })(Hierarchy || (Hierarchy = {}));
-//# sourceMappingURL=GuideManager.js.map

@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="CuoTiBenSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
-	<w:Config id="16af733f504" ></w:Config>
-	<e:Rect fillAlpha="0.5" left="0" top="0" right="0" bottom="0"/>
-	<e:Group id="aniGroup" left="0" top="-100" bottom="100" right="0">
+	<w:Config id="16b0857847d" ></w:Config>
+	<e:Rect left="0" top="0" bottom="0" right="0" fillAlpha="0.5"/>
+	<e:Group id="aniGroup" right="0" bottom="0" left="0" top="0"/>
+	<e:Group bottom="0" right="0" left="0" top="0">
+		<e:Image y="250" source="red_png" horizontalCenter="-227"/>
+		<e:Image y="250" source="green_png" horizontalCenter="227"/>
+		<e:Image y="338" source="dd_png" horizontalCenter="-225.5" height="2"/>
+		<e:Image y="338" source="aa_png" horizontalCenter="224.5" height="2"/>
+		<e:Image id="leftArrow" y="800" source="zuos_png" horizontalCenter="-80"/>
+		<e:Image id="rightArrow" y="800" source="yous_png" horizontalCenter="80"/>
+		<e:Scroller id="scrollerLeft" width="380" height="330" y="362" touchEnabled="true" bounces="false" horizontalCenter="-250">
+			<e:Group height="0" width="0" touchEnabled="true">
+				<e:Label id="labelWrong" text="Label" fontFamily="z2" size="35" textAlign="left" width="380" bold="true" lineSpacing="10" verticalAlign="middle" textColor="0" x="0" top="10"/>
+			</e:Group>
+		</e:Scroller>
+		<e:Scroller id="scrollerRight" width="380" height="330" y="362" touchEnabled="true" bounces="false" horizontalCenter="250">
+			<e:Group height="0" width="0" touchEnabled="true">
+				<e:Label id="labelCorrect" text="Label" textColor="0x000000" fontFamily="z2" size="35" textAlign="left" width="380" bold="true" lineSpacing="10" verticalAlign="middle" top="10"/>
+			</e:Group>
+		</e:Scroller>
 	</e:Group>
-	<e:Group id="contentGroup" width="795" height="315" verticalCenter="50" horizontalCenter="0">
-		<e:layout>
-			<e:TileLayout horizontalAlign="center" verticalAlign="middle" horizontalGap="15" verticalGap="15" orientation="rows" rowHeight="135" requestedRowCount="2" columnWidth="141" requestedColumnCount="5" paddingLeft="15" paddingRight="15" paddingTop="15" paddingBottom="15"/>
-		</e:layout>
-	</e:Group>
-	<e:Image id="restart" x="797" y="795" source="anniu_png"/>
 </e:Skin>

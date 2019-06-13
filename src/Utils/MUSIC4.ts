@@ -105,11 +105,11 @@ class MUSIC4 {
     }
 
     /**
-    * 為聲音添加監聽播放完
-    * @param name 
-    * @param fun 
-    * @param that 
-    */
+     * 為聲音添加監聽播放完
+     * @param name 
+     * @param fun 
+     * @param that 
+     */
     addEvent(name: string, fun: Function, that) {
         this.Arr.forEach((v) => {
             if (name == v.name) {

@@ -44,4 +44,3 @@ var Hierarchy;
     Hierarchy.BottomManager = BottomManager;
     __reflect(BottomManager.prototype, "Hierarchy.BottomManager", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Hierarchy || (Hierarchy = {}));
-//# sourceMappingURL=BottomManager.js.map

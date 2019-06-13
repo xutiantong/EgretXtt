@@ -32,6 +32,7 @@ var Manager;
          * @param thisObj this对象
          */
         EventManager.prototype.addListener = function (className, addObj, type, listener, thisObj) {
+            // if (DEBUG) console.log("addListener: " + className);
             addObj.addEventListener(type, listener, thisObj);
             this.listenerArr.push({ className: className, addObj: addObj, type: type, listener: listener, thisObj: thisObj });
         };
@@ -73,4 +74,3 @@ var Manager;
     Manager.EventManager = EventManager;
     __reflect(EventManager.prototype, "Manager.EventManager");
 })(Manager || (Manager = {}));
-//# sourceMappingURL=EventManager.js.map

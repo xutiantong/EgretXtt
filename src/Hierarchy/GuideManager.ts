@@ -11,6 +11,9 @@ module Hierarchy {
 
 		public constructor() {
 			super()
+			DRAGONBONES.getinstance().addToFactory("dongdongdianji_ske_json", "dongdongdianji_tex_json", "dongdongdianji_tex_png");
+			//初始化对号(全局唯一)
+			DRAGONBONES.getinstance().initArmature("手指", "shouzhi")
 		}
 		//指引
 		show(x, y) {

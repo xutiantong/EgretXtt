@@ -47,6 +47,7 @@ var LoadingUI = (function (_super) {
         DRAGONBONES.getinstance().addToFactory("loading_ske_json", "loading_tex_json", "loading_tex_png");
         DRAGONBONES.getinstance().initArmature("加载动画", "loading");
         DRAGONBONES.getinstance().playAnimation("加载动画", "newAnimation", "加载动画分组", this.gr, 0, 1, 1, 1);
+        this.addChild(new XDFLogoComponent());
     };
     LoadingUI.prototype.onProgress = function (current, total) {
         var baifenbi = ((current / total) * 100).toFixed(0);
@@ -55,4 +56,3 @@ var LoadingUI = (function (_super) {
     return LoadingUI;
 }(eui.Component));
 __reflect(LoadingUI.prototype, "LoadingUI", ["RES.PromiseTaskReporter"]);
-//# sourceMappingURL=LoadingUI.js.map

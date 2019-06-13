@@ -23,7 +23,7 @@ module Manager {
          * @param callBack：延时执行的函数
          * @param loop: 是否循环
          */
-        addDelay(num: number, time: number, callBack: Function, loop: boolean = false) {
+        addDelay(time: number, callBack: Function, num: number = 1, loop: boolean = false) {
             egret.Tween.get(this["delay" + num], { loop: loop }).wait(time).call(callBack);
         }
 
@@ -39,7 +39,9 @@ module Manager {
          * 移除DelayManager所有延时
          */
         removeAllDelay() {
-            egret.Tween.removeTweens(this);
+            egret.Tween.removeTweens(this["delay1"]);
+            egret.Tween.removeTweens(this["delay2"]);
+            egret.Tween.removeTweens(this["delay3"]);
         }
 
         //单例

@@ -22,7 +22,7 @@ var Manager;
             var _this = _super.call(this) || this;
             _this.questionNum = 1;
             _this.questionCurArr = new Array();
-            _this.wrongArr = new Array();
+            _this.wrongArr = [];
             return _this;
         }
         //单例
@@ -42,4 +42,3 @@ var Manager;
     Manager.GlobalManager = GlobalManager;
     __reflect(GlobalManager.prototype, "Manager.GlobalManager");
 })(Manager || (Manager = {}));
-//# sourceMappingURL=GlobalManager.js.map

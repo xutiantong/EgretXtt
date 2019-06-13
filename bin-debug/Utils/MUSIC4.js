@@ -95,11 +95,11 @@ var MUSIC4 = (function () {
         });
     };
     /**
-    * 為聲音添加監聽播放完
-    * @param name
-    * @param fun
-    * @param that
-    */
+     * 為聲音添加監聽播放完
+     * @param name
+     * @param fun
+     * @param that
+     */
     MUSIC4.prototype.addEvent = function (name, fun, that) {
         this.Arr.forEach(function (v) {
             if (name == v.name) {
@@ -128,4 +128,3 @@ var MUSIC4 = (function () {
     return MUSIC4;
 }());
 __reflect(MUSIC4.prototype, "MUSIC4");
-//# sourceMappingURL=MUSIC4.js.map

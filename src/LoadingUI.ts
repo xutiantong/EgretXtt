@@ -38,13 +38,11 @@ class LoadingUI extends eui.Component implements RES.PromiseTaskReporter {
         DRAGONBONES.getinstance().addToFactory("loading_ske_json", "loading_tex_json", "loading_tex_png");
         DRAGONBONES.getinstance().initArmature("加载动画", "loading");
         DRAGONBONES.getinstance().playAnimation("加载动画", "newAnimation", "加载动画分组", this.gr, 0, 1, 1, 1);
+        this.addChild(new XDFLogoComponent());
     }
 
     public onProgress(current: number, total: number): void {
         let baifenbi = ((current / total) * 100).toFixed(0)
         this.lab.text = `${baifenbi}%`;
-
-
-
     }
 }

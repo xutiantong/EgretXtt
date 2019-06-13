@@ -28,15 +28,19 @@ declare module skins{
 	class PanelSkin extends eui.Skin{
 	}
 }
+declare class BreadSkin extends eui.Skin{
+}
 declare class CuoTiBenSkin extends eui.Skin{
 }
-declare class CuoTiBenCellSkin extends eui.Skin{
+declare class EndSkin extends eui.Skin{
+}
+declare class EndCellSkin extends eui.Skin{
 }
 declare class IntroductionSkin extends eui.Skin{
 }
-declare class StartSkin extends eui.Skin{
+declare class Pop extends eui.Skin{
 }
-declare class WaterPotSkin extends eui.Skin{
+declare class StartSkin extends eui.Skin{
 }
 declare class Scene1Skin extends eui.Skin{
 }

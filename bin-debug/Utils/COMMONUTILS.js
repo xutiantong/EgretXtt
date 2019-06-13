@@ -1,10 +1,109 @@
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
+/**
+ * 常用方法合集
+ * (都需要重新指向)
+ */
 var COMMONUTILS = (function () {
     function COMMONUTILS() {
-        this.Arr = new Array();
+        this.Arr = new Array(); //存储滤镜对象
     }
+    /**
+     * 截屏并保存到指定路径
+     * 传入参数为现实对象
+     * 截屏可选择截屏区域
+     */
+    COMMONUTILS.prototype.render = function (com) {
+        // let render = new egret.RenderTexture();
+        // let rootLayer = com;
+        // render.drawToTexture(com);
+        // //获取到文件流
+        // let base64Str = render.toDataURL("image/png");
+        // //保存到bitmap
+        // let bitmapData
+        // let bitmap: egret.Bitmap = new egret.Bitmap()
+        // bitmap.
+        // //保存到电脑
+        // render.saveToFile("image/png", "aa.png");
+    };
+    /**
+     * 是否是汉字
+     */
+    COMMONUTILS.prototype.isChinese = function (temp) {
+        var re = new RegExp('[^\\u4e00-\\u9fa5]');
+        if (re.test(temp))
+            return false;
+        return true;
+    };
+    /**
+     * 获取当前客户端时间
+     */
+    COMMONUTILS.prototype.getTimeNow = function () {
+        var now = new Date();
+        var nowYear = now.getFullYear();
+        var nowMonth = now.getMonth() + 1;
+        var nowweekday = now.getDate();
+        var nowMonths;
+        var nowweekdays;
+        if (nowMonth < 10) {
+            nowMonths = "0" + nowMonth;
+        }
+        else {
+            nowMonths = nowMonth;
+        }
+        if (nowweekday < 10) {
+            nowweekdays = "0" + nowweekday;
+        }
+        else {
+            nowweekdays = nowweekday;
+        }
+        var hh = now.getHours(); //时
+        var mm = now.getMinutes(); //分
+        var ss = now.getSeconds(); //秒
+        var hhs, mms, sss;
+        if (hh < 10) {
+            hhs = "0" + hh;
+        }
+        else {
+            hhs = hh;
+        }
+        if (mm < 10) {
+            mms = "0" + mm;
+        }
+        else {
+            mms = mm;
+        }
+        if (ss < 10) {
+            sss = "0" + ss;
+        }
+        else {
+            sss = ss;
+        }
+        return nowYear + "-" + nowMonths + "-" + nowweekdays + "  " + hhs + ":" + mms + ":" + sss;
+    };
+    //全部替换
+    COMMONUTILS.prototype.replaceAll = function (str, f, e) {
+        //吧f替换成e
+        var reg = new RegExp(f, "g"); //创建正则RegExp对象   
+        str = str.replace(reg, e);
+        return str;
+    };
+    /**
+     * 添加灰度化
+     */
+    COMMONUTILS.prototype.addColorMatrix = function (obj) {
+        var colorMatrix = [
+            0.3, 0.9, 0, 0,
+            0, 0.3, 0.9, 0,
+            0, 0, 0.3, 0.9,
+            0, 0, 0, 0,
+            0, 0, 1, 0
+        ];
+        var colorFlilter = new egret.ColorMatrixFilter(colorMatrix);
+        obj.filters = [colorFlilter];
+        this.Arr.push(obj);
+    };
     /**
      * 随机数组内元素顺序
      */
@@ -68,8 +167,16 @@ var COMMONUTILS = (function () {
     /**
      * 去掉滤镜
      */
-    COMMONUTILS.prototype.remfilter = function (img) {
-        img.filters = [];
+    COMMONUTILS.prototype.remfilter = function (obj) {
+        if (obj === void 0) { obj = null; }
+        if (obj == null) {
+            this.Arr.forEach(function (v) {
+                v.filters = [];
+            });
+        }
+        else {
+            obj.filters = [];
+        }
     };
     /**
      * 任意颜色滤镜
@@ -110,62 +217,67 @@ var COMMONUTILS = (function () {
         img.filters = [glowFilter];
     };
     /**
-     * 通过编号活动拼音字符串
-     * āáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜ
+     * 查找字符串中字符第几次出现的位置
+     * @param str 字符串
+     * @param cha 字符
+     * @param num 第几次（第一次为0，第二次为1，以此类推）
      */
-    COMMONUTILS.prototype.getPinyin = function (zimu, num) {
-        switch (zimu + num) {
-            case "ɑ0":
-                return "ā";
-            case "ɑ1":
-                return "á";
-            case "ɑ2":
-                return "ǎ";
-            case "ɑ3":
-                return "à";
-            case "o0":
-                return "ō";
-            case "o1":
-                return "ó";
-            case "o2":
-                return "ǒ";
-            case "o3":
-                return "ò";
-            case "e0":
-                return "ē";
-            case "e1":
-                return "é";
-            case "e2":
-                return "ě";
-            case "e3":
-                return "è";
-            case "i0":
-                return "ī";
-            case "i1":
-                return "í";
-            case "i2":
-                return "ǐ";
-            case "i3":
-                return "ì";
-            case "u0":
-                return "ū";
-            case "u1":
-                return "ú";
-            case "u2":
-                return "ǔ";
-            case "u3":
-                return "ù";
-            case "ü0":
-                return "ǖ";
-            case "ü1":
-                return "ǘ";
-            case "ü2":
-                return "ǚ";
-            case "ü3":
-                return "ǜ";
-            default:
-                return "err";
+    COMMONUTILS.prototype.find = function (str, cha, num) {
+        var x = str.indexOf(cha);
+        for (var i = 0; i < num; i++) {
+            x = str.indexOf(cha, x + 1);
         }
+        return x;
+    };
+    /**
+     * 替换字符串中指定位置内容
+     * @param text 字符串
+     * @param start 开始位置
+     * @param stop 结束位置
+     * @param replaceText 替换内容
+     */
+    COMMONUTILS.prototype.replacePos = function (text, start, stop, replaceText) {
+        var myStr = text.substring(start, stop - 1) + replaceText + text.substring(stop + 1);
+        return myStr;
+    };
+    /**
+     * 处理中文引号换行问题（临时方法并不完善，使用时可根据情况修改）
+     * @param text 字符串
+     * @param start 开始位置（第二行第一个字的下标，第一行可能涉及句子开头空两格）
+     * @param num 每行能显示的字数
+     */
+    COMMONUTILS.prototype.fixText = function (text, start, num) {
+        var length = text.length;
+        var fixText = "";
+        var pos = start;
+        while (length >= pos) {
+            var str = text.substr(pos, 1);
+            if (str == "”" && text.substr(pos - 2, 1) == "“") {
+                fixText += text.slice(0, pos - 2) + "\n";
+                text = text.slice(pos - 2);
+                pos = num;
+            }
+            else if ((str == "，" || str == "。") && text.substr(pos - 1, 1) == "”" && text.substr(pos - 3, 1) == "“") {
+                fixText += text.slice(0, pos - 3) + "\n";
+                text = text.slice(pos - 3);
+                pos = num;
+            }
+            else if ((str == "，" || str == "。") && text.substr(pos - 1, 1) == "”") {
+                fixText += text.slice(0, pos - 2);
+                text = text.slice(pos - 2);
+                pos = num;
+            }
+            else if (text.substr(pos - 1, 1) == "“") {
+                fixText += text.slice(0, pos - 1) + "\n";
+                text = text.slice(pos - 1);
+                pos = num;
+            }
+            else {
+                pos += num;
+            }
+        }
+        fixText += text;
+        return fixText;
     };
     COMMONUTILS.get = function () {
         if (this.st == null) {
@@ -177,4 +289,3 @@ var COMMONUTILS = (function () {
     return COMMONUTILS;
 }());
 __reflect(COMMONUTILS.prototype, "COMMONUTILS");
-//# sourceMappingURL=COMMONUTILS.js.map

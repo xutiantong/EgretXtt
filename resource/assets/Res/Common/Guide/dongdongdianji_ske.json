@@ -1,0 +1,156 @@
+{
+    "frameRate": 24,
+    "name": "dongdongdianji",
+    "version": "5.5",
+    "compatibleVersion": "5.5",
+    "armature": [
+        {
+            "type": "MovieClip",
+            "frameRate": 24,
+            "name": "shouzhi",
+            "bone": [
+                {
+                    "name": "root"
+                },
+                {
+                    "name": "手指",
+                    "parent": "root"
+                },
+                {
+                    "name": "newLayer",
+                    "parent": "root"
+                }
+            ],
+            "slot": [
+                {
+                    "displayIndex": -1,
+                    "name": "newLayer",
+                    "parent": "newLayer"
+                },
+                {
+                    "displayIndex": -1,
+                    "name": "手指",
+                    "parent": "手指"
+                }
+            ],
+            "skin": [
+                {
+                    "slot": [
+                        {
+                            "name": "手指",
+                            "display": [
+                                {
+                                    "name": "手指"
+                                },
+                                {
+                                    "name": "QQ图片20180919171650"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "newLayer",
+                            "display": [
+                                {
+                                    "name": "guanquan"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "animation": [
+                {
+                    "duration": 19,
+                    "playTimes": 0,
+                    "name": "shouzhi",
+                    "bone": [
+                        {
+                            "name": "手指",
+                            "translateFrame": [
+                                {
+                                    "duration": 9,
+                                    "tweenEasing": 0,
+                                    "x": 46.13,
+                                    "y": 52.95
+                                },
+                                {
+                                    "duration": 8,
+                                    "tweenEasing": 0,
+                                    "x": 29.06,
+                                    "y": 35.87
+                                },
+                                {
+                                    "duration": 2,
+                                    "x": 46.13,
+                                    "y": 52.95
+                                }
+                            ]
+                        },
+                        {
+                            "name": "newLayer",
+                            "scaleFrame": [
+                                {
+                                    "duration": 2
+                                },
+                                {
+                                    "duration": 17,
+                                    "tweenEasing": 0,
+                                    "x": 0.3,
+                                    "y": 0.3
+                                },
+                                {
+                                    "duration": 0,
+                                    "x": 1.7,
+                                    "y": 1.7
+                                }
+                            ]
+                        }
+                    ],
+                    "slot": [
+                        {
+                            "name": "手指",
+                            "displayFrame": [
+                                {
+                                    "duration": 19,
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "newLayer",
+                            "displayFrame": [
+                                {
+                                    "duration": 2,
+                                    "value": -1
+                                },
+                                {
+                                    "duration": 17
+                                }
+                            ],
+                            "colorFrame": [
+                                {
+                                    "duration": 2
+                                },
+                                {
+                                    "duration": 17,
+                                    "tweenEasing": 0
+                                },
+                                {
+                                    "duration": 0,
+                                    "value": {
+                                        "aM": 4
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "defaultActions": [
+                {
+                    "gotoAndPlay": "shouzhi"
+                }
+            ]
+        }
+    ]
+}

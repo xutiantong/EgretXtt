@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="WaterPotSkin" width="323" height="240" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
-	<w:Config id="16ae8c6ef83" ></w:Config>
-	<e:Group id="aniGroup" left="0" top="0" bottom="0" right="0">
-	</e:Group>
-</e:Skin>

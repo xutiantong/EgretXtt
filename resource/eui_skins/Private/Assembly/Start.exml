@@ -4,5 +4,4 @@
 	<e:Group id="aniGroup" left="0" right="0" top="0" bottom="0" touchEnabled="false">
 	</e:Group>
 	<e:Image id="startButton" source="anniu-kaishi_png" horizontalCenter="0" bottom="200"/>
-	<e:Image source="shuiyin_png" left="0" bottom="0"/>
 </e:Skin>

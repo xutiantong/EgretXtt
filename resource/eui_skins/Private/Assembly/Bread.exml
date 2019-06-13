@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="BreadSkin"
+	 width="875"
+	height="115" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="img" top="0" source="3_png" fillMode="scale" bottom="0" left="0" right="0"/>
+	<e:Label id="label" text="Label" textColor="0" size="36" fontFamily="z" horizontalCenter="0" verticalCenter="0" textAlign="center" bold="true" strokeColor="0xffffff" stroke="4" visible="true"/>
+	<e:Group id="touchGroup" left="0" right="0" top="0" bottom="0"/>
+</e:Skin>

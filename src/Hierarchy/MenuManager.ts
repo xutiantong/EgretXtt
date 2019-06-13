@@ -17,7 +17,6 @@ module Hierarchy {
 		public ifpause: boolean = false//当前是否暂停状态
 		public rect: eui.Rect;//暂停遮罩
 		public lab: eui.Image;//暂停标志
-		public read: eui.Image;//重读
 		public constructor() {
 			super();
 			this.skinName = "Menu"
@@ -30,8 +29,6 @@ module Hierarchy {
 			this.pause.addEventListener(egret.TouchEvent.TOUCH_TAP, this.touch, this)
 			this.music.addEventListener(egret.TouchEvent.TOUCH_TAP, this.touch, this)
 			this.lab.addEventListener(egret.TouchEvent.TOUCH_TAP, this.touch, this)
-			this.read.addEventListener(egret.TouchEvent.TOUCH_TAP, this.touch, this)
-			this.read.touchEnabled = false;
 			this.group.height = 0
 			this.init()
 		}
@@ -86,7 +83,7 @@ module Hierarchy {
 					//点击声音
 					switch (this.music.selected) {
 						case false:
-							MUSIC4.get().play("bg")
+							MUSIC4.get().play("bg", -1);
 							break;
 						case true:
 							MUSIC4.get().stop("bg")
@@ -110,10 +107,6 @@ module Hierarchy {
 						egret.ticker.pause()
 					}, 200)
 
-					break;
-				case this.read:
-					let question = Manager.GlobalManager.get().questionCurArr[Manager.GlobalManager.get().questionNum - 1];
-					MUSIC4.get().play(question.zimu + "_" + question.shengdiao);
 					break;
 				default:
 					break;

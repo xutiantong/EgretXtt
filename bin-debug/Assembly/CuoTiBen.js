@@ -22,50 +22,99 @@ var Assembly;
         };
         CuoTiBen.prototype.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
-            DRAGONBONES.getinstance().addToFactory("taiozhanjieshu_ske_json", "taiozhanjieshu_tex_json", "taiozhanjieshu_tex_png");
-            DRAGONBONES.getinstance().initArmature("错题本", "tiaozhanjieshu");
+            DRAGONBONES.getinstance().addToFactory("cuotiben_ske_json", "cuotiben_tex_json", "cuotiben_tex_png");
+            DRAGONBONES.getinstance().initArmature("错题本动画", "Armature");
+            this.scrollerLeft.verticalScrollBar.autoVisibility = false;
+            this.scrollerLeft.verticalScrollBar.visible = false;
+            this.scrollerRight.verticalScrollBar.autoVisibility = false;
+            this.scrollerRight.verticalScrollBar.visible = false;
         };
         CuoTiBen.prototype.init = function () {
             var _this = this;
-            Manager.EventManager.get().addListener("CuoTiBen", this.restart, egret.TouchEvent.TOUCH_TAP, function () {
-                //点击重置
+            this.page = 0;
+            this.leftArrow.visible = false;
+            this.rightArrow.visible = this.Global.wrongArr.length > 1;
+            Manager.EventManager.get().addListener("CuoTiBen", this.leftArrow, egret.TouchEvent.TOUCH_TAP, function () {
                 MUSIC4.get().play("dianji");
-                MUSIC4.get().pauseLast();
-                MUSIC4.get().play("bg", -1);
-                Manager.DelayManager.get().removeAllDelay();
-                _this.Global.restart();
-                Manager.EventManager.get().removeAllListener();
-                Hierarchy.AbManager.get().show("Start");
-                Hierarchy.MenuManager.get().music.selected = false;
-                _this.init();
+                _this.page -= 1;
+                _this.leftArrow.visible = _this.page > 0;
+                _this.rightArrow.visible = _this.page < _this.Global.wrongArr.length - 1;
+                _this.scrollerLeft.viewport.scrollV = 0;
+                _this.scrollerRight.viewport.scrollV = 0;
+                _this.showCuoTi();
             }, this);
-            this.contentGroup.removeChildren();
-            this.contentGroup.alpha = 0;
-            DRAGONBONES.getinstance().playAnimation("错题本", "shengli", "a", this.aniGroup, 1);
-            var _loop_1 = function (i) {
-                var correct = true;
-                this_1.Global.wrongArr.forEach(function (v, j) {
-                    if (v == i) {
-                        _this.Global.wrongArr.splice(j, 1);
-                        correct = false;
-                    }
-                });
-                var word = this_1.Global.questionCurArr[i].zimu.substring(0, this_1.Global.questionCurArr[i].zimu.length - 1) +
-                    COMMONUTILS.get().getPinyin(this_1.Global.questionCurArr[i].zimu.substr(-1, 1), this_1.Global.questionCurArr[i].shengdiao);
-                cell = new Assembly.CuoTiBenCell(word, correct);
-                this_1.contentGroup.addChild(cell);
-                this_1.contentGroup.scaleX = 1.2;
-                this_1.contentGroup.scaleY = 1.2;
-            };
-            var this_1 = this, cell;
-            for (var i = 0; i < 10; i++) {
-                _loop_1(i);
+            Manager.EventManager.get().addListener("CuoTiBen", this.rightArrow, egret.TouchEvent.TOUCH_TAP, function () {
+                MUSIC4.get().play("dianji");
+                _this.page += 1;
+                _this.leftArrow.visible = _this.page > 0;
+                _this.rightArrow.visible = _this.page < _this.Global.wrongArr.length - 1;
+                _this.scrollerLeft.viewport.scrollV = 0;
+                _this.scrollerRight.viewport.scrollV = 0;
+                _this.showCuoTi();
+            }, this);
+            this.showCuoTi();
+            this.scrollerRight.y = -400;
+            this.scrollerLeft.y = -400;
+            this.scrollerRight.alpha = 0;
+            this.scrollerLeft.alpha = 0;
+            egret.Tween.get(this.scrollerRight).to({ y: 362, alpha: 1 }, 800, egret.Ease.backInOut);
+            egret.Tween.get(this.scrollerLeft).to({ y: 362, alpha: 1 }, 800, egret.Ease.backInOut);
+            DRAGONBONES.getinstance().playAnimation("错题本动画", "newAnimation", "a", this.aniGroup, 1, 1, 1, 1);
+        };
+        CuoTiBen.prototype.showCuoTi = function () {
+            var question = this.Global.questionCurArr[this.Global.wrongArr[this.page].id - 1];
+            var textCorrect = "       ";
+            for (var i = 1; i <= 6; i++) {
+                if (question[String(i)] != null) {
+                    textCorrect += question[String(i)];
+                }
             }
-            egret.Tween.get(this.contentGroup).wait(500).to({ alpha: 1 }, 500, egret.Ease.backInOut);
+            var textWrong = "       ";
+            for (var j = 0; j < this.Global.wrongArr[this.page].answer.length; j++) {
+                textWrong += this.Global.wrongArr[this.page].answer[j];
+            }
+            var correctText = this.fixText(textCorrect);
+            var wrongText = this.fixText(textWrong);
+            this.labelWrong.text = wrongText;
+            this.labelCorrect.text = correctText;
+            this.labelCorrect.wordWrap = true;
+            this.labelWrong.wordWrap = true;
+        };
+        CuoTiBen.prototype.fixText = function (text) {
+            var length = text.length;
+            var fixText = "";
+            var pos = 15;
+            while (length >= pos) {
+                var str = text.substr(pos, 1);
+                if (str == "”" && text.substr(pos - 2, 1) == "“") {
+                    fixText += text.slice(0, pos - 2) + "\n";
+                    text = text.slice(pos - 2);
+                    pos = 10;
+                }
+                else if ((str == "，" || str == "。") && text.substr(pos - 1, 1) == "”" && text.substr(pos - 3, 1) == "“") {
+                    fixText += text.slice(0, pos - 3) + "\n";
+                    text = text.slice(pos - 3);
+                    pos = 10;
+                }
+                else if ((str == "，" || str == "。") && text.substr(pos - 1, 1) == "”") {
+                    fixText += text.slice(0, pos - 2);
+                    text = text.slice(pos - 2);
+                    pos = 10;
+                }
+                else if (text.substr(pos - 1, 1) == "“") {
+                    fixText += text.slice(0, pos - 1) + "\n";
+                    text = text.slice(pos - 1);
+                    pos = 10;
+                }
+                else {
+                    pos += 10;
+                }
+            }
+            fixText += text;
+            return fixText;
         };
         return CuoTiBen;
     }(eui.Component));
     Assembly.CuoTiBen = CuoTiBen;
     __reflect(CuoTiBen.prototype, "Assembly.CuoTiBen", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Assembly || (Assembly = {}));
-//# sourceMappingURL=CuoTiBen.js.map
