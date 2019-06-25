@@ -55,12 +55,20 @@ module Hierarchy {
 					//点击伸缩弹出
 					switch (this.mains.selected) {
 						case false:
+							Manager.DelayManager.get().removeDelay(3);
 							egret.Tween.get(this.group).to({ height: 0 }, 300).call(() => {
 								this.mains.touchEnabled = true
 							})
 							break;
 						case true:
 							egret.Tween.get(this.group).to({ height: 517 }, 500, egret.Ease.backOut).call(() => {
+								// 三秒自动收回
+								Manager.DelayManager.get().addDelay(3000, () => {
+									egret.Tween.get(this.group).to({ height: 0 }, 300).call(() => {
+										this.mains.touchEnabled = true
+										this.mains.selected = false
+									})
+								}, 3);
 								this.mains.touchEnabled = true
 							})
 							break;
