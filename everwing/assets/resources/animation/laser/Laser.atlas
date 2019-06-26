@@ -1,0 +1,153 @@
+
+Laser.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2dian0
+  rotate: true
+  xy: 371, 44
+  size: 64, 57
+  orig: 64, 57
+  offset: 0, 0
+  index: -1
+2dian1
+  rotate: false
+  xy: 496, 54
+  size: 64, 57
+  orig: 64, 57
+  offset: 0, 0
+  index: -1
+2dian2
+  rotate: false
+  xy: 562, 49
+  size: 64, 57
+  orig: 64, 57
+  offset: 0, 0
+  index: -1
+2dian3
+  rotate: false
+  xy: 628, 49
+  size: 64, 57
+  orig: 64, 57
+  offset: 0, 0
+  index: -1
+2dian4
+  rotate: false
+  xy: 694, 49
+  size: 64, 57
+  orig: 64, 57
+  offset: 0, 0
+  index: -1
+child_2
+  rotate: false
+  xy: 760, 116
+  size: 96, 14
+  orig: 96, 14
+  offset: 0, 0
+  index: -1
+dian0
+  rotate: true
+  xy: 2, 2
+  size: 97, 121
+  orig: 97, 121
+  offset: 0, 0
+  index: -1
+dian1
+  rotate: false
+  xy: 760, 132
+  size: 97, 121
+  orig: 97, 121
+  offset: 0, 0
+  index: -1
+dian2
+  rotate: false
+  xy: 859, 132
+  size: 97, 121
+  orig: 97, 121
+  offset: 0, 0
+  index: -1
+dian3
+  rotate: true
+  xy: 125, 2
+  size: 97, 121
+  orig: 97, 121
+  offset: 0, 0
+  index: -1
+dian4
+  rotate: true
+  xy: 248, 11
+  size: 97, 121
+  orig: 97, 121
+  offset: 0, 0
+  index: -1
+kuo2
+  rotate: false
+  xy: 371, 9
+  size: 33, 33
+  orig: 33, 33
+  offset: 0, 0
+  index: -1
+kuo3
+  rotate: false
+  xy: 760, 61
+  size: 53, 53
+  orig: 53, 53
+  offset: 0, 0
+  index: -1
+kuo4
+  rotate: false
+  xy: 815, 61
+  size: 53, 53
+  orig: 53, 53
+  offset: 0, 0
+  index: -1
+kuo5
+  rotate: false
+  xy: 870, 77
+  size: 53, 53
+  orig: 53, 53
+  offset: 0, 0
+  index: -1
+lianhua1
+  rotate: false
+  xy: 2, 101
+  size: 196, 152
+  orig: 196, 152
+  offset: 0, 0
+  index: -1
+lianhua2
+  rotate: false
+  xy: 583, 108
+  size: 175, 145
+  orig: 175, 145
+  offset: 0, 0
+  index: -1
+lianhua3
+  rotate: false
+  xy: 391, 113
+  size: 190, 140
+  orig: 190, 140
+  offset: 0, 0
+  index: -1
+lianhua4
+  rotate: false
+  xy: 200, 110
+  size: 189, 143
+  orig: 189, 143
+  offset: 0, 0
+  index: -1
+light_1
+  rotate: false
+  xy: 430, 47
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+liudong
+  rotate: true
+  xy: 958, 125
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1

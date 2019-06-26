@@ -1,0 +1,30 @@
+{
+  "ver": "2.0.0",
+  "uuid": "b96339a4-d1cf-4073-b231-5ac06e5b1a71",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "item_amethyst_0004": {
+      "ver": "1.0.3",
+      "uuid": "ff8da2ed-86ba-4587-b90f-9890f67211f5",
+      "rawTextureUuid": "b96339a4-d1cf-4073-b231-5ac06e5b1a71",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 35,
+      "height": 46,
+      "rawWidth": 35,
+      "rawHeight": 46,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

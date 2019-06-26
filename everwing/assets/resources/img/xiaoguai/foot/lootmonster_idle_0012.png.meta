@@ -1,0 +1,30 @@
+{
+  "ver": "2.0.0",
+  "uuid": "7a7a31b5-23b2-4763-9687-a4e0a14cf3d9",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "lootmonster_idle_0012": {
+      "ver": "1.0.3",
+      "uuid": "a2cc4be3-bce5-4e5c-b1e9-0132177e4b21",
+      "rawTextureUuid": "7a7a31b5-23b2-4763-9687-a4e0a14cf3d9",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 53,
+      "height": 51,
+      "rawWidth": 53,
+      "rawHeight": 51,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

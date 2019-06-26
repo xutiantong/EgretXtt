@@ -1,0 +1,37 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "jiesuan_zi",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.75,
+  "sample": 4,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "947eec90-dd6c-4c03-a26f-b050123c7190"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "8dee30be-8737-4401-82f6-3dbc9ecb4afe"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "a8c75154-5a8c-4fb7-9068-0e8a3ac0d93b"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

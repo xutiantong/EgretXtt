@@ -1,0 +1,30 @@
+{
+  "ver": "2.0.0",
+  "uuid": "6de11b81-aa0c-4dc8-b18b-4ba2d472330d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "lootmonster_hit_0003": {
+      "ver": "1.0.3",
+      "uuid": "36a7c7fa-3e6b-4c89-84ca-685218121aac",
+      "rawTextureUuid": "6de11b81-aa0c-4dc8-b18b-4ba2d472330d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 52,
+      "height": 51,
+      "rawWidth": 52,
+      "rawHeight": 51,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

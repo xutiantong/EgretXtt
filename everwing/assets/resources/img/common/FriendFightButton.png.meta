@@ -1,0 +1,30 @@
+{
+  "ver": "2.0.0",
+  "uuid": "dabffe82-cf12-4a75-9889-3cc85e1100c8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "FriendFightButton": {
+      "ver": "1.0.3",
+      "uuid": "7af46328-923b-4446-b840-63bd15165870",
+      "rawTextureUuid": "dabffe82-cf12-4a75-9889-3cc85e1100c8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 110,
+      "height": 124,
+      "rawWidth": 110,
+      "rawHeight": 124,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

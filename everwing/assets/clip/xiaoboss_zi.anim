@@ -1,0 +1,37 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "xiaoboss_zi",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.75,
+  "sample": 4,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "a70db218-ca03-4e5c-807f-6d4918bf8858"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "44183a32-616b-457c-a0e8-6e77aedbe121"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "65415a91-b97f-418d-be31-98523171d6c6"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

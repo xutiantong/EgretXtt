@@ -1,0 +1,36 @@
+发版流程
+
+前端代码git: https://github.com/codertianwei/everwing.git
+配置git: https://github.com/codertianwei/everwing-config.git
+微信后台：https://mp.weixin.qq.com/wxopen/home?token=1254265374&lang=zh_CN
+
+提审容易过审建议:
+ 1.周一，周四，周五，下午3点以后提审过的很快
+ 2.周三通常比较慢。
+ 3.版本更新公告里，不要写分享相关的内容。
+
+一、开发版本测试
+1、拉取配置git的dev分支的最新代码
+2、拉取前端代码git的dev分支最新代码
+3、将前端代码 /build-templates/wechatgame/config 路径下配置文件，用配置git的/config路径下文件覆盖
+4、在项目REAdME.md中 记录当前发布版本的开发功能
+5、修改预发布版本号
+6、使用jenkins 的WeChat_package 项目，构建预发布版本的测试包（填入发布版本号，设置分支为minigame_dev）
+7、扫码测试体验包
+8、清除测试服数据测试新手
+
+二、发布版本
+1、将前端代码git 的dev分支合并至master分支
+2、再讲前端代码git 的master分支合并至release分支
+3、和发版策划确认配置的master配置是否正确
+4、将配置的master分支合并至release分支
+5、使用jenkins 的 client-config-release 项目，构建发布版本的配置项目（填入发布版本号）,打包账号使用老罗的微信账号
+6、将配置Git 打对应版本的标签
+7、使用Jenkins 的 WeChat_package 项目，构建小程序发布包(填入发布版本号，勾选release，设置分支为release)
+8、设置为预览码准备测试
+9、找老罗确认正式服服务器是否准备妥当
+10、提交审核  提审的appleId(appledev@rivergame.net)
+11、将前端代码git的release分支的代码打对应的发版标签
+12、在README中，填写提审时间，并记录上个版本的发布时间
+13、在BI系统中，填写版本更新记录,要求必须填写提审时间、发布时间，精确到秒（微信后台能看到时间） 打开 http://stats.elexapp.com/data/versionRecord?moduleId=69&appId=10039001
+    用户名密码找相关人员索取

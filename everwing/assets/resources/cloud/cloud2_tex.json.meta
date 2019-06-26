@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "356fa40e-cc14-4da9-a47c-f8339b660336",
+  "atlasJson": "{\"SubTexture\":[{\"frameY\":-2,\"y\":1,\"frameWidth\":256,\"height\":253,\"frameHeight\":256,\"width\":256,\"name\":\"_T_Cloud_A_mip_0\",\"frameX\":0,\"x\":517},{\"frameY\":-2,\"y\":256,\"frameWidth\":256,\"height\":253,\"frameHeight\":256,\"width\":256,\"name\":\"_T_Cloud_A_mip_4\",\"frameX\":0,\"x\":1},{\"frameY\":-2,\"y\":1,\"frameWidth\":256,\"height\":253,\"frameHeight\":256,\"width\":256,\"name\":\"_T_Cloud_A_mip_2\",\"frameX\":0,\"x\":1},{\"frameY\":-2,\"y\":1,\"frameWidth\":256,\"height\":253,\"frameHeight\":256,\"width\":256,\"name\":\"_T_Cloud_A_mip_1\",\"frameX\":0,\"x\":259},{\"frameY\":-2,\"y\":511,\"frameWidth\":256,\"height\":253,\"frameHeight\":256,\"width\":256,\"name\":\"_T_Cloud_A_mip_3\",\"frameX\":0,\"x\":1}],\"width\":1024,\"name\":\"cloud2\",\"imagePath\":\"cloud2_tex.png\",\"height\":1024}",
+  "texture": "606c0833-d097-4067-b675-e38220b3bca4",
+  "subMetas": {}
+}

@@ -1,0 +1,37 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "xiaoboss_huang",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.75,
+  "sample": 4,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "d828cb8f-4f27-4dfa-8af3-93605ef0e5c3"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "d9eeaf19-fefe-4f08-8916-23e7b223706e"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "316ba245-5776-4b37-a9b0-db832befecfd"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

@@ -1,0 +1,83 @@
+
+libao_active.png
+size: 512,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fusheguang01_00
+  rotate: false
+  xy: 2, 52
+  size: 69, 74
+  orig: 80, 80
+  offset: 9, 4
+  index: -1
+fusheguang02_00
+  rotate: false
+  xy: 73, 56
+  size: 66, 70
+  orig: 80, 80
+  offset: 8, 8
+  index: -1
+glow
+  rotate: false
+  xy: 141, 62
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+lizi/lizi_00
+  rotate: false
+  xy: 305, 79
+  size: 46, 47
+  orig: 70, 70
+  offset: 13, 12
+  index: -1
+lizi/lizi_04
+  rotate: false
+  xy: 207, 77
+  size: 47, 49
+  orig: 70, 70
+  offset: 12, 11
+  index: -1
+lizi/lizi_08
+  rotate: false
+  xy: 2, 2
+  size: 45, 48
+  orig: 70, 70
+  offset: 11, 11
+  index: -1
+lizi/lizi_12
+  rotate: false
+  xy: 256, 79
+  size: 47, 47
+  orig: 70, 70
+  offset: 9, 11
+  index: -1
+lizi/lizi_16
+  rotate: false
+  xy: 353, 84
+  size: 47, 42
+  orig: 70, 70
+  offset: 8, 14
+  index: -1
+lizi/lizi_20
+  rotate: false
+  xy: 402, 92
+  size: 46, 34
+  orig: 70, 70
+  offset: 8, 20
+  index: -1
+lizi/lizi_24
+  rotate: false
+  xy: 450, 94
+  size: 44, 32
+  orig: 70, 70
+  offset: 8, 20
+  index: -1
+lizi/lizi_28
+  rotate: true
+  xy: 49, 11
+  size: 39, 27
+  orig: 70, 70
+  offset: 11, 24
+  index: -1

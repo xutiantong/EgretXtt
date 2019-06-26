@@ -1,0 +1,30 @@
+{
+  "ver": "2.0.0",
+  "uuid": "3db176e7-764a-4145-9de9-0dc2740489cc",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "zhuzhanicon": {
+      "ver": "1.0.3",
+      "uuid": "335c874b-38af-4d77-b292-3a9673eefa5b",
+      "rawTextureUuid": "3db176e7-764a-4145-9de9-0dc2740489cc",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 110,
+      "height": 124,
+      "rawWidth": 110,
+      "rawHeight": 124,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
