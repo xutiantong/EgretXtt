@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Scene1Skin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16a957de5ef" ></w:Config>
+	<e:Image left="0" right="0" top="0" bottom="0" source="bg_png"/>
+
+	<e:Group id="bgGroup" left="0" right="0" top="0" bottom="0" touchEnabled="false">
+	</e:Group>
+	<e:Group id="foodGroup" left="0" right="0" top="0" bottom="0" touchChildren="false" touchEnabled="false" touchThrough="true"/>
+	<e:Group id="selectGroup" left="0" right="0" top="0" bottom="0" visible="false">
+		<e:Group id="touchBag1" width="500" height="390" horizontalCenter="-300" verticalCenter="170"/>
+		<e:Group id="touchBag2" width="500" height="390" scaleX="1" scaleY="1" horizontalCenter="300" verticalCenter="170"/>
+	</e:Group>
+	<e:Group id="questionGroup" visible="true" left="0" right="0" top="0" bottom="0">
+		<e:layout>
+		<e:BasicLayout/>
+		</e:layout>
+		<e:Group id="touch1" width="300" height="500" x="307.993" y="466">
+			<e:Image id="img1" source="b18_png" scaleX="0.78" scaleY="0.78" x="24.007" y="346.824"/>
+		</e:Group>
+		<e:Group id="touch2" width="200" height="320" x="669.253" y="646">
+			<e:Image id="img2" source="b18_png" scaleX="0.78" scaleY="0.78" x="-9.344" y="188.592"/>
+		</e:Group>
+		<e:Group id="touch3" width="282" height="351" x="921.95" y="615">
+			<e:Image id="img3" source="b18_png" scaleX="0.78" scaleY="0.78" x="27" y="230"/>
+		</e:Group>
+		<e:Group id="touch4" width="282" height="351" x="1260.001" y="615">
+			<e:Image id="img4" source="b18_png" scaleX="0.78" scaleY="0.78" x="15.545" y="202.456"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

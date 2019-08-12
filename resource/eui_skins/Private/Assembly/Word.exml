@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SoccerSkin"
+	 width="378"
+	height="237" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="bg" source="yu_png" horizontalCenter="0" verticalCenter="0"/>
+	<e:Label id="label" text="天" textColor="7082257" size="138" fontFamily="z2" verticalCenter="0" stroke="5" strokeColor="0xffffff" x="189"/>
+	<e:Group id="img" width="200" height="200" verticalCenter="0" x="20">
+		<e:Group id="tipGroup" left="0" right="0" top="0" bottom="0">
+			<e:Image id="tip1" source="huang1_png" verticalCenter="0" horizontalCenter="0" visible="false"/>
+			<e:Image id="tip2" verticalCenter="0" source="huang2_png" horizontalCenter="0" visible="false"/>
+			<e:Image id="tip3" verticalCenter="0" source="huang3_png" horizontalCenter="0" visible="false"/>
+		</e:Group>
+		<e:Image id="question" source="a7_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image id="answer" source="b7_png" verticalCenter="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="touchGroup" left="0" right="0" top="0" bottom="0">
+	</e:Group>
+</e:Skin>
