@@ -95,3 +95,4 @@ var Assembly;
     Assembly.ErrBook = ErrBook;
     __reflect(ErrBook.prototype, "Assembly.ErrBook", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Assembly || (Assembly = {}));
+//# sourceMappingURL=ErrBook.js.map

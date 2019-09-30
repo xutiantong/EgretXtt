@@ -142,3 +142,4 @@ var MUSIC4 = (function () {
     return MUSIC4;
 }());
 __reflect(MUSIC4.prototype, "MUSIC4");
+//# sourceMappingURL=MUSIC4.js.map

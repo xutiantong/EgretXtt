@@ -47,3 +47,4 @@ var Manager;
     Manager.GlobalManager = GlobalManager;
     __reflect(GlobalManager.prototype, "Manager.GlobalManager");
 })(Manager || (Manager = {}));
+//# sourceMappingURL=GlobalManager.js.map

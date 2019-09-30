@@ -340,3 +340,4 @@ var Assembly;
     Assembly.Scene1 = Scene1;
     __reflect(Scene1.prototype, "Assembly.Scene1", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Assembly || (Assembly = {}));
+//# sourceMappingURL=Scene1.js.map

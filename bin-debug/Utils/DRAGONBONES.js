@@ -267,3 +267,4 @@ var DRAGONBONES = (function () {
     return DRAGONBONES;
 }());
 __reflect(DRAGONBONES.prototype, "DRAGONBONES");
+//# sourceMappingURL=DRAGONBONES.js.map

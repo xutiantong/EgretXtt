@@ -74,3 +74,4 @@ var Assembly;
     Assembly.EndCell = EndCell;
     __reflect(EndCell.prototype, "Assembly.EndCell", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Assembly || (Assembly = {}));
+//# sourceMappingURL=EndCell.js.map

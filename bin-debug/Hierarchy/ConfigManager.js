@@ -60,3 +60,4 @@ var Hierarchy;
     Hierarchy.ConfigManager = ConfigManager;
     __reflect(ConfigManager.prototype, "Hierarchy.ConfigManager", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Hierarchy || (Hierarchy = {}));
+//# sourceMappingURL=ConfigManager.js.map

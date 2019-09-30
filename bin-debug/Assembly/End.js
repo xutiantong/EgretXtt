@@ -67,3 +67,4 @@ var Assembly;
     Assembly.End = End;
     __reflect(End.prototype, "Assembly.End", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Assembly || (Assembly = {}));
+//# sourceMappingURL=End.js.map

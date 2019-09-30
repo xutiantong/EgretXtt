@@ -89,3 +89,4 @@ var Hierarchy;
     Hierarchy.MessageManager = MessageManager;
     __reflect(MessageManager.prototype, "Hierarchy.MessageManager");
 })(Hierarchy || (Hierarchy = {}));
+//# sourceMappingURL=MessageManager.js.map

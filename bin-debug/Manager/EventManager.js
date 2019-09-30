@@ -74,3 +74,4 @@ var Manager;
     Manager.EventManager = EventManager;
     __reflect(EventManager.prototype, "Manager.EventManager");
 })(Manager || (Manager = {}));
+//# sourceMappingURL=EventManager.js.map

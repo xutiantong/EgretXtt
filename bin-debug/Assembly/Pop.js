@@ -34,3 +34,4 @@ var Assembly;
     Assembly.Pop = Pop;
     __reflect(Pop.prototype, "Assembly.Pop", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Assembly || (Assembly = {}));
+//# sourceMappingURL=Pop.js.map

@@ -147,3 +147,4 @@ var Hierarchy;
     Hierarchy.MenuManager = MenuManager;
     __reflect(MenuManager.prototype, "Hierarchy.MenuManager", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Hierarchy || (Hierarchy = {}));
+//# sourceMappingURL=MenuManager.js.map

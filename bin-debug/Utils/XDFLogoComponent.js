@@ -50,3 +50,4 @@ var XDFLogoComponent = (function (_super) {
     return XDFLogoComponent;
 }(eui.Component));
 __reflect(XDFLogoComponent.prototype, "XDFLogoComponent");
+//# sourceMappingURL=XDFLogoComponent.js.map

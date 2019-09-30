@@ -53,3 +53,4 @@ var Assembly;
     Assembly.Select = Select;
     __reflect(Select.prototype, "Assembly.Select", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Assembly || (Assembly = {}));
+//# sourceMappingURL=Select.js.map

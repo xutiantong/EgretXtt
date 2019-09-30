@@ -51,3 +51,4 @@ var Assembly;
     Assembly.Word = Word;
     __reflect(Word.prototype, "Assembly.Word", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Assembly || (Assembly = {}));
+//# sourceMappingURL=Word.js.map

@@ -46,3 +46,4 @@ var Assembly;
     Assembly.Start = Start;
     __reflect(Start.prototype, "Assembly.Start", ["eui.UIComponent", "egret.DisplayObject"]);
 })(Assembly || (Assembly = {}));
+//# sourceMappingURL=Start.js.map

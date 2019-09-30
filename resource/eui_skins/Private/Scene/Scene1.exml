@@ -18,7 +18,7 @@
 			<e:Image id="img1" source="b18_png" scaleX="0.78" scaleY="0.78" x="24.007" y="346.824"/>
 		</e:Group>
 		<e:Group id="touch2" width="200" height="320" x="669.253" y="646">
-			<e:Image id="img2" source="b18_png" scaleX="0.78" scaleY="0.78" x="-9.344" y="188.592"/>
+			<e:Image id="img2" source="b18_png" scaleX="0.78" scaleY="0.78" x="-13.344" y="202.592"/>
 		</e:Group>
 		<e:Group id="touch3" width="282" height="351" x="921.95" y="615">
 			<e:Image id="img3" source="b18_png" scaleX="0.78" scaleY="0.78" x="27" y="230"/>
