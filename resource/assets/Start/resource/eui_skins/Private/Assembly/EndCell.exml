@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="EndCellSkin" width="200" height="40" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16b08289659" ></w:Config>
+	<e:Label id="lab" text="第一题" textColor="0x9d5414" fontFamily="z2" size="44" verticalCenter="0" left="0"/>
+	<e:Image id="img" x="140" y="0" source="dui_png"/>
+</e:Skin>

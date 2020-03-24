@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SoccerSkin"
+	 width="366"
+	height="366" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="bg" source="block_bg_png" bottom="0" right="159" visible="false"/>
+	<e:Image id="dark" bottom="0" right="0" source="block_green_dark_png"/>
+	<e:Image id="light" right="0" source="block_green_light_png" top="-183"/>
+</e:Skin>

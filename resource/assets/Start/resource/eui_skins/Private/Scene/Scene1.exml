@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Scene1Skin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:Assembly="Assembly.*" xmlns:ns1="*">
+	<w:Config id="16a957de5ef"></w:Config>
+	<e:Group id="bgGroup" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="questionGroup" left="0" right="0" top="0" bottom="0">
+		<e:Rect left="0" right="0" top="0" bottom="0" alpha="0.6"/>
+		<e:Group id="answerGroup" verticalCenter="0" width="800" height="600" anchorOffsetX="400" anchorOffsetY="340" horizontalCenter="0">
+			<e:Group id="title" width="600" x="237" y="92"/>
+			<e:Group id="g1" x="0" y="159.58" anchorOffsetX="306.5">
+				<e:Image source="tip_png" left="0" right="0" top="0" bottom="0" scale9Grid="204,21,205,21"/>
+				<e:Label id="l1" text="Label" size="50" fontFamily="z2" wordWrap="true" textColor="0x453E11" horizontalCenter="0" verticalCenter="0" verticalAlign="middle" textAlign="center" width="550"/>
+			</e:Group>
+			<e:Group x="20" y="179.58" id="g2" anchorOffsetX="306.5">
+				<e:Image source="tip_png" left="0" right="0" top="0" bottom="0" scale9Grid="204,21,205,21"/>
+				<e:Label id="l2" text="Label" size="50" fontFamily="z2" wordWrap="true" textColor="0x453E11" horizontalCenter="0" verticalCenter="0" verticalAlign="middle" textAlign="center" width="550"/>
+			</e:Group>
+			<e:Group x="30" y="189.58" id="g3" anchorOffsetX="306.5">
+				<e:Image source="tip_png" left="0" right="0" top="0" bottom="0" scale9Grid="204,21,205,21"/>
+				<e:Label id="l3" text="Label" size="50" fontFamily="z2" wordWrap="true" textColor="0x453E11" horizontalCenter="0" verticalCenter="0" verticalAlign="middle" textAlign="center" width="550"/>
+			</e:Group>
+			<e:Group x="40" y="199.58" id="g4" anchorOffsetX="306.5">
+				<e:Image source="tip_png" left="0" right="0" top="0" bottom="0" scale9Grid="204,21,205,21"/>
+				<e:Label id="l4" text="Label" size="50" fontFamily="z2" wordWrap="true" textColor="0x453E11" horizontalCenter="0" verticalCenter="0" verticalAlign="middle" textAlign="center" width="550"/>
+			</e:Group>
+			<e:layout>
+				<e:VerticalLayout gap="20" horizontalAlign="center" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+	</e:Group>
+</e:Skin>

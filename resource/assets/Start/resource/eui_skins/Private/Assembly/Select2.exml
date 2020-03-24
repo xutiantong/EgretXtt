@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="Select2Skin"
+	 width="1920"
+	height="1080" xmlns:e="http://ns.egret.com/eui">
+	<e:Group id="aniGroup" left="0" right="0" top="0" bottom="0">
+	</e:Group>
+	<e:Group id="select1" width="600" height="700" x="188.368" y="278">
+		<e:Rect left="0" right="0" top="0" bottom="0" alpha="0"/>
+	</e:Group>
+	<e:Group id="select2" width="600" height="700" x="1130.467" y="278">
+		<e:Rect left="0" right="0" top="0" bottom="0" alpha="0"/>
+	</e:Group>
+</e:Skin>
