@@ -24,23 +24,29 @@ var Hierarchy;
         //配置
         ConfigManager.prototype.config = function () {
             //1.注册声音
-            var musicArr = ["bg", "dianji", "err", "introduction1", "introduction2", "success", "fatherDoubt", "fatherLaugh", "motherDoubt", "motherLaugh", "brotherDoubt", "brotherLaugh", "sisterDoubt", "sisterLaugh", "bag", "fly", "bounce"];
+            var musicArr = ["bg", "change", "dianji", "introduction1", "right", "rightTips", "show", "success", "tips1", "tips2", "wrong", "wrongTips", "wrongTips2", "bird", "book"];
             MUSIC4.get().init(musicArr);
             //2.注册层级
             this.addChildAt(Hierarchy.AbManager.get(), 0);
             this.addChildAt(Hierarchy.MenuManager.get(), 1);
             this.addChildAt(Hierarchy.MessageManager.get(), 2);
-            this.addChildAt(new XDFLogoComponent(), 3);
+            this.addChildAt(new XDFLogoComponent(), 4);
             //3.注册组件
             Hierarchy.AbManager.get().init([
                 { name: "Start", obj: new Assembly.Start() },
                 { name: "Select", obj: new Assembly.Select() },
+                { name: "Select2", obj: new Assembly.Select2() },
                 { name: "Scene1", obj: new Assembly.Scene1() },
+                { name: "CardScene", obj: new Assembly.CardScene() },
                 { name: "End", obj: new Assembly.End() },
-                { name: "ErrBook", obj: new Assembly.ErrBook() }
+                { name: "ErrBook", obj: new Assembly.ErrBook() },
+                { name: "Word", obj: new Assembly.Word() },
+                { name: "MazeBg", obj: new Assembly.MazeBg() }
             ]);
             //4.注册消息提示
-            Hierarchy.MessageManager.get().init([]);
+            Hierarchy.MessageManager.get().init([
+                { name: "Introduction", obj: new Assembly.Introduction() }
+            ]);
             //5.初始化全局变量
             Manager.GlobalManager.get();
             //6.默认起始组件

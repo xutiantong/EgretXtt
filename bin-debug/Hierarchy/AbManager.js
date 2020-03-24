@@ -22,10 +22,6 @@ var Hierarchy;
         function AbManager() {
             var _this = _super.call(this) || this;
             _this.Arr = new Array(); //存储组件
-            _this.system = new particle.GravityParticleSystem(RES.getRes("snow_png"), RES.getRes("snow_json"));
-            _this.system.y = -200;
-            _this.addChild(_this.system);
-            _this.system.start();
             return _this;
         }
         /**
@@ -42,17 +38,17 @@ var Hierarchy;
          * 显示组件
          * @param name 名称
          */
-        AbManager.prototype.show = function (name) {
+        AbManager.prototype.show = function (name, buttom) {
+            if (buttom === void 0) { buttom = false; }
             for (var i = 0; i < this.Arr.length; i++) {
                 var v = this.Arr[i];
                 if (v.name == name) {
-                    this.addChild(v.obj);
+                    this.addChildAt(v.obj, buttom ? 0 : -1);
                     if (v.obj["init"] != null) {
                         v.obj.init();
                     }
                 }
             }
-            this.setChildIndex(this.system, -1);
         };
         /**
          * 隐藏组件

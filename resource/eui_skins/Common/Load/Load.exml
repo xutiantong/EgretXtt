@@ -2,5 +2,5 @@
 <e:Skin class="Load" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Rect anchorOffsetX="0" left="0" right="0" top="0" bottom="0" fillAlpha="1" fillColor="0xffffff"/>
 	<e:Group id="gr" left="0" right="0" top="0" bottom="0" touchEnabled="false"/>
-	<e:Label id="lab" text="" width="300" height="200" horizontalCenter="0" fontFamily="FangSong" size="74" verticalAlign="middle" textAlign="center" bold="true" y="830" textColor="0x000000"/>
+	<e:Label id="lab" text="" width="300" height="200" horizontalCenter="50" fontFamily="FangSong" size="74" verticalAlign="middle" textAlign="center" bold="true" textColor="0x000000" bottom="100"/>
 </e:Skin>

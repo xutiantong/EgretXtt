@@ -31,7 +31,12 @@ class MUSIC4 {
     */
     continueLast() {
         for (let i = 0; i < this.last_Arr.length; i++) {
-            this.play(this.last_Arr[i], 1, this.position_Arr[i]);
+            if (this.last_Arr[i] == "bg") {
+                //对背景音乐做特殊处理
+                this.play(this.last_Arr[i], 0, this.position_Arr[i])
+            } else {
+                this.play(this.last_Arr[i], 1, this.position_Arr[i]);
+            }
         }
     }
 
@@ -117,13 +122,24 @@ class MUSIC4 {
 
     /**
      * 获得声音的长度(秒)
-     * @param name
+     * @param name 名字
      */
     getLength(name: string) {
         for (let i = 0; i < this.Arr.length; i++) {
             let v = this.Arr[i];
             if (name == v.name) {
                 return v.sound.length;
+            }
+        }
+    }
+    /**
+     * 调整音量
+     * @param val 音量大小
+     */
+    changeVolume(val: number) {
+        for (let i = 0; i < this.Arr.length; i++) {
+            if (this.Arr[i].channel != null && this.Arr[i].isPlay) {
+                this.Arr[i].channel.volume = val;
             }
         }
     }

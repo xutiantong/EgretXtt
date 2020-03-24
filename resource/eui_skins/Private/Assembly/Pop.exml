@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="Pop" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"  height="416">
-	<w:Config id="16ae7b5cdb2" ></w:Config>
+<e:Skin class="Pop" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" height="416">
+	<w:Config id="16ae7b5cdb2"></w:Config>
 	<e:Group id="bubbleGroup" anchorOffsetY="0" left="0" right="0" top="0">
-		<e:Image id="bubble" source="qipao_png" bottom="0" width="1300" horizontalCenter="0" scale9Grid="98,92,99,91" height="280"/>
-		<e:Image source="tianqizhenhao_03_png" bottom="-40" horizontalCenter="-500"/>
-		<e:Label id="label" text="选阿胶粉解放军北纬科技暴风科技哈哈发布会为背景和规范为给我个怎讲大V就是你看见如果您" size="60" fontFamily="z" anchorOffsetY="0" width="1200" textColor="6234120" horizontalCenter="3.5" bottom="30" lineSpacing="15" anchorOffsetX="0" textAlign="left" verticalAlign="middle"/>
+		<e:Image id="bubble" source="qipao_png" bottom="0" width="1300" skewX="10" horizontalCenter="152"
+		         scale9Grid="98,92,99,91" height="280" />
+		<e:Image id="arrowImage" source="tianqizhenhao_03_png" bottom="-98" horizontalCenter="-347.5" />
+		<e:Label id="label" text="选阿胶粉解放军北纬科技暴风科技哈哈发布会为背景和规范为给我个怎讲大V就是你看见如果您" size="60" fontFamily="z" anchorOffsetY="0"
+		         width="1200" horizontalCenter="156" bottom="30" lineSpacing="15" anchorOffsetX="0"
+		         textAlign="left" verticalAlign="middle"  textColor="0x218aa0"/>
 		<e:layout>
 			<e:BasicLayout/>
 		</e:layout>

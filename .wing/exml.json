@@ -77,7 +77,15 @@
     "16ae7b5cdb2": {
         "path": "Assembly\\Introduction.ts",
         "class": "Introduction",
-        "parentPath": ""
+        "parentPath": "",
+        "guideLinesEnabled": false,
+        "backgroundX": 0,
+        "backgroundY": 0,
+        "backgroundWidth": -1,
+        "backgroundHeight": -1,
+        "useBgImage": true,
+        "useBgColor": true,
+        "backgroundAlpha": 100
     },
     "16ae8c61142": {
         "path": "Assembly\\WaterPot.ts",
@@ -127,6 +135,40 @@
     "16b0857847d": {
         "path": "Assembly\\CuoTiBen.ts",
         "class": "CuoTiBen",
+        "parentPath": ""
+    },
+    "16ce00f32e2": {
+        "path": "Assembly\\BackGround.ts",
+        "class": "BackGround",
+        "parentPath": ""
+    },
+    "16d80449805": {
+        "path": "Assembly\\SwitchScene.ts",
+        "class": "SwitchScene",
+        "parentPath": ""
+    },
+    "16f78cd2294": {
+        "path": "Senc\\MazeBg.ts",
+        "class": "MazeBg",
+        "parentPath": ""
+    },
+    "global": {
+        "globalAdsorbEnable": false,
+        "globalRulerEnable": true
+    },
+    "16f84871b4e": {
+        "path": "Assembly\\FloorBg.ts",
+        "class": "FloorBg",
+        "parentPath": ""
+    },
+    "16f84927d94": {
+        "path": "Assembly\\ShadowBg.ts",
+        "class": "ShadowBg",
+        "parentPath": ""
+    },
+    "1705cbb9a82": {
+        "path": "Senc\\CardScene.ts",
+        "class": "CardScene",
         "parentPath": ""
     }
 }

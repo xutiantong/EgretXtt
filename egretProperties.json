@@ -26,10 +26,6 @@
 		},
 		{
 			"name": "game"
-		},
-		{
-			"name": "particle",
-			"path": "./libs/particle"
 		}
 	]
 }

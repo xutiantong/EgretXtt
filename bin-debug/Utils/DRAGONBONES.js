@@ -64,111 +64,68 @@ var DRAGONBONES = (function () {
      * 初始化骨架
      * @param name 骨架昵称
      * @param armaturename 骨架名称
-     * @param fadeInCall fadeIn事件监听
-     * @param completeCall complete事件监听
-     * @param loopCompleteCall loopComplete事件监听
-     * @param framecall frame事件监听
+     * @param animationName 动画名称
+     * @param playTime 播放次数
+     * @param parent 父节点
+     * @param x x偏移
+     * @param y y偏移
+     * @param scaleX x缩放
+     * @param scaleY y缩放
+     * @param speed 播放速度
      */
-    DRAGONBONES.prototype.initArmature = function (name, armaturename, fadeInCall, completeCall, loopCompleteCall, framecall) {
-        var armature = this.egretFactory.buildArmatureDisplay(armaturename);
-        var fadeIn = null;
-        var complete = null;
-        var frame = null;
-        var loop = null;
+    DRAGONBONES.prototype.initArmature = function (name, armaturename, animationName, playTime, parent, x, y, scaleX, scaleY, speed) {
+        var armature = null;
+        var isNew = false;
+        for (var i = 0; i < this.armatureArr.length; i++) {
+            var v = this.armatureArr[i];
+            if (name == v.name) {
+                armature = v.gujia;
+                isNew = true;
+                break;
+            }
+        }
+        if (!isNew) {
+            armature = this.egretFactory.buildArmatureDisplay(armaturename);
+            this.armatureArr.push({ name: name, gujia: armature });
+        }
         armature.anchorOffsetX = 0;
         armature.anchorOffsetY = 0;
-        if (fadeInCall != null) {
-            armature.addEventListener(dragonBones.EventObject.FADE_IN, fadeInCall, this);
-            fadeIn = fadeInCall;
+        if (scaleX != null) {
+            armature.scaleX = scaleX;
         }
-        if (completeCall != null) {
-            armature.addEventListener(dragonBones.EventObject.COMPLETE, completeCall, this);
-            complete = completeCall;
+        if (scaleY != null) {
+            armature.scaleY = scaleY;
         }
-        if (loopCompleteCall != null) {
-            armature.addEventListener(dragonBones.EventObject.LOOP_COMPLETE, loopCompleteCall, this);
-            loop = loopCompleteCall;
+        if (x != null) {
+            armature.x = x;
         }
-        if (framecall != null) {
-            armature.addEventListener(dragonBones.EventObject.FRAME_EVENT, framecall, this);
-            frame = framecall;
+        if (y != null) {
+            armature.y = y;
         }
-        this.armatureArr.push({ name: name, gujia: armature, startlisten: fadeIn, endlisten: complete, framelisten: frame, loopendlisten: loop, xianyin: false });
+        if (parent != null) {
+            parent.addChild(armature);
+        }
+        if (playTime != null) {
+            var db = armature.animation.play(animationName, playTime);
+            if (speed != null) {
+                db.timeScale = speed;
+            }
+        }
         return armature;
     };
     /**
-     * 更新骨架事件监听
-     * @param name 骨架昵称
-     * @param start fadeIn事件监听
-     * @param end complete事件监听
-     * @param loopend loopComplete事件监听
-     * @param frame frame事件监听
-     */
-    DRAGONBONES.prototype.updateListener = function (name, start, end, loopend, frame) {
-        for (var i = 0; i < this.armatureArr.length; i++) {
-            var v = this.armatureArr[i];
-            if (name == v.name) {
-                var armature = v.gujia;
-                if (start != null) {
-                    if (v.startlisten != null)
-                        armature.removeEventListener(dragonBones.EventObject.COMPLETE, v.startlisten, this);
-                    armature.addEventListener(dragonBones.EventObject.COMPLETE, start, this);
-                    v.startlisten = start;
-                }
-                if (end != null) {
-                    if (v.endlisten != null)
-                        armature.removeEventListener(dragonBones.EventObject.COMPLETE, v.endlisten, this);
-                    armature.addEventListener(dragonBones.EventObject.COMPLETE, end, this);
-                    v.endlisten = end;
-                }
-                if (frame != null) {
-                    if (v.framelisten != null)
-                        armature.removeEventListener(dragonBones.EventObject.COMPLETE, v.framelisten, this);
-                    armature.addEventListener(dragonBones.EventObject.COMPLETE, frame, this);
-                    v.framelisten = frame;
-                }
-                if (loopend != null) {
-                    if (v.loopendlisten != null)
-                        armature.removeEventListener(dragonBones.EventObject.LOOP_COMPLETE, v.loopendlisten, this);
-                    armature.addEventListener(dragonBones.EventObject.LOOP_COMPLETE, loopend, this);
-                    v.loopendlisten = loopend;
-                }
-            }
-        }
-    };
-    /**
-     * 特定骨架的开始显示，结束隐藏
-     * @param name 骨架昵称
-     * @param vis 添加删除
-     */
-    DRAGONBONES.prototype.changeVisible = function (name, vis) {
-        for (var i = 0; i < this.armatureArr.length; i++) {
-            var v = this.armatureArr[i];
-            if (name == v.name) {
-                if (vis) {
-                    v.gujia.addEventListener(dragonBones.EventObject.START, this.tru, this);
-                    v.gujia.addEventListener(dragonBones.EventObject.COMPLETE, this.fal, this);
-                }
-                else {
-                    v.gujia.removeEventListener(dragonBones.EventObject.START, this.tru, this);
-                    v.gujia.removeEventListener(dragonBones.EventObject.COMPLETE, this.fal, this);
-                }
-            }
-        }
-    };
-    /**
-     * 播放骨架动画
-     * @param name 骨架昵称
-     * @param animationname 动画名字
-     * @param parent 父节点
-     * @param playtime 播放次数
-     * @param scaleX 水平缩放
-     * @param scaleY 垂直缩放
-     * @param speed 播放速度
-     * @param x 水平偏移
-     * @param y 垂直偏移
-     * @param maskBoneName 骨架遮罩
-     */
+    * 播放骨架动画
+    * @param name 骨架昵称
+    * @param animationname 动画名字
+    * @param parent 父节点
+    * @param playtime 播放次数
+    * @param scaleX 水平缩放
+    * @param scaleY 垂直缩放
+    * @param speed 播放速度
+    * @param x 水平偏移
+    * @param y 垂直偏移
+    * @param maskBoneName 骨架遮罩
+    */
     DRAGONBONES.prototype.playAnimation = function (name, animationname, parent, playtime, scaleX, scaleY, speed, x, y, maskBoneName) {
         for (var i = 0; i < this.armatureArr.length; i++) {
             var v = this.armatureArr[i];
@@ -206,38 +163,6 @@ var DRAGONBONES = (function () {
             }
         }
         return null;
-    };
-    /**
-     * 用其他骨架插槽替换当前插槽
-     * @param bei_armaturename 被提取的骨架原生名称
-     * @param bei_slotname 被提取的骨架插槽原生名称
-     * @param bei_slotdisplayname 被提取的骨架插槽图片原生名称
-     * @param forarmaturename_nicheng 将接受皮肤的骨架昵称
-     * @param forslotname 将接受皮肤的骨架插槽原生名称
-     */
-    DRAGONBONES.prototype.changeSlotWithAnotherSlot = function (bei_armaturename, bei_slotname, bei_slotdisplayname, forarmaturename_nicheng, forslotname) {
-        var bone;
-        for (var i = 0; i < this.armatureArr.length; i++) {
-            var v = this.armatureArr[i];
-            if (forarmaturename_nicheng == v.name) {
-                bone = v.gujia;
-            }
-        }
-        this.egretFactory.replaceSlotDisplay(null, bei_armaturename, bei_slotname, bei_slotdisplayname, bone.armature.getSlot(forslotname));
-    };
-    /**
-     * 隐藏
-     * @param event
-     */
-    DRAGONBONES.prototype.fal = function (event) {
-        event.target.visible = false;
-    };
-    /**
-     * 显示
-     * @param event
-     */
-    DRAGONBONES.prototype.tru = function (event) {
-        event.target.visible = true;
     };
     /**
      * 移除DragonBonesData及TextureAtlasData实例

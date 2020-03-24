@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShadowBgSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="16f84927d94"></w:Config>
+	<e:Group touchEnabled="false" width="1920" height="1080" scaleX="1" scaleY="1" x="-174" y="-14">
+		<e:Image source="block_bg_png" id="item2" x="183" y="-366" />
+		<e:Image source="block_bg_png" id="item5" x="183" y="0" />
+		<e:Image source="block_bg_png" id="item8" x="183" y="366" />
+		<e:Image source="block_bg_png" id="item1" x="-183" y="-366" />
+		<e:Image source="block_bg_png" id="item4" x="-183" y="0" />
+		<e:Image source="block_bg_png" id="item7" x="-183" y="366" />
+		<e:Image source="block_bg_png" id="item0" x="-549" y="-366" />
+		<e:Image source="block_bg_png" id="item3" x="-549" y="0" />
+		<e:Image source="block_bg_png" id="item6" x="-549" y="366" />
+		<e:Image source="block_bg_png" id="item11" x="2013" y="-366" />
+		<e:Image source="block_bg_png" id="item14" x="2013" y="0" />
+		<e:Image source="block_bg_png" id="item17" x="2013" y="366" />
+		<e:Image source="block_bg_png" id="item10" x="1647" y="-366" />
+		<e:Image source="block_bg_png" id="item13" x="1647" y="0" />
+		<e:Image source="block_bg_png" id="item16" x="1647" y="366" />
+		<e:Image source="block_bg_png" id="item9" x="1281" y="-366" />
+		<e:Image source="block_bg_png" id="item12" x="1281" y="0" />
+		<e:Image source="block_bg_png" id="item15" x="1281" y="366" />
+	</e:Group>
+</e:Skin>

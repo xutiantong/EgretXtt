@@ -18,14 +18,9 @@ module Hierarchy {
 
 		static D: AbManager = null;
 		Arr: Array<Ab> = new Array<Ab>();//存储组件
-		private system: particle.GravityParticleSystem;
 
 		public constructor() {
 			super();
-			this.system = new particle.GravityParticleSystem(RES.getRes("snow_png"), RES.getRes("snow_json"));
-			this.system.y = -200;
-			this.addChild(this.system);
-			this.system.start();
 		}
 
 		/**
@@ -42,17 +37,16 @@ module Hierarchy {
 		 * 显示组件
 		 * @param name 名称
 		 */
-		show(name: string) {
+		show(name: string, buttom: boolean = false) {
 			for (let i = 0; i < this.Arr.length; i++) {
 				let v = this.Arr[i];
 				if (v.name == name) {
-					this.addChild(v.obj)
+					this.addChildAt(v.obj, buttom ? 0 : -1)
 					if (v.obj["init"] != null) {
 						v.obj.init();
 					}
 				}
 			}
-			this.setChildIndex(this.system, -1);
 		}
 
 		/**

@@ -33,7 +33,13 @@ var MUSIC4 = (function () {
     */
     MUSIC4.prototype.continueLast = function () {
         for (var i = 0; i < this.last_Arr.length; i++) {
-            this.play(this.last_Arr[i], 1, this.position_Arr[i]);
+            if (this.last_Arr[i] == "bg") {
+                //对背景音乐做特殊处理
+                this.play(this.last_Arr[i], 0, this.position_Arr[i]);
+            }
+            else {
+                this.play(this.last_Arr[i], 1, this.position_Arr[i]);
+            }
         }
     };
     /**
@@ -122,13 +128,24 @@ var MUSIC4 = (function () {
     };
     /**
      * 获得声音的长度(秒)
-     * @param name
+     * @param name 名字
      */
     MUSIC4.prototype.getLength = function (name) {
         for (var i = 0; i < this.Arr.length; i++) {
             var v = this.Arr[i];
             if (name == v.name) {
                 return v.sound.length;
+            }
+        }
+    };
+    /**
+     * 调整音量
+     * @param val 音量大小
+     */
+    MUSIC4.prototype.changeVolume = function (val) {
+        for (var i = 0; i < this.Arr.length; i++) {
+            if (this.Arr[i].channel != null && this.Arr[i].isPlay) {
+                this.Arr[i].channel.volume = val;
             }
         }
     };

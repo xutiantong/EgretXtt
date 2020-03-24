@@ -19,34 +19,67 @@ var Assembly;
     var Select = (function (_super) {
         __extends(Select, _super);
         function Select() {
-            return _super.call(this) || this;
+            var _this = _super.call(this) || this;
+            _this.Global = Manager.GlobalManager.get();
+            return _this;
         }
         Select.prototype.partAdded = function (partName, instance) {
             _super.prototype.partAdded.call(this, partName, instance);
         };
         Select.prototype.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
-            DRAGONBONES.getInstance().addToFactory("budai_ske_json", "budai_tex_json", "budai_tex_png");
-            this.ani = DRAGONBONES.getInstance().initArmature("串场动画", "chuanchang");
-            this.aniGroup.addChild(this.ani);
+            DRAGONBONES.getInstance().addToFactory("chutangsijie_1_ske_json", "chutangsijie_1_tex_json", "chutangsijie_1_tex_png");
+            this.bookAnim = DRAGONBONES.getInstance().initArmature("翻书动画", "fanshu");
+            this.aniGroup.addChild(this.bookAnim);
+            this.bookAnim.armature.getSlot("shu_zuo2211").displayList = [this.slotLeftTextImg];
+            this.bookAnim.armature.getSlot("shu_zuo_luobinwang").displayList = [this.slotLeftBg];
+            this.bookAnim.armature.getSlot("shu_you_luobinwang").displayList = [this.slotRightGroup];
+            // let img = new eui.Image("shu1_png");
+            // this.addChild(img);
+            // img.anchorOffsetX = img.width / 2;
+            // img.anchorOffsetY = img.height / 2;
+            // this.bookAnim.armature.getSlot("shu1").displayList = [img];
         };
         Select.prototype.init = function () {
-            this.ani.animation.play("newAnimation", 1);
-            Manager.DelayManager.get().addDelay(8200, function () {
-                MUSIC4.get().play("introduction1");
-                Manager.DelayManager.get().addDelay(28000, function () {
-                    MUSIC4.get().stop("introduction1");
-                    Hierarchy.AbManager.get().show("Scene1");
-                    Hierarchy.AbManager.get().hide("Select");
-                }, 3);
-            }, 3);
-            Manager.EventManager.get().addListener("Select", this.aniGroup, egret.TouchEvent.TOUCH_TAP, function () {
+            var _this = this;
+            this.bookAnim.animation.gotoAndStopByFrame("fanshu", 0);
+            this.slotLeftTextImg.alpha = 0;
+            Manager.EventManager.get().addListener("Select", this.bookAnim, dragonBones.EgretEvent.COMPLETE, this.animComplete, this);
+            this.closeImg.visible = false;
+            egret.Tween.get(this.closeImg, { loop: true }).to({ scaleX: 1.2, scaleY: 1.2 }, 300).to({ scaleX: 1, scaleY: 1 }, 300);
+            Manager.EventManager.get().addListener("Select", this.closeImg, egret.TouchEvent.TOUCH_TAP, function () {
                 MUSIC4.get().play("dianji");
-                Manager.DelayManager.get().removeDelay(3);
-                MUSIC4.get().stop("introduction1");
-                Hierarchy.AbManager.get().show("Scene1");
-                Hierarchy.AbManager.get().hide("Select");
+                MUSIC4.get().play("book");
+                _this.closeImg.visible = false;
+                _this.bookAnim.animation.timeScale = -1;
+                _this.bookAnim.animation.play("fanshu", 1);
             }, this);
+            this.slotLeftBg.source = "bookSlotBg" + (this.num - 1) + "_png";
+            this.slotLeftTextImg.source = "bookSlotLabel" + (this.num - 1) + "_png";
+            this.slotImg.source = "select_slot" + (this.num - 1) + "_png";
+        };
+        Select.prototype.playBookAnim = function () {
+            MUSIC4.get().play("book");
+            this.bookAnim.animation.timeScale = 1;
+            this.bookAnim.animation.play("fanshu", 1);
+        };
+        Select.prototype.animComplete = function (evt) {
+            var _this = this;
+            if (evt.animationName == "fanshu") {
+                if (evt.armature.animation.timeScale == 1) {
+                    egret.Tween.get(this.slotLeftTextImg).to({ alpha: 1 }, 500).call(function () {
+                        _this.closeImg.visible = true;
+                    });
+                }
+                else {
+                    egret.Tween.get(this).wait(500).call(function () {
+                        //展示scene, 开始做题
+                        Hierarchy.AbManager.get().hide("Select");
+                        Hierarchy.AbManager.get().getOne("Scene1").num = _this.num - 1;
+                        Hierarchy.AbManager.get().show("Scene1");
+                    });
+                }
+            }
         };
         return Select;
     }(eui.Component));

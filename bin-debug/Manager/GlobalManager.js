@@ -24,7 +24,9 @@ var Manager;
             _this.questionNum = 1; //当前题号
             _this.questionCurArr = new Array(); //当前题库
             _this.wrongArr = []; //错题库
-            _this.isFirstPlay = true; //是否第一次玩
+            _this.isFirstPlay = 0; //是否第一次玩
+            // public characterNum: number//当前选择人物
+            _this.hasShadowArr = [];
             return _this;
         }
         //单例
@@ -40,6 +42,7 @@ var Manager;
         GlobalManager.prototype.restart = function () {
             this.questionNum = 1;
             this.wrongArr = [];
+            Hierarchy.AbManager.get().hide("Scene1");
         };
         GlobalManager.D = null;
         return GlobalManager;

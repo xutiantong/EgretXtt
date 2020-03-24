@@ -76,7 +76,6 @@ var Main = (function (_super) {
     function Main() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.countGroupError = 0;
-        _this.timeOnEnterFrame = 0;
         return _this;
     }
     Main.prototype.createChildren = function () {
@@ -172,80 +171,10 @@ var Main = (function (_super) {
         });
     };
     /**
-       * 创建场景界面
-       */
+     * 创建场景界面
+     */
     Main.prototype.createGameScene = function () {
-        this.initShader();
-        this.props = {
-            aspect: 1.7,
-            radius: .07,
-            amp: 0.4,
-            band: .4,
-            waves: 15,
-            speed: 3,
-            life: .5,
-            progress: 0,
-        };
         this.addChild(Hierarchy.ConfigManager.get());
-        this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.handleClick, this);
-        this.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this);
-        this.timeOnEnterFrame = egret.getTimer();
-    };
-    Main.prototype.handleClick = function (evt) {
-        var isTouch = false;
-        isTouch = true;
-        this.touchPoint = new egret.Point(evt.stageX, evt.stageY);
-        var rectangle = this.$getOriginalBounds();
-        this.customFilter = new egret.CustomFilter(this.vertexSrc, this.fragmentSrc, {
-            center: {
-                x: (this.touchPoint.x - rectangle.x) / rectangle.width,
-                y: 1 - (this.touchPoint.y - rectangle.y) / rectangle.height
-            },
-            lowV: {
-                x: (0 - rectangle.x) / rectangle.width,
-                y: 1 - (0 - rectangle.y) / rectangle.height
-            },
-            heightV: {
-                x: (this.stage.stageWidth - rectangle.x) / rectangle.width,
-                y: 1 - (this.stage.stageHeight - rectangle.y) / rectangle.height
-            },
-            aspect: this.props.aspect,
-            radius: this.props.radius,
-            amp: this.props.amp,
-            band: this.props.band,
-            waves: this.props.waves,
-            speed: this.props.speed,
-            life: this.props.life,
-            time: this.props.time,
-            progress: this.props.progress,
-        });
-        this.customFilter.uniforms.progress = 0.0;
-        this.filters = [this.customFilter];
-    };
-    Main.prototype.onEnterFrame = function (e) {
-        var now = egret.getTimer();
-        var time = this.timeOnEnterFrame;
-        var dt = (now - time) / (this.props.life * 1000);
-        this.timeOnEnterFrame = egret.getTimer();
-        if (!this.customFilter)
-            return;
-        this.customFilter.uniforms.progress += dt;
-        var rectangle = this.$getOriginalBounds();
-        this.customFilter.uniforms.center = {
-            x: (this.touchPoint.x - rectangle.x) / rectangle.width,
-            y: 1 - (this.touchPoint.y - rectangle.y) / rectangle.height
-        };
-        this.customFilter.uniforms.aspect = this.stage.width / this.stage.height;
-        if (this.customFilter.uniforms.progress > 1) {
-            this.customFilter.uniforms.progress = 0.0;
-            this.filters = [];
-        }
-    };
-    Main.prototype.initShader = function () {
-        this.vertexSrc =
-            "\n            attribute vec2 aVertexPosition;\n            attribute vec2 aTextureCoord;\n            attribute vec2 aColor;\n\n            uniform vec2 projectionVector;\n\n            varying vec2 vTextureCoord;\n            varying vec4 vColor;\n            varying vec2 vUv;\n\n            const vec2 center = vec2(-1.0, 1.0);\n\n            void main(void) {\n               gl_Position = vec4( (aVertexPosition / projectionVector) + center , 0.0, 1.0);\n               vTextureCoord = aTextureCoord;\n               vColor = vec4(aColor.x, aColor.x, aColor.x, aColor.x);\n               //0.0 - 1.0\n               vUv = vTextureCoord;\n            }\n            ";
-        this.fragmentSrc =
-            "\n            precision lowp float;\n            const int numbers = 1;\n\n            uniform sampler2D uSampler;\n            uniform float aspect;\n            uniform float radius;\n            uniform float amp;\n            uniform float band;\n            uniform float waves;\n            uniform float speed;\n            uniform float progress;\n            uniform vec2 center;\n            uniform vec2 lowV;\n            uniform vec2 heightV;\n            varying vec2 vUv;\n            \n            \n            void main() {\n                vec2 tc = vUv.xy;\n                vec2 uv = vec2(0.0, 0.0);\n                vec2 p;\n                float len;\n                vec2 uv_offset;\n                float wave_width = band * radius;\n\n                p = (tc - center);\n                p.x = p.x * aspect;\n                len = length(p);\n            \n                float current_progress = progress;\n                float current_radius = radius * current_progress;\n                float damp_factor = 1.0;\n                if (current_progress > .5) {\n                    damp_factor = (1.0 - current_progress) * 2.0;\n                }\n            \n                float cut_factor = clamp(wave_width * damp_factor - abs(current_radius - len), 0.0, 1.0);\n                float waves_factor = waves * len / radius;\n                uv_offset = (p / len) * cos((waves_factor - current_progress * speed) * 3.14) * amp * cut_factor;\n            \n                uv += uv_offset;\n                // vec2 tmp = fract(tc + uv);\n                vec2 tmp = tc + uv;\n                if(tmp[0] < lowV.x)\n                {\n                    tmp[0] = vUv.x;\n                }\n                else if (tmp[0] > heightV.x){\n                    tmp[0] = vUv.x;\n                }\n\n                if(tmp[1] > lowV.y)\n                {\n                    tmp[1] = vUv.y;\n                }\n                else if (tmp[1] < heightV.y){\n                    tmp[1] = vUv.y;\n                }\n\n                vec4 t_image = texture2D(uSampler, tmp);\n\n                gl_FragColor = t_image;\n            }\n        ";
     };
     return Main;
 }(eui.UILayer));

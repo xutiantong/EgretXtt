@@ -1,7 +1,7 @@
 module Assembly {
 	/**
 	 * @description 介绍组件
-	 * @description gameName:人物名称 talkNum：说话次数 startText:第一句话 LoopText：第二句话
+	 * @description
 	 * @description introduction1,introduction2为介绍第一二句话的音频
 	 */
 	export class Introduction extends eui.Component implements eui.UIComponent {
@@ -9,18 +9,34 @@ module Assembly {
 		//UI
 		public touchGroup: eui.Group;
 		//设置
-		private gameName: string = "仓颉";
-		private talkNum: number = 1;
-		private startText: string = "同学们，过年啦，我们家最爱吃的就是饺子，请按照题板选择饺子馅吧，包出美味的饺子吧！"
+		private animNameArr: Array<string> = ["小书童"]
+		private startText: string = "同学们，你们向往闲适恬淡的山水田园生活吗？今天我们就一起走进王维和孟浩然的人生旅程中，去感悟山水之美，田园之乐吧！"
 		private LoopText: string = "";
 		//参数
-		private skeName: string = "";//龙骨文件ske
-		private texName: string = "";//龙骨文件tex
-		private texName2: string = "";//龙骨文件png
-		private armera: string = "";//骨架
-		private animStart: string = "";//第一段动画名
-		private animLoop: string = "";//第二段动画名
-		private soltName: string = "";//气泡插槽名
+		private skeName0: string = "shutong_ske_json";
+		private texName0: string = "shutong_tex_json";
+		private texNamePng0: string = "shutong_tex_png";
+
+		private skeName1: string = "sister_ske_json";
+		private texName1: string = "sister_tex_json";
+		private texNamePng1: string = "sister_tex_png";
+
+		private armera0: string = "shutong";//骨架
+		private animStart0: string = "tanchu";//第一段动画名
+		private animLoop0: string = "talk";//第二段动画名
+		private animLoop01: string = "talk";//第三段动画名
+		private animStop0: string = "talk_mouse_stop"//停住呼吸动画
+		private slotName0: string = "1";//气泡插槽名
+
+		private armera1: string = "sister";//骨架
+		private animStart1: string = "stanchu";//第一段动画名
+		private animLoop1: string = "yiwen";//第二段动画名
+		private animLoop11: string = "xiao";//第三段动画名
+		private slotName1: string = "1";//气泡插槽名
+
+		private anim0: dragonBones.EgretArmatureDisplay
+		private anim1: dragonBones.EgretArmatureDisplay
+
 		//公共
 		private dr: DRAGONBONES = DRAGONBONES.getInstance()//龙骨方法
 
@@ -34,134 +50,131 @@ module Assembly {
 
 		protected childrenCreated(): void {
 			super.childrenCreated();
-			//1.龙骨散文件
-			if (this.gameName == "东东") {
-				this.skeName = "talk_ske_json";
-				this.texName = "talk_tex_json";
-				this.texName2 = "talk_tex_png";
-				this.armera = "dongdong";
-				this.animStart = "talk_tanchu";
-				this.animLoop = "xunhuan";
-				this.soltName = "qipao"
+
+			//创建骨架
+			for (let i = 0; i < this.animNameArr.length; i++) {
+				this.dr.addToFactory(this["skeName" + i], this["texName" + i], this["texNamePng" + i])
+				this["anim" + i] = this.dr.initArmature(this.animNameArr[i], this["armera" + i])
+
 			}
-			else if (this.gameName == "小王子") {
-				this.skeName = "DB_duibai_ske_json";
-				this.texName = "DB_duibai_tex_json";
-				this.texName2 = "DB_duibai_tex_png";
-				this.armera = "duibai";
-				this.animStart = "DB_duibaitanchu";
-				this.animLoop = "DB_duibai_xunhuan";
-				this.soltName = "qipao"
-			}
-			else if (this.gameName == "仓颉") {
-				this.skeName = "shuohua_ske_json";
-				this.texName = "shuohua_tex_json";
-				this.texName2 = "shuohua_tex_png";
-				this.armera = "shuohua";
-				this.animStart = "tanchu";
-				this.animLoop = "shuohua";
-				this.soltName = "qipao"
-			}
-			else if (this.gameName == "小侦探") {
-				this.skeName = "xiaozhentan_ske_json";
-				this.texName = "xiaozhentan_tex_json";
-				this.texName2 = "xiaozhentan_tex_png";
-				this.armera = "xiaozhentan";
-				this.animStart = "tanchu";
-				this.animLoop = "tanchushuohua";
-				this.soltName = "talk"
-			}
-			else if (this.gameName == "仓颉女友") {
-				this.skeName = "cjny_ske_json";
-				this.texName = "cjny_tex_json";
-				this.texName2 = "cjny_tex_png";
-				this.armera = "cjny";
-				this.animStart = "tallk_1";
-				this.animLoop = "tallk_2";
-				this.soltName = "cangjie1";
-			}
-			//2.创建骨架
-			this.dr.addToFactory(this.skeName, this.texName, this.texName2)
-			this.dr.initArmature("说话", this.armera, () => { }, () => {
-				//播完弹出自动播放循环
-				if (this.gameName == "东东") {
-					this.dr.playAnimation("说话", this.animLoop, this.touchGroup, 0, 0.5, 0.5, 1, 300, 1080);
-				} else if (this.gameName == "小王子") {
-					this.dr.playAnimation("说话", this.animLoop, this.touchGroup, 0, 1, 1, 1, 0, -100);
-				} else if (this.gameName == "仓颉") {
-					this.dr.playAnimation("说话", this.animLoop, this.touchGroup, 0, 1, 1, 1, 300, 1080);
-				} else if (this.gameName == "小侦探") {
-					this.dr.playAnimation("说话", this.animLoop, this.touchGroup, 0, 1, 1, 1);
-				} else if (this.gameName == "仓颉女友") {
-					this.dr.playAnimation("说话", this.animLoop, this.touchGroup, 0, 1, 1, 1, -100, 480);
-				}
-			});
 		}
+
 
 		/**
 		 * 更改泡泡内容
 		 * @param num 
 		 */
-		private changePop(num: number) {
+		private changePop(name: string, slotName: string, num: number) {
 			let pop: Assembly.Pop = new Assembly.Pop(num == 1 ? this.startText : this.LoopText)
 			// this.addChild(pop)
-			this.dr.changeSlotDisplay("说话", this.soltName, pop);
+			if (num != 1) {
+				pop.arrowImage.horizontalCenter = 500
+				pop.arrowImage.scaleX = -1
+				pop.anchorOffsetX = pop.width / 2 + 200
+				pop.anchorOffsetY = pop.height / 2 - 150
+				pop.scaleX = pop.scaleY = 1.2
+			} else {
+				pop.anchorOffsetX = pop.width / 2 - 100
+				pop.anchorOffsetY = pop.height / 2
+			}
+			DRAGONBONES.getInstance().getarmature(name).armature.getSlot(slotName).displayList = [pop]
 		}
 
 		init() {
-			//1.一开始禁止点击，等待弹出动画弹出
-			this.touchChildren = false
-			this.touchEnabled = false
-			//2.换第一句话的图片
-			this.changePop(1);
-			Manager.DelayManager.get().addDelay(500, () => {
-				MUSIC4.get().play("introduction1")
-				if (this.talkNum == 1) {
-					//如果只是播放一个题目框，则立即恢复点击可切断
-					this.touchChildren = true
-					this.touchEnabled = true
-					//第一段声音播完则动画停住
-					MUSIC4.get().addEvent("introduction1", () => {
-						this.dr.getarmature("说话").armature.animation.gotoAndStopByFrame(this.animLoop, 0)
-					}, this)
-				} else if (this.talkNum == 2) {
-					//如果播放多个板子，则在第一个声音播放完后播放下一个板子的声音和动画
-					MUSIC4.get().addEvent("introduction1", () => {
-						//2.换第一句话的图片
-						this.changePop(2)
-						MUSIC4.get().play("introduction2")
-						this.touchChildren = true
-						this.touchEnabled = true
-						MUSIC4.get().addEvent("introduction2", () => {
-							this.dr.getarmature("说话").armature.animation.gotoAndStopByFrame(this.animLoop, 0)
-						}, this)
-					}, this)
-				}
-			})
-			//自动播放弹出
-			if (this.gameName == "东东") {
-				this.dr.playAnimation("说话", this.animStart, this.touchGroup, 1, 0.5, 0.5, 1, 300, 1080)
-			} else if (this.gameName == "小王子") {
-				this.dr.playAnimation("说话", this.animStart, this.touchGroup, 1, 1, 1, 1, 0, -100)
-			} else if (this.gameName == "仓颉") {
-				this.dr.playAnimation("说话", this.animStart, this.touchGroup, 1, 1, 1, 1, 300, 1080)
-			} else if (this.gameName == "小侦探") {
-				this.dr.playAnimation("说话", this.animStart, this.touchGroup, 1, 1, 1, 1)
-			} else if (this.gameName == "仓颉女友") {
-				this.dr.playAnimation("说话", this.animStart, this.touchGroup, 1, 1, 1, 1, -100, 480)
+			for (let i = 0; i < this.animNameArr.length; i++) {
+
+				//更改插槽
+				this.changePop(this.animNameArr[i], this["slotName" + i], i + 1);
+
+				//onComplete
+				Manager.EventManager.get().addListener("Introduction", this["anim" + i], dragonBones.EgretEvent.COMPLETE, this.animComplete, this)
 			}
+			//visible
+			this.anim0.visible = true
+			if (this.anim1) this.anim1.visible = false
+			//播放第一动画
+			this.dr.playAnimation(this.animNameArr[0], this.animStart0, this.touchGroup, 1, 1, 1, 1, 300, 1080);
+			MUSIC4.get().play("introduction1")
+			MUSIC4.get().addEvent("introduction1", () => {
+				this.showAnim2()
+			}, this)
+
 			Manager.EventManager.get().addListener("Introduction", this, egret.TouchEvent.TOUCH_TAP, () => {
-				// 点击声音
-				MUSIC4.get().play("dianji");
-				// 停止介绍
-				MUSIC4.get().stop("introduction1");
-				MUSIC4.get().stop("introduction2");
-				// 隐藏介绍界面
-				Hierarchy.MessageManager.get().hide("Introduction");
-				// 开始第一题
-				Hierarchy.AbManager.get().getOne("Scene1").showNextQuestion();
-			}, this);
+				MUSIC4.get().play("dianji")
+				if (this.animNameArr.length == 1) {
+					this.showScene1()
+				} else {
+					if (this.anim0.visible == false) {
+						this.showScene1()
+					} else {
+						this.showAnim2()
+					}
+				}
+			}, this)
+
 		}
 
+		private showAnim2() {
+			MUSIC4.get().stop("introduction1");
+			//第一动画停住
+			this.anim0.animation.gotoAndStopByFrame(this.animLoop0, 0)
+			this.anim0.animation.play(this.animStop0, 0)
+
+			if (this.animNameArr.length == 1) {
+				// this.showScene1()
+			} else {
+				this.anim0.visible = false
+				//第二动画播放
+				MUSIC4.get().play("introduction2")
+				this.anim1.visible = true
+				this.dr.playAnimation(this.animNameArr[1], this.animStart1, this.touchGroup, 1, 1, 1, 1, 1700, 1080);
+				MUSIC4.get().addEvent("introduction2", () => {
+					//第二动画停住
+					this.anim1.animation.gotoAndStopByFrame(this.animLoop1, 0)
+					// this.anim1.visible = false
+					// this.showScene1()
+				}, this)
+			}
+		}
+
+		private showScene1() {
+			MUSIC4.get().stop("introduction1");
+			MUSIC4.get().stop("introduction2");
+			// 隐藏介绍界面
+			Hierarchy.MessageManager.get().hide("Introduction");
+			// 开始第一题
+			// Hierarchy.AbManager.get().getOne("Scene1").showNextQuestion();
+			//女声提示
+			MUSIC4.get().play("tips1", 1);
+		}
+
+		private animComplete(evt: dragonBones.EgretEvent) {
+			if (evt.animationName == this.animStart0) {
+				// console.log("动画1弹出播放完")
+				evt.armature.animation.play(this.animLoop0, 1)
+			}
+			if (evt.animationName == this.animLoop0) {
+				let _name = Math.random() > 0.5 ? this.animLoop0 : this.animLoop01
+				evt.armature.animation.play(_name, 1)
+			}
+			if (evt.animationName == this.animLoop01) {
+				let _name = Math.random() > 0.5 ? this.animLoop0 : this.animLoop01
+				evt.armature.animation.play(_name, 1)
+			}
+
+
+			if (evt.animationName == this.animStart1) {
+				// console.log("动画2弹出播放完")
+				evt.armature.animation.play(this.animLoop1, 1)
+			}
+			if (evt.animationName == this.animLoop1) {
+				let _name = Math.random() > 0.5 ? this.animLoop1 : this.animLoop11
+				evt.armature.animation.play(_name, 1)
+			}
+			if (evt.animationName == this.animLoop11) {
+				let _name = Math.random() > 0.5 ? this.animLoop1 : this.animLoop11
+				evt.armature.animation.play(_name, 1)
+			}
+		}
 	}
 }

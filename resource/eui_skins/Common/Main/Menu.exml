@@ -3,7 +3,7 @@
 	<w:Config id="169b2803be5" ></w:Config>
 	<e:Rect id="rect" touchEnabled="false" left="0" right="0" top="0" bottom="0" fillAlpha="0.5" fillColor="0x000000"/>
 	<e:Image id="lab" horizontalCenter="0" verticalCenter="0" source="zanting_png"/>
-	<e:Group width="114.36" height="617.21" x="1792.13" y="389.61" anchorOffsetX="0" anchorOffsetY="0" scrollEnabled="true" touchEnabled="false">
+	<e:Group width="114.36" height="617.21" y="389.61" anchorOffsetX="0" anchorOffsetY="0" scrollEnabled="true" touchEnabled="false" x="1791.64">
 		<e:Group id="group" anchorOffsetX="4" anchorOffsetY="512" scrollEnabled="true" scaleX="1" scaleY="1" width="114" x="0" height="517" bottom="0.21000000000003638">
 		<e:Image source="anniu-di_png" scaleX="1" scaleY="1" anchorOffsetY="0" anchorOffsetX="0" width="521.21" height="112.12" y="12" x="116" rotation="90"/>
 		<e:Image id="pause" source="zanting-anniu_png" y="64.09" x="6.067"/>

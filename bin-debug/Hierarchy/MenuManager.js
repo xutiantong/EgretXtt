@@ -89,6 +89,8 @@ var Hierarchy;
                     Manager.GlobalManager.get().restart();
                     Manager.EventManager.get().removeAllListener();
                     Hierarchy.AbManager.get().show("Start");
+                    Hierarchy.AbManager.get().hide("ErrBook");
+                    egret.Tween.removeAllTweens();
                     this.music.selected = false;
                     this.init();
                     break;

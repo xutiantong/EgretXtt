@@ -4,22 +4,18 @@ module Assembly {
 	 */
 	export class ErrBook extends eui.Component implements eui.UIComponent {
 
-		public aniGroup: eui.Group; //动画层
-		public leftArrow: eui.Image; //上一页
-		public rightArrow: eui.Image; //下一页
-		public contentGroup: eui.Group; //内容
-		public answer1: eui.Label;
-		public answer2: eui.Label;
-		public answer3: eui.Label;
-		public correct1: eui.Label;
-		public correct2: eui.Label;
-		public correct3: eui.Label;
-		public arrow2: eui.Image;
-		public arrow3: eui.Image;
-		private page: number; //当前看到第几页
-		private wrongArr = [];
+		aniGroup: eui.Group; //动画层
+		leftArrow: eui.Image; //上一页
+		rightArrow: eui.Image; //下一页
+		contentGroup: eui.Group; //内容
+		questionLabel: eui.Label
 
+		private page: number; //当前看到第几页
+		private cuotiAnim: dragonBones.EgretArmatureDisplay;//错题本动画
+		private cuotileft: dragonBones.EgretArmatureDisplay;//错题本动画
+		private cuotiright: dragonBones.EgretArmatureDisplay;//错题本动画
 		private Global = Manager.GlobalManager.get();
+		private questionCfg: Array<any>
 
 		public constructor() {
 			super();
@@ -31,66 +27,86 @@ module Assembly {
 
 		protected childrenCreated(): void {
 			super.childrenCreated();
-			DRAGONBONES.getInstance().addToFactory("cuotiben_ske_json", "cuotiben_tex_json", "cuotiben_tex_png");
-			DRAGONBONES.getInstance().initArmature("错题本动画", "cuotiben");
+			DRAGONBONES.getInstance().addToFactory("shanshui_cuotiben_ske_json", "shanshui_cuotiben_tex_json", "shanshui_cuotiben_tex_png");
+			this.cuotiAnim = DRAGONBONES.getInstance().initArmature("错题本动画", "cuotiben");
+			this.cuotileft = DRAGONBONES.getInstance().initArmature("错题本左", "anniuzuo", "in", 1, this.aniGroup, 550, 540);
+			this.cuotiright = DRAGONBONES.getInstance().initArmature("错题本右", "anniuyou", "in", 1, this.aniGroup, 1370, 540);
+			this.aniGroup.addChild(this.cuotiAnim);
+			this.cuotiAnim.armature.getSlot("zi").displayList = [this.questionLabel];
+			this.cuotiAnim.x = 35;
+			this.questionCfg = [];
+			let config = RES.getRes("ti_json");
+			for (let i = 0; i < 48; i++) {
+				this.questionCfg.push(config[i]);
+			}
 		}
 
 		init() {
 			Hierarchy.AbManager.get().hide("End");
-			this.Global.wrongArr.forEach((v) => {
-				if (this.wrongArr.length == 0 || this.wrongArr[this.wrongArr.length - 1].length == 3) {
-					this.wrongArr.push([v]);
-				} else {
-					this.wrongArr[this.wrongArr.length - 1].push(v);
-				}
-			});
 			this.page = 0;
 			this.leftArrow.visible = false;
-			this.rightArrow.visible = this.wrongArr.length > 1;
+			this.cuotileft.visible = false;
+			this.rightArrow.visible = this.Global.wrongArr.length > 1;
+			this.cuotiright.visible = this.Global.wrongArr.length > 1;
 			Manager.EventManager.get().addListener("CuoTiBen", this.leftArrow, egret.TouchEvent.TOUCH_TAP, () => {
 				MUSIC4.get().play("dianji");
+				this.cuotileft.animation.play("click", 1);
 				this.page -= 1;
 				this.leftArrow.visible = this.page > 0;
-				this.rightArrow.visible = this.page < this.wrongArr.length - 1;
+				this.rightArrow.visible = this.page < this.Global.wrongArr.length - 1;
+				this.cuotileft.visible = this.page > 0;
+				this.cuotiright.visible = this.page < this.Global.wrongArr.length - 1;
 				this.showCuoTi();
 			}, this);
 			Manager.EventManager.get().addListener("CuoTiBen", this.rightArrow, egret.TouchEvent.TOUCH_TAP, () => {
 				MUSIC4.get().play("dianji");
+				this.cuotiright.animation.play("click", 1);
 				this.page += 1;
 				this.leftArrow.visible = this.page > 0;
-				this.rightArrow.visible = this.page < this.wrongArr.length - 1;
+				this.rightArrow.visible = this.page < this.Global.wrongArr.length - 1;
+				this.cuotileft.visible = this.page > 0;
+				this.cuotiright.visible = this.page < this.Global.wrongArr.length - 1;
 				this.showCuoTi();
 			}, this);
 			this.showCuoTi();
-			this.contentGroup.scaleX = 0;
-			this.contentGroup.scaleY = 0;
-			egret.Tween.get(this.contentGroup).to({ scaleX: 1, scaleY: 1 }, 600, egret.Ease.backInOut);
-			DRAGONBONES.getInstance().playAnimation("错题本动画", "shengli", this.aniGroup, 1, 1, 1, 1, 0, -120);
+			// this.contentGroup.y = -762;
+			// this.contentGroup.alpha = 0;
+			// egret.Tween.get(this.contentGroup).wait(2880).to({ y: 0, alpha: 1 }, 800, egret.Ease.backInOut);
+			this.cuotiAnim.animation.play("in", 1);
+			this.cuotileft.animation.play("in", 1);
+			this.cuotiright.animation.play("in", 1);
 		}
 
 		private showCuoTi() {
-			let question1 = this.Global.questionCurArr[this.wrongArr[this.page][0]];
-			this.answer1.text = question1.question.replace("()", "_");
-			this.correct1.text = COMMONUTILS.get().replacePos(question1.question, (question1.mark == 1 ? 0 : 1), (question1.mark == 1 ? 3 : 4), question1.correct);
-			if (this.wrongArr[this.page].length > 1) {
-				this.arrow2.visible = true;
-				let question2 = this.Global.questionCurArr[this.wrongArr[this.page][1]];
-				this.answer2.text = question2.question.replace("()", "_");
-				this.correct2.text = COMMONUTILS.get().replacePos(question2.question, (question2.mark == 1 ? 0 : 1), (question2.mark == 1 ? 3 : 4), question2.correct);
+			let data = this.Global.wrongArr[this.page];
+			let txt = this.questionCfg[parseInt(data)].analysis.split("\n");
+			if (txt.length == 1) {
+				this.questionLabel.text = "        " + txt[0];
+				this.questionLabel.size = 56;
+				this.questionLabel.textColor = 0x212102;
+				this.questionLabel.wordWrap = true;
+				this.questionLabel.textAlign = egret.HorizontalAlign.LEFT;
 			} else {
-				this.answer2.text = "";
-				this.correct2.text = "";
-				this.arrow2.visible = false;
-			}
-			if (this.wrongArr[this.page].length > 2) {
-				this.arrow3.visible = true;
-				let question3 = this.Global.questionCurArr[this.wrongArr[this.page][2]];
-				this.answer3.text = question3.question.replace("()", "_");
-				this.correct3.text = COMMONUTILS.get().replacePos(question3.question, (question3.mark == 1 ? 0 : 1), (question3.mark == 1 ? 3 : 4), question3.correct);
-			} else {
-				this.arrow3.visible = false;
-				this.answer3.text = "";
-				this.correct3.text = "";
+				this.questionLabel.textAlign = egret.HorizontalAlign.CENTER;
+				if (this.questionCfg[parseInt(data)].type == 2) {
+					this.questionLabel.textFlow = (new egret.HtmlTextParser).parse(
+						"<font color='#1e2406' size='61'>" + txt[0] + "\n</font>"
+						+ "<font color='#3a4623' size='30'>" + txt[1] + "\n</font>"
+						+ "<font color='#31340a' size='42'>  " + txt[2].replace(this.questionCfg[parseInt(data)].a1, "</font><font color='#cc3300' size='42'>" + this.questionCfg[parseInt(data)].a1 + "</font><font color='#31340a' size='42'>") + "\n</font>"
+						+ "<font color='#31340a' size='42'>  " + txt[3].replace(this.questionCfg[parseInt(data)].a1, "</font><font color='#cc3300' size='42'>" + this.questionCfg[parseInt(data)].a1 + "</font><font color='#31340a' size='42'>") + "\n</font>"
+						+ "<font color='#31340a' size='42'>  " + txt[4].replace(this.questionCfg[parseInt(data)].a1, "</font><font color='#cc3300' size='42'>" + this.questionCfg[parseInt(data)].a1 + "</font><font color='#31340a' size='42'>") + "\n</font>"
+						+ "<font color='#31340a' size='42'>  " + txt[5].replace(this.questionCfg[parseInt(data)].a1, "</font><font color='#cc3300' size='42'>" + this.questionCfg[parseInt(data)].a1 + "</font><font color='#31340a' size='42'>") + "\n</font>"
+					)
+				} else {
+					this.questionLabel.textFlow = <Array<egret.ITextElement>>[
+						{ text: txt[0] + "\n", style: { "textColor": 0x1e2406, "size": 61 } }
+						, { text: txt[1] + "\n", style: { "textColor": 0x3a4623, "size": 30 } }
+						, { text: "  " + txt[2] + "\n", style: { "textColor": 0x31340a, "size": 42 } }
+						, { text: "  " + txt[3] + "\n", style: { "textColor": 0x31340a, "size": 42 } }
+						, { text: "  " + txt[4] + "\n", style: { "textColor": 0x31340a, "size": 42 } }
+						, { text: "  " + txt[5] + "\n", style: { "textColor": 0x31340a, "size": 42 } }
+					];
+				}
 			}
 		}
 

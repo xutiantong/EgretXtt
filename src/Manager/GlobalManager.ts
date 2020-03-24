@@ -12,8 +12,9 @@ module Manager {
         public questionNum: number = 1; //当前题号
         public questionCurArr: Array<any> = new Array<any>(); //当前题库
         public wrongArr: Array<any> = []; //错题库
-        public isFirstPlay: boolean = true; //是否第一次玩
-
+        public isFirstPlay: number = 0; //是否第一次玩
+        // public characterNum: number//当前选择人物
+        public hasShadowArr: Array<number> = []
         public constructor() {
             super();
         }
@@ -32,6 +33,7 @@ module Manager {
         restart() {
             this.questionNum = 1;
             this.wrongArr = [];
+            Hierarchy.AbManager.get().hide("Scene1")
         }
     }
 }

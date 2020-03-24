@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FloorBgSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16f84871b4e" ></w:Config>
+	<e:Group width="2196" height="1080" y="0" x="0">
+		<e:Image source="bg_block_png" x="64" y="-148" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="430" y="218" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="430" y="218" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="440.00000000000006" y="228.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="450" y="238" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="460" y="248" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="470.00000000000006" y="258.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="480.00000000000006" y="268.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="490.00000000000006" y="278.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="500.00000000000006" y="288.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="510.00000000000006" y="298.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="520" y="308.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="530" y="318.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="540" y="328.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="550" y="338.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="560" y="348.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="570" y="358.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="580" y="368.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="590" y="378.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="600" y="388.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="610" y="398.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="620" y="408.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="630" y="418.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="640" y="428.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="650" y="438.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="660" y="448.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="670" y="458.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="680" y="468.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="690" y="478.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="700" y="488.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="710" y="498.00000000000006" scaleX="1" scaleY="1"/>
+		<e:Image source="bg_block_png" x="720" y="508.00000000000006" scaleX="1" scaleY="1"/>
+		<e:layout>
+		<e:TileLayout horizontalGap="0" verticalGap="0" paddingLeft="-549" paddingTop="-366" requestedColumnCount="8" requestedRowCount="8"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

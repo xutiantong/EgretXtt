@@ -31,19 +31,49 @@ class LoadingUI extends eui.Component implements RES.PromiseTaskReporter {
 
     public lab: eui.Label;
     public gr: eui.Group;
-
+    private _time: number = 0
+    private loadAnim: dragonBones.EgretArmatureDisplay
     public constructor() {
         super();
         this.skinName = "Load"
     }
 
     protected childrenCreated(): void {
-        DRAGONBONES.getInstance().addToFactory("winter_loading_ske_json", "winter_loading_tex_0_json", "winter_loading_tex_0_png");
-        DRAGONBONES.getInstance().addTextrueAtlas("winter_loading_tex_1_json", "winter_loading_tex_1_png");
-        DRAGONBONES.getInstance().addTextrueAtlas("winter_loading_tex_2_json", "winter_loading_tex_2_png");
-        DRAGONBONES.getInstance().initArmature("加载动画", "loading");
-        DRAGONBONES.getInstance().playAnimation("加载动画", "newAnimation", this.gr, 0, 1, 1, 1);
+        DRAGONBONES.getInstance().addToFactory("loading_ske_json", "loading_tex_json", "loading_tex_png");
+        this.loadAnim = DRAGONBONES.getInstance().initArmature("加载动画", "loading");
+        this.gr.addChild(this.loadAnim)
+        this.loadAnim.animation.play("newAnimation", 0)
+        // this.loadAnim.animation.timeScale = 1
+        // this.loadAnim.animation.play("in_2", 1)
+        // this.loadAnim.addEventListener(dragonBones.EgretEvent.COMPLETE, this.animComplete, this)
+
         this.addChild(new XDFLogoComponent());
+    }
+    private animComplete(evt: dragonBones.EgretEvent) {
+        if (evt.animationName == "in_2") {
+            this._time++
+            if (this._time == 1) {
+                this.loadAnim.animation.timeScale = - 1
+                this.loadAnim.animation.play("in_2", 1)
+            } else {
+                this._time = 0
+                this.loadAnim.animation.timeScale = 1
+                this.loadAnim.animation.play("in_1", 1)
+            }
+
+        }
+        if (evt.animationName == "in_1") {
+            this._time++
+            if (this._time == 1) {
+                this.loadAnim.animation.timeScale = - 1
+                this.loadAnim.animation.play("in_1", 1)
+            } else {
+                this._time = 0
+                this.loadAnim.animation.timeScale = 1
+                this.loadAnim.animation.play("in_2", 1)
+            }
+
+        }
     }
 
     public onProgress(current: number, total: number): void {
@@ -51,3 +81,4 @@ class LoadingUI extends eui.Component implements RES.PromiseTaskReporter {
         this.lab.text = `${percent}%`;
     }
 }
+

@@ -68,101 +68,57 @@ class DRAGONBONES {
      * 初始化骨架
      * @param name 骨架昵称
      * @param armaturename 骨架名称
-     * @param fadeInCall fadeIn事件监听
-     * @param completeCall complete事件监听
-     * @param loopCompleteCall loopComplete事件监听
-     * @param framecall frame事件监听
+     * @param animationName 动画名称
+     * @param playTime 播放次数
+     * @param parent 父节点
+     * @param x x偏移
+     * @param y y偏移
+     * @param scaleX x缩放
+     * @param scaleY y缩放
+     * @param speed 播放速度
      */
-    public initArmature(name: string, armaturename: string, fadeInCall?: any, completeCall?: any, loopCompleteCall?: any, framecall?: any): dragonBones.EgretArmatureDisplay {
-        var armature: dragonBones.EgretArmatureDisplay = this.egretFactory.buildArmatureDisplay(armaturename);
-        let fadeIn = null;
-        let complete = null;
-        let frame = null;
-        let loop = null;
+    public initArmature(name: string, armaturename: string, animationName?: string, playTime?: number, parent?: any, x?: number, y?: number, scaleX?: number, scaleY?: number, speed?: number): dragonBones.EgretArmatureDisplay {
+        var armature = null;
+        let isNew = false;
+        for (let i = 0; i < this.armatureArr.length; i++) {
+            let v = this.armatureArr[i];
+            if (name == v.name) {
+                armature = v.gujia;
+                isNew = true;
+                break;
+            }
+        }
+        if (!isNew) {
+            armature = this.egretFactory.buildArmatureDisplay(armaturename);
+            this.armatureArr.push({ name: name, gujia: armature });
+        }
         armature.anchorOffsetX = 0
         armature.anchorOffsetY = 0
-        if (fadeInCall != null) {
-            armature.addEventListener(dragonBones.EventObject.FADE_IN, fadeInCall, this);
-            fadeIn = fadeInCall;
+        if (scaleX != null) {
+            armature.scaleX = scaleX;
         }
-        if (completeCall != null) {
-            armature.addEventListener(dragonBones.EventObject.COMPLETE, completeCall, this);
-            complete = completeCall;
+        if (scaleY != null) {
+            armature.scaleY = scaleY;
         }
-        if (loopCompleteCall != null) {
-            armature.addEventListener(dragonBones.EventObject.LOOP_COMPLETE, loopCompleteCall, this);
-            loop = loopCompleteCall;
+        if (x != null) {
+            armature.x = x;
         }
-        if (framecall != null) {
-            armature.addEventListener(dragonBones.EventObject.FRAME_EVENT, framecall, this);
-            frame = framecall;
+        if (y != null) {
+            armature.y = y;
         }
-        this.armatureArr.push({ name: name, gujia: armature, startlisten: fadeIn, endlisten: complete, framelisten: frame, loopendlisten: loop, xianyin: false });
+        if (parent != null) {
+            parent.addChild(armature);
+        }
+        if (playTime != null) {
+            let db: dragonBones.AnimationState = armature.animation.play(animationName, playTime);
+            if (speed != null) {
+                db.timeScale = speed;
+            }
+        }
         return armature;
     }
 
-    /**
-     * 更新骨架事件监听
-     * @param name 骨架昵称
-     * @param start fadeIn事件监听
-     * @param end complete事件监听
-     * @param loopend loopComplete事件监听
-     * @param frame frame事件监听
-     */
-    public updateListener(name: string, start?: any, end?: any, loopend?: any, frame?: any) {
-        for (let i = 0; i < this.armatureArr.length; i++) {
-            let v = this.armatureArr[i];
-            if (name == v.name) {
-                let armature: dragonBones.EgretArmatureDisplay = v.gujia;
-                if (start != null) {
-                    if (v.startlisten != null)
-                        armature.removeEventListener(dragonBones.EventObject.COMPLETE, v.startlisten, this);
-                    armature.addEventListener(dragonBones.EventObject.COMPLETE, start, this);
-                    v.startlisten = start;
-                }
-                if (end != null) {
-                    if (v.endlisten != null)
-                        armature.removeEventListener(dragonBones.EventObject.COMPLETE, v.endlisten, this);
-                    armature.addEventListener(dragonBones.EventObject.COMPLETE, end, this);
-                    v.endlisten = end;
-                }
-                if (frame != null) {
-                    if (v.framelisten != null)
-                        armature.removeEventListener(dragonBones.EventObject.COMPLETE, v.framelisten, this);
-                    armature.addEventListener(dragonBones.EventObject.COMPLETE, frame, this);
-                    v.framelisten = frame;
-                }
-                if (loopend != null) {
-                    if (v.loopendlisten != null)
-                        armature.removeEventListener(dragonBones.EventObject.LOOP_COMPLETE, v.loopendlisten, this);
-                    armature.addEventListener(dragonBones.EventObject.LOOP_COMPLETE, loopend, this);
-                    v.loopendlisten = loopend;
-                }
-            }
-        }
-    }
-
-    /**
-     * 特定骨架的开始显示，结束隐藏
-     * @param name 骨架昵称
-     * @param vis 添加删除
-     */
-    public changeVisible(name: string, vis: boolean) {
-        for (let i = 0; i < this.armatureArr.length; i++) {
-            let v = this.armatureArr[i];
-            if (name == v.name) {
-                if (vis) {
-                    v.gujia.addEventListener(dragonBones.EventObject.START, this.tru, this);
-                    v.gujia.addEventListener(dragonBones.EventObject.COMPLETE, this.fal, this);
-                } else {
-                    v.gujia.removeEventListener(dragonBones.EventObject.START, this.tru, this);
-                    v.gujia.removeEventListener(dragonBones.EventObject.COMPLETE, this.fal, this);
-                }
-            }
-        }
-    }
-
-    /**
+     /**
      * 播放骨架动画
      * @param name 骨架昵称
      * @param animationname 动画名字
@@ -212,41 +168,6 @@ class DRAGONBONES {
             }
         }
         return null;
-    }
-
-    /**
-     * 用其他骨架插槽替换当前插槽
-     * @param bei_armaturename 被提取的骨架原生名称
-     * @param bei_slotname 被提取的骨架插槽原生名称
-     * @param bei_slotdisplayname 被提取的骨架插槽图片原生名称
-     * @param forarmaturename_nicheng 将接受皮肤的骨架昵称
-     * @param forslotname 将接受皮肤的骨架插槽原生名称
-     */
-    public changeSlotWithAnotherSlot(bei_armaturename: string, bei_slotname: string, bei_slotdisplayname: string, forarmaturename_nicheng: string, forslotname: string) {
-        let bone: dragonBones.EgretArmatureDisplay;
-        for (let i = 0; i < this.armatureArr.length; i++) {
-            let v = this.armatureArr[i];
-            if (forarmaturename_nicheng == v.name) {
-                bone = v.gujia;
-            }
-        }
-        this.egretFactory.replaceSlotDisplay(null, bei_armaturename, bei_slotname, bei_slotdisplayname, bone.armature.getSlot(forslotname));
-    }
-
-    /**
-     * 隐藏
-     * @param event 
-     */
-    private fal(event: dragonBones.EgretEvent) {
-        event.target.visible = false;
-    }
-
-    /**
-     * 显示
-     * @param event 
-     */
-    private tru(event: dragonBones.EgretEvent) {
-        event.target.visible = true;
     }
 
     /**

@@ -3,26 +3,9 @@
 	<w:Config id="16b0857847d" ></w:Config>
 	<e:Rect left="0" top="0" bottom="0" right="0" fillAlpha="0.5"/>
 	<e:Group id="aniGroup" right="0" bottom="0" left="0" top="0"/>
-	<e:Group id="contentGroup" anchorOffsetX="960" anchorOffsetY="540" width="1920" height="1080" y="540" x="960">
-		<e:Image id="leftArrow" y="940" source="zuos_png" horizontalCenter="-80"/>
-		<e:Image id="rightArrow" y="940" source="yous_png" horizontalCenter="80"/>
-		<e:Group width="855" height="70" y="440" horizontalCenter="0.5">
-			<e:Label id="correct1" text="Label" size="70" fontFamily="z2" y="0" horizontalCenter="150" textColor="16777215"/>
-			<e:Label id="answer1" text="Label" size="70" fontFamily="z2" y="0" horizontalCenter="-150" height="80" verticalAlign="top" textColor="16777215"/>
-			<e:Image anchorOffsetY="10.5" horizontalCenter="0" verticalCenter="0" source="white_arow_png"/>
-		</e:Group>
-		<e:Group width="855" height="70" y="550" horizontalCenter="0.5">
-			<e:Label id="correct2" text="Label" size="70" fontFamily="z2" y="0" scaleX="1" scaleY="1" horizontalCenter="150" textColor="16777215"/>
-			<e:Label id="answer2" text="Label" size="70" fontFamily="z2" y="0" scaleX="1" scaleY="1" horizontalCenter="-150" height="80" verticalAlign="top" textColor="16777215"/>
-			<e:Image id="arrow2" anchorOffsetY="10.5" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" source="white_arow_png"/>
-		</e:Group>
-		<e:Group width="855" height="70" y="660" horizontalCenter="0">
-			<e:Label id="correct3" text="Label" size="70" fontFamily="z2" y="0" scaleX="1" scaleY="1" horizontalCenter="150" textColor="16777215"/>
-			<e:Label id="answer3" text="Label" size="70" fontFamily="z2" y="0" scaleX="1" scaleY="1" horizontalCenter="-150" height="80" verticalAlign="top" textColor="16777215"/>
-			<e:Image id="arrow3" anchorOffsetY="10.5" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" source="white_arow_png"/>
-		</e:Group>
-		<e:layout>
-			<e:BasicLayout/>
-		</e:layout>
+	<e:Group id="contentGroup" width="1920" height="1080" x="0" y="0">
+		<e:Image id="leftArrow" source="zuos_png" verticalCenter="0" horizontalCenter="-410" alpha="0.01"/>
+		<e:Image id="rightArrow" source="yous_png" verticalCenter="0" horizontalCenter="410" alpha="0.01"/>
+		<e:Label id="questionLabel" text="我就四个" size="43" fontFamily="z2" horizontalCenter="0" verticalCenter="0" x="-54" y="48.99999999999994" scaleX="1" scaleY="1" strokeColor="0xffffff" stroke="3" width="560" anchorOffsetX="280" height="400" anchorOffsetY="200" verticalAlign="middle" textAlign="center" textColor="0x3A4623" lineSpacing="20"/>
 	</e:Group>
 </e:Skin>

@@ -23,7 +23,7 @@ var Assembly;
         }
         Pop.prototype.childrenCreated = function () {
             _super.prototype.childrenCreated.call(this);
-            this.anchorOffsetX = this.width / 2;
+            this.anchorOffsetX = this.width / 2 - 120;
             this.anchorOffsetY = this.height / 2;
             this.label.text = "       " + this.strTex;
             this.label.wordWrap = true;
