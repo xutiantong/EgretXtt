@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="CardSceneSkin" width="1920" height="1080" xmlns:e="http://ns.egret.com/eui"
-        xmlns:w="http://ns.egret.com/wing">
-	<w:Config id="1705cbb9a82"></w:Config>
-	<e:Rect left="0" top="0" bottom="0" right="0" alpha="0.6" />
-	<e:Group id="animGroup">
-	</e:Group>
-	<e:Image id="return"  horizontalCenter="-839" verticalCenter="-450" source="card_return_png"/>
-</e:Skin>
