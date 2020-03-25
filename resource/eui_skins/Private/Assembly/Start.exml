@@ -7,4 +7,5 @@
 		<e:Image id="startButton" source="anniu-kaishi_png" anchorOffsetX="216" anchorOffsetY="159" scaleX="1" scaleY="1"/>
 
 	</e:Group>
+	<e:Image id="gg" source="soldier_body2_png" x="500" y="100"/>
 </e:Skin>
